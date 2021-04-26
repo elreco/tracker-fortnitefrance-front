@@ -24,9 +24,9 @@ export default {
     ],
     script: [
       { src: '//cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js', body: true },
+      { src: '//cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js', body: true },
       { src: '//cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js', body: true },
       { src: '//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js', body: true },
-      { src: '/js/core.js', body: true },
       { src: '/plugins/jpreloader2/js/jpreloader.js', body: true },
       { src: '//cdnjs.cloudflare.com/ajax/libs/svg4everybody/2.1.9/svg4everybody.min.js', body: true },
       { src: '//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js', body: true },

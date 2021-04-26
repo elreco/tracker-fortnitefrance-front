@@ -88,8 +88,8 @@ var revapi, tpj;
 				});
 			}; /* END OF revapi call */
 
-			RsRevealerAddOn(tpj, revapi, "<div class='rsaddon-revealer-spinner rsaddon-revealer-spinner-2'><div class='rsaddon-revealer-2' style='border-top-color: {{color}}0.65); border-bottom-color: {{color}}0.15); border-left-color: {{color}}0.65); border-right-color: {{color}}0.15)'><\/div><\/div>");
-			RsTypewriterAddOn(tpj, revapi);
+			//RsRevealerAddOn(tpj, revapi, "<div class='rsaddon-revealer-spinner rsaddon-revealer-spinner-2'><div class='rsaddon-revealer-2' style='border-top-color: {{color}}0.65); border-bottom-color: {{color}}0.15); border-left-color: {{color}}0.65); border-right-color: {{color}}0.15)'><\/div><\/div>");
+			//RsTypewriterAddOn(tpj, revapi);
 
 		}; /* END OF ON LOAD FUNCTION */
 	}()); /* END OF WRAPPING FUNCTION */
@@ -167,7 +167,7 @@ var revapi, tpj;
 	var $insta_feed = $('#instagram-feed');
 	var $insta_feed_alt = $('#instagram-feed-alt');
 	var $insta_feed_section = $('#instagram-feed-section');
-	var posts_filterable = $('.js-posts--filterable');
+  var posts_filterable = $('.js-posts--filterable');
 
 	if ( $template_var == 'template-soccer' ) {
 		$color_primary = '#1892ed';
@@ -185,7 +185,7 @@ var revapi, tpj;
 
 			this.headerNav();
 
-			this.countDown();
+			/* this.countDown(); */
 
 			this.circularBar();
 

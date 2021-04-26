@@ -1,5 +1,5 @@
 <template>
-  <body data-template="template-esports">
+  <body data-template="template-esports" class="page-loader-disable">
 
 	<div class="site-wrapper clearfix">
 		<div class="site-overlay"></div>
@@ -9,7 +9,7 @@
 		<!-- Header Mobile -->
 		<div class="header-mobile clearfix" id="header-mobile">
 			<div class="header-mobile__logo">
-				<a href="_esports_index.html"><img src="" srcset="assets/images/esports/logo@2x.png 2x" alt="Alchemists" class="header-mobile__logo-img"></a>
+				<a href="_esports_index.html"><img src="" srcset="~assets/images/esports/logo@2x.png 2x" alt="Alchemists" class="header-mobile__logo-img"></a>
 			</div>
 			<div class="header-mobile__inner">
 				<a id="header-mobile__toggle" class="burger-menu-icon"><span class="burger-menu-icon__line"></span></a>
@@ -83,7 +83,7 @@
 
 						<!-- Header Logo -->
 						<div class="header-logo">
-							<a href="_esports_index.html"><img src="assets/images/esports/logo.png" srcset="assets/images/esports/logo@2x.png 2x" alt="Alchemists" class="header-logo__img"></a>
+							<a href="_esports_index.html"><img src="~assets/images/esports/logo.png" srcset="~assets/images/esports/logo@2x.png 2x" alt="Alchemists" class="header-logo__img"></a>
 						</div>
 						<!-- Header Logo / End -->
 
@@ -107,7 +107,7 @@
 														<ul class="posts posts--simple-list posts-layout-horizontal posts-layout-horizontal--3cols">
 															<li class="posts__item posts__item--category-4 ">
 																<figure class="posts__thumb posts__thumb--hover">
-																	<a href="#"><img src="assets/images/esports/samples/nav-post-img-1.jpg" alt=""></a>
+																	<a href="#"><img src="~assets/images/esports/samples/nav-post-img-1.jpg" alt=""></a>
 																</figure>
 																<div class="posts__inner">
 																	<div class="posts__cat">
@@ -119,7 +119,7 @@
 															</li>
 															<li class="posts__item posts__item--category-2 ">
 																<figure class="posts__thumb posts__thumb--hover">
-																	<a href="#"><img src="assets/images/esports/samples/nav-post-img-2.jpg" alt=""></a>
+																	<a href="#"><img src="~assets/images/esports/samples/nav-post-img-2.jpg" alt=""></a>
 																</figure>
 																<div class="posts__inner">
 																	<div class="posts__cat">
@@ -131,7 +131,7 @@
 															</li>
 															<li class="posts__item posts__item--category-3 ">
 																<figure class="posts__thumb posts__thumb--hover">
-																	<a href="#"><img src="assets/images/esports/samples/nav-post-img-3.jpg" alt=""></a>
+																	<a href="#"><img src="~assets/images/esports/samples/nav-post-img-3.jpg" alt=""></a>
 																</figure>
 																<div class="posts__inner">
 																	<div class="posts__cat">
@@ -277,7 +277,7 @@
 							<li class="info-block__item info-block__item--shopping-cart js-info-block__item--onclick">
 								<a href="_esports_shop-cart.html" class="info-block__link-wrapper">
 									<svg role="img" class="df-icon df-icon--shopping-cart">
-										<use xlink:href="assets/images/esports/icons-esports.svg#cart"/>
+										<use xlink:href="~assets/images/esports/icons-esports.svg#cart"/>
 									</svg>
 									<h6 class="info-block__heading">Your Bag (8 items)</h6>
 									<span class="info-block__cart-sum">$256,30</span>
@@ -293,7 +293,7 @@
 									<li class="header-cart__item">
 										<figure class="header-cart__product-thumb">
 											<a href="_esports_shop-product.html">
-												<img src="assets/images/esports/samples/cart-sm-1.jpg" alt="Jaxxy Framed Art Print">
+												<img src="~assets/images/esports/samples/cart-sm-1.jpg" alt="Jaxxy Framed Art Print">
 											</a>
 										</figure>
 										<div class="header-cart__badges">
@@ -304,7 +304,7 @@
 									<li class="header-cart__item">
 										<figure class="header-cart__product-thumb">
 											<a href="_esports_shop-product.html">
-												<img src="assets/images/esports/samples/cart-sm-2.jpg" alt="Tech Warrior Framed Art Print">
+												<img src="~assets/images/esports/samples/cart-sm-2.jpg" alt="Tech Warrior Framed Art Print">
 											</a>
 										</figure>
 										<div class="header-cart__badges">
@@ -315,7 +315,7 @@
 									<li class="header-cart__item">
 										<figure class="header-cart__product-thumb">
 											<a href="_esports_shop-product.html">
-												<img src="assets/images/esports/samples/cart-sm-3.jpg" alt="Alchemists White Mug">
+												<img src="~assets/images/esports/samples/cart-sm-3.jpg" alt="Alchemists White Mug">
 											</a>
 										</figure>
 										<div class="header-cart__badges">
@@ -325,7 +325,7 @@
 									<li class="header-cart__item">
 										<figure class="header-cart__product-thumb">
 											<a href="_esports_shop-product.html">
-												<img src="assets/images/esports/samples/cart-sm-4.jpg" alt="Mercenaries Framed Art Print">
+												<img src="~assets/images/esports/samples/cart-sm-4.jpg" alt="Mercenaries Framed Art Print">
 											</a>
 										</figure>
 										<div class="header-cart__badges">
@@ -383,7 +383,7 @@
 						<li data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="300" data-rotate="0" data-saveperformance="off" data-title="Slide">
 
 							<!-- MAIN IMAGE -->
-							<img src="assets/images/esports/hero-slider/hero-bg-1.jpg" data-bgcolor='#1d1429' alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+							<img src="~assets/images/esports/hero-slider/hero-bg-1.jpg" data-bgcolor='#1d1429' alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
 							<!-- LAYERS -->
 
 							<!-- LAYER NR. 1 -->
@@ -408,7 +408,7 @@
 
 								style="z-index: 5;">
 
-								<img src="assets/images/esports/hero-slider/hero-character-1.png" alt="" data-ww="['457px','385px','323px','261px']" data-hh="['591px','500px','420px','340px']" width="457" height="591" data-no-retina>
+								<img src="~assets/images/esports/hero-slider/hero-character-1.png" alt="" data-ww="['457px','385px','323px','261px']" data-hh="['591px','500px','420px','340px']" width="457" height="591" data-no-retina>
 							</div>
 
 							<!-- LAYER NR. 2 -->
@@ -525,7 +525,7 @@
 						<li data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="300" data-rotate="0" data-saveperformance="off" data-title="Slide">
 
 							<!-- MAIN IMAGE -->
-							<img src="assets/images/esports/hero-slider/hero-bg-2.jpg" data-bgcolor='#1d1429' alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+							<img src="~assets/images/esports/hero-slider/hero-bg-2.jpg" data-bgcolor='#1d1429' alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
 							<!-- LAYERS -->
 
 							<!-- LAYER NR. 1 -->
@@ -551,7 +551,7 @@
 
 								style="z-index: 1;">
 
-								<img src="assets/images/esports/hero-slider/hero-decor.png" alt="" data-ww="['593px','420px','300px','290px']" data-hh="['431px','480px','420px','340px']" width="593" height="431" data-no-retina>
+								<img src="~assets/images/esports/hero-slider/hero-decor.png" alt="" data-ww="['593px','420px','300px','290px']" data-hh="['431px','480px','420px','340px']" width="593" height="431" data-no-retina>
 							</div>
 
 							<!-- LAYER NR. 2 -->
@@ -576,7 +576,7 @@
 
 								style="z-index: 5;">
 
-								<img src="assets/images/esports/hero-slider/hero-character-2.png" alt="" data-ww="['949px','760px','580px','460px']" data-hh="['503px','403px','307px','244px']" width="949" height="503" data-no-retina>
+								<img src="~assets/images/esports/hero-slider/hero-character-2.png" alt="" data-ww="['949px','760px','580px','460px']" data-hh="['503px','403px','307px','244px']" width="949" height="503" data-no-retina>
 							</div>
 
 							<!-- LAYER NR. 3 -->
@@ -693,7 +693,7 @@
 						<li data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="300" data-rotate="0" data-saveperformance="off" data-title="Slide">
 
 							<!-- MAIN IMAGE -->
-							<img src="assets/images/esports/hero-slider/hero-bg-3.jpg" data-bgcolor='#1d1429' alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+							<img src="~assets/images/esports/hero-slider/hero-bg-3.jpg" data-bgcolor='#1d1429' alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
 							<!-- LAYERS -->
 
 							<!-- LAYER NR. 1 -->
@@ -816,7 +816,7 @@
 
 								style="z-index: 5;">
 
-								<img src="assets/images/samples/avatar-12-xs.jpg" alt="" class="rounded-circle" data-ww="['24px','24px','18px','15px']" data-hh="['24px','24px','18px','15px']" width="24" height="24" data-no-retina>
+								<img src="~assets/images/samples/avatar-12-xs.jpg" alt="" class="rounded-circle" data-ww="['24px','24px','18px','15px']" data-hh="['24px','24px','18px','15px']" width="24" height="24" data-no-retina>
 							</div>
 
 							<!-- LAYER NR. 7 -->
@@ -884,7 +884,7 @@
 										<div class="posts__cat">
 											<span class="label posts__cat-label posts__cat-label--category-1">The Team</span><span class="label posts__cat-label posts__cat-label--category-4">Xenowatch</span>
 										</div>
-										<a href="_esports_blog-post-1.html"><img src="assets/images/esports/samples/post-img1.jpg" alt=""></a>
+										<a href="_esports_blog-post-1.html"><img src="~assets/images/esports/samples/post-img1.jpg" alt=""></a>
 									</figure>
 									<div class="posts__inner card__content">
 										<a href="_esports_blog-post-1.html" class="posts__cta"></a>
@@ -897,7 +897,7 @@
 									<footer class="posts__footer card__footer">
 										<div class="post-author">
 											<figure class="post-author__avatar">
-												<img src="assets/images/samples/avatar-12-xs.jpg" alt="Post Author Avatar">
+												<img src="~assets/images/samples/avatar-12-xs.jpg" alt="Post Author Avatar">
 											</figure>
 											<div class="post-author__info">
 												<h4 class="post-author__name">Erick Rodgers</h4>
@@ -917,7 +917,7 @@
 										<div class="posts__cat">
 											<span class="label posts__cat-label posts__cat-label--category-2">L.O. Heroes</span>
 										</div>
-										<a href="_esports_blog-post-1.html"><img src="assets/images/esports/samples/post-img2.jpg" alt=""></a>
+										<a href="_esports_blog-post-1.html"><img src="~assets/images/esports/samples/post-img2.jpg" alt=""></a>
 									</figure>
 									<div class="posts__inner card__content">
 										<a href="_esports_blog-post-1.html" class="posts__cta"></a>
@@ -930,7 +930,7 @@
 									<footer class="posts__footer card__footer">
 										<div class="post-author">
 											<figure class="post-author__avatar">
-												<img src="assets/images/samples/avatar-6-xs.jpg" alt="Post Author Avatar">
+												<img src="~assets/images/samples/avatar-6-xs.jpg" alt="Post Author Avatar">
 											</figure>
 											<div class="post-author__info">
 												<h4 class="post-author__name">Lagertha Dax</h4>
@@ -950,7 +950,7 @@
 										<div class="posts__cat">
 											<span class="label posts__cat-label posts__cat-label--category-1">The Team</span><span class="label posts__cat-label posts__cat-label--category-3">Striker GO</span>
 										</div>
-										<a href="_esports_blog-post-1.html"><img src="assets/images/esports/samples/post-img3.jpg" alt=""></a>
+										<a href="_esports_blog-post-1.html"><img src="~assets/images/esports/samples/post-img3.jpg" alt=""></a>
 									</figure>
 									<div class="posts__inner card__content">
 										<a href="_esports_blog-post-1.html" class="posts__cta"></a>
@@ -963,7 +963,7 @@
 									<footer class="posts__footer card__footer">
 										<div class="post-author">
 											<figure class="post-author__avatar">
-												<img src="assets/images/samples/avatar-6-xs.jpg" alt="Post Author Avatar">
+												<img src="~assets/images/samples/avatar-6-xs.jpg" alt="Post Author Avatar">
 											</figure>
 											<div class="post-author__info">
 												<h4 class="post-author__name">Lagertha Dax</h4>
@@ -983,7 +983,7 @@
 										<div class="posts__cat">
 											<span class="label posts__cat-label posts__cat-label--category-4">Xenowatch</span>
 										</div>
-										<a href="_esports_blog-post-1.html"><img src="assets/images/esports/samples/post-img4.jpg" alt=""></a>
+										<a href="_esports_blog-post-1.html"><img src="~assets/images/esports/samples/post-img4.jpg" alt=""></a>
 									</figure>
 									<div class="posts__inner card__content">
 										<a href="_esports_blog-post-1.html" class="posts__cta"></a>
@@ -996,7 +996,7 @@
 									<footer class="posts__footer card__footer">
 										<div class="post-author">
 											<figure class="post-author__avatar">
-												<img src="assets/images/samples/avatar-6-xs.jpg" alt="Post Author Avatar">
+												<img src="~assets/images/samples/avatar-6-xs.jpg" alt="Post Author Avatar">
 											</figure>
 											<div class="post-author__info">
 												<h4 class="post-author__name">Lagertha Dax</h4>
@@ -1016,7 +1016,7 @@
 										<div class="posts__cat">
 											<span class="label posts__cat-label posts__cat-label--category-1">The Team</span>
 										</div>
-										<a href="_esports_blog-post-1.html"><img src="assets/images/esports/samples/post-img6.jpg" alt=""></a>
+										<a href="_esports_blog-post-1.html"><img src="~assets/images/esports/samples/post-img6.jpg" alt=""></a>
 									</figure>
 									<div class="posts__inner card__content">
 										<a href="_esports_blog-post-1.html" class="posts__cta"></a>
@@ -1029,7 +1029,7 @@
 									<footer class="posts__footer card__footer">
 										<div class="post-author">
 											<figure class="post-author__avatar">
-												<img src="assets/images/samples/avatar-12-xs.jpg" alt="Post Author Avatar">
+												<img src="~assets/images/samples/avatar-12-xs.jpg" alt="Post Author Avatar">
 											</figure>
 											<div class="post-author__info">
 												<h4 class="post-author__name">Eric Rodgers</h4>
@@ -1050,7 +1050,7 @@
 									<div class="post-grid__item">
 										<div class="posts__item posts__item--tile posts__item--category-3  card">
 											<figure class="posts__thumb">
-												<img src="assets/images/esports/samples/post-img11-card-md.jpg" alt="">
+												<img src="~assets/images/esports/samples/post-img11-card-md.jpg" alt="">
 												<div class="posts__inner">
 													<div class="posts__cat">
 														<span class="label posts__cat-label posts__cat-label--category-3">Striker GO</span>
@@ -1070,7 +1070,7 @@
 									<div class="post-grid__item">
 										<div class="posts__item posts__item--tile posts__item--category-2  card">
 											<figure class="posts__thumb">
-												<img src="assets/images/esports/samples/post-img5-card-md.jpg" alt="">
+												<img src="~assets/images/esports/samples/post-img5-card-md.jpg" alt="">
 												<div class="posts__inner">
 													<div class="posts__cat">
 														<span class="label posts__cat-label posts__cat-label--category-2">L.O. Heroes</span>
@@ -1098,7 +1098,7 @@
 						<!-- Main News Banner -->
 						<div class="main-news-banner main-news-banner--bg main-news-banner--img-left">
 							<figure class="main-news-banner__img">
-								<img src="assets/images/esports/samples/character-news-banner__img.png" alt="">
+								<img src="~assets/images/esports/samples/character-news-banner__img.png" alt="">
 							</figure>
 							<div class="main-news-banner__inner">
 								<div class="posts posts--simple-list posts--simple-list--xlg">
@@ -1133,7 +1133,7 @@
 										<div class="posts__cat">
 											<span class="label posts__cat-label posts__cat-label--category-4">Xenowatch</span>
 										</div>
-										<a href="_esports_blog-post-1.html"><img src="assets/images/esports/samples/post-img13.jpg" alt=""></a>
+										<a href="_esports_blog-post-1.html"><img src="~assets/images/esports/samples/post-img13.jpg" alt=""></a>
 									</figure>
 									<div class="posts__inner card__content">
 										<a href="_esports_blog-post-1.html" class="posts__cta"></a>
@@ -1143,7 +1143,7 @@
 									<footer class="posts__footer card__footer">
 										<div class="post-author">
 											<figure class="post-author__avatar">
-												<img src="assets/images/samples/avatar-12-xs.jpg" alt="Post Author Avatar">
+												<img src="~assets/images/samples/avatar-12-xs.jpg" alt="Post Author Avatar">
 											</figure>
 											<div class="post-author__info">
 												<h4 class="post-author__name">Erick Rodgers</h4>
@@ -1163,7 +1163,7 @@
 										<div class="posts__cat">
 											<span class="label posts__cat-label posts__cat-label--category-1">The Team</span><span class="label posts__cat-label posts__cat-label--category-4">Xenowatch</span>
 										</div>
-										<a href="_esports_blog-post-1.html"><img src="assets/images/esports/samples/post-img7.jpg" alt=""></a>
+										<a href="_esports_blog-post-1.html"><img src="~assets/images/esports/samples/post-img7.jpg" alt=""></a>
 									</figure>
 									<div class="posts__inner card__content">
 										<a href="_esports_blog-post-1.html" class="posts__cta"></a>
@@ -1173,7 +1173,7 @@
 									<footer class="posts__footer card__footer">
 										<div class="post-author">
 											<figure class="post-author__avatar">
-												<img src="assets/images/samples/avatar-12-xs.jpg" alt="Post Author Avatar">
+												<img src="~assets/images/samples/avatar-12-xs.jpg" alt="Post Author Avatar">
 											</figure>
 											<div class="post-author__info">
 												<h4 class="post-author__name">Erick Rodgers</h4>
@@ -1193,7 +1193,7 @@
 										<div class="posts__cat">
 											<span class="label posts__cat-label posts__cat-label--category-1">The Team</span>
 										</div>
-										<a href="_esports_blog-post-1.html"><img src="assets/images/esports/samples/post-img14.jpg" alt=""></a>
+										<a href="_esports_blog-post-1.html"><img src="~assets/images/esports/samples/post-img14.jpg" alt=""></a>
 									</figure>
 									<div class="posts__inner card__content">
 										<a href="_esports_blog-post-1.html" class="posts__cta"></a>
@@ -1203,7 +1203,7 @@
 									<footer class="posts__footer card__footer">
 										<div class="post-author">
 											<figure class="post-author__avatar">
-												<img src="assets/images/samples/avatar-12-xs.jpg" alt="Post Author Avatar">
+												<img src="~assets/images/samples/avatar-12-xs.jpg" alt="Post Author Avatar">
 											</figure>
 											<div class="post-author__info">
 												<h4 class="post-author__name">Erick Rodgers</h4>
@@ -1223,7 +1223,7 @@
 										<div class="posts__cat">
 											<span class="label posts__cat-label posts__cat-label--category-3">Striker GO</span>
 										</div>
-										<a href="_esports_blog-post-1.html"><img src="assets/images/esports/samples/post-img4.jpg" alt=""></a>
+										<a href="_esports_blog-post-1.html"><img src="~assets/images/esports/samples/post-img4.jpg" alt=""></a>
 									</figure>
 									<div class="posts__inner card__content">
 										<a href="_esports_blog-post-1.html" class="posts__cta"></a>
@@ -1233,7 +1233,7 @@
 									<footer class="posts__footer card__footer">
 										<div class="post-author">
 											<figure class="post-author__avatar">
-												<img src="assets/images/samples/avatar-6-xs.jpg" alt="Post Author Avatar">
+												<img src="~assets/images/samples/avatar-6-xs.jpg" alt="Post Author Avatar">
 											</figure>
 											<div class="post-author__info">
 												<h4 class="post-author__name">Lagertha Dax</h4>
@@ -1279,7 +1279,7 @@
 												<td>
 													<div class="team-meta">
 														<figure class="team-meta__logo">
-															<img src="assets/images/samples/logos/pirates_shield.png" alt="L.A. Pirates">
+															<img src="~assets/images/samples/logos/pirates_shield.png" alt="L.A. Pirates">
 														</figure>
 														<div class="team-meta__info">
 															<h6 class="team-meta__name">L.A. Pirates</h6>
@@ -1294,7 +1294,7 @@
 												<td>
 													<div class="team-meta">
 														<figure class="team-meta__logo">
-															<img src="assets/images/samples/logos/sharks_shield.png" alt="Sharks">
+															<img src="~assets/images/samples/logos/sharks_shield.png" alt="Sharks">
 														</figure>
 														<div class="team-meta__info">
 															<h6 class="team-meta__name">Sharks</h6>
@@ -1309,7 +1309,7 @@
 												<td>
 													<div class="team-meta">
 														<figure class="team-meta__logo">
-															<img src="assets/images/esports/logos/alchemists-22x25.png" alt="The Alchemists">
+															<img src="~assets/images/esports/logos/alchemists-22x25.png" alt="The Alchemists">
 														</figure>
 														<div class="team-meta__info">
 															<h6 class="team-meta__name">The Alchemists</h6>
@@ -1324,7 +1324,7 @@
 												<td>
 													<div class="team-meta">
 														<figure class="team-meta__logo">
-															<img src="assets/images/samples/logos/ocean_kings_shield.png" alt="Ocean Kings">
+															<img src="~assets/images/samples/logos/ocean_kings_shield.png" alt="Ocean Kings">
 														</figure>
 														<div class="team-meta__info">
 															<h6 class="team-meta__name">Ocean Kings</h6>
@@ -1339,7 +1339,7 @@
 												<td>
 													<div class="team-meta">
 														<figure class="team-meta__logo">
-															<img src="assets/images/samples/logos/red_wings_shield.png" alt="Red Wings">
+															<img src="~assets/images/samples/logos/red_wings_shield.png" alt="Red Wings">
 														</figure>
 														<div class="team-meta__info">
 															<h6 class="team-meta__name">Red Wings</h6>
@@ -1354,7 +1354,7 @@
 												<td>
 													<div class="team-meta">
 														<figure class="team-meta__logo">
-															<img src="assets/images/samples/logos/lucky_clovers_shield.png" alt="Lucky Clovers">
+															<img src="~assets/images/samples/logos/lucky_clovers_shield.png" alt="Lucky Clovers">
 														</figure>
 														<div class="team-meta__info">
 															<h6 class="team-meta__name">Lucky Clovers</h6>
@@ -1382,7 +1382,7 @@
 									<a href="#" class="twitch-stream twitch-stream--featured twitch-stream--has-video card">
 										<div class="twitch-stream__overlay twitch-stream__overlay--bg0 effect-duotone effect-duotone--base"></div>
 										<figure class="twitch-stream__img twitch-stream__img--extra-top">
-											<img src="assets/images/esports/samples/twitch-streamer-1.png" alt="">
+											<img src="~assets/images/esports/samples/twitch-streamer-1.png" alt="">
 										</figure>
 										<div class="twitch-stream__body">
 											<h6 class="twitch-stream__featured">Featured Stream</h6>
@@ -1397,7 +1397,7 @@
 
 									<div class="twitch-stream-video card">
 										<div class="card__content">
-											<div class="alc-embeded-player" data-id="amaz" data-controls="false" data-provider="twitch" data-thumbnail="assets/images/esports/samples/twitch-stream-cover.jpg" data-easy-embed>
+											<div class="alc-embeded-player" data-id="amaz" data-controls="false" data-provider="twitch" data-thumbnail="~assets/images/esports/samples/twitch-stream-cover.jpg" data-easy-embed>
 												<div class="alc-embeded-player__overlay">
 													<i class="fas fa-play alc-embeded-player__icon"></i>
 												</div>
@@ -1412,7 +1412,7 @@
 									<a href="#" class="twitch-stream   card">
 										<div class="twitch-stream__overlay twitch-stream__overlay--bg1 effect-duotone effect-duotone--base"></div>
 										<figure class="twitch-stream__img ">
-											<img src="assets/images/esports/samples/twitch-streamer-2.png" alt="">
+											<img src="~assets/images/esports/samples/twitch-streamer-2.png" alt="">
 										</figure>
 										<div class="twitch-stream__body">
 											<h5 class="twitch-stream__title">Assassins League Gameplay</h5>
@@ -1432,7 +1432,7 @@
 									<a href="#" class="twitch-stream   card">
 										<div class="twitch-stream__overlay twitch-stream__overlay--bg2 effect-duotone effect-duotone--base"></div>
 										<figure class="twitch-stream__img ">
-											<img src="assets/images/esports/samples/twitch-streamer-3.png" alt="">
+											<img src="~assets/images/esports/samples/twitch-streamer-3.png" alt="">
 										</figure>
 										<div class="twitch-stream__body">
 											<h5 class="twitch-stream__title">League of Heroes: Ether Quest</h5>
@@ -1452,7 +1452,7 @@
 									<a href="#" class="twitch-stream   card">
 										<div class="twitch-stream__overlay twitch-stream__overlay--bg3 effect-duotone effect-duotone--base"></div>
 										<figure class="twitch-stream__img ">
-											<img src="assets/images/esports/samples/twitch-streamer-4.png" alt="">
+											<img src="~assets/images/esports/samples/twitch-streamer-4.png" alt="">
 										</figure>
 										<div class="twitch-stream__body">
 											<h5 class="twitch-stream__title">The Game Huntress&#x27;s Channel</h5>
@@ -1498,7 +1498,7 @@
 											<!-- 1st Team -->
 											<div class="widget-game-result__team widget-game-result__team--first">
 												<figure class="widget-game-result__team-logo">
-													<a href="#"><img src="assets/images/esports/logos/alchemists-86x98.png" alt=""></a>
+													<a href="#"><img src="~assets/images/esports/logos/alchemists-86x98.png" alt=""></a>
 												</figure>
 												<div class="widget-game-result__team-info">
 													<h5 class="widget-game-result__team-name">Alchemists</h5>
@@ -1517,7 +1517,7 @@
 											<!-- 2nd Team -->
 											<div class="widget-game-result__team widget-game-result__team--second">
 												<figure class="widget-game-result__team-logo">
-													<a href="#"><img src="assets/images/esports/logos/pirates-114x98.png" alt=""></a>
+													<a href="#"><img src="~assets/images/esports/logos/pirates-114x98.png" alt=""></a>
 												</figure>
 												<div class="widget-game-result__team-info">
 													<h5 class="widget-game-result__team-name">L.A. Pirates</h5>
@@ -1680,7 +1680,7 @@
 											<ul class="posts posts--simple-list">
 												<li class="posts__item posts__item--category-4 ">
 													<figure class="posts__thumb posts__thumb--hover">
-														<a href="_esports_blog-post-1.html"><img src="assets/images/esports/samples/post-img4-sidebar-xs.jpg" alt=""></a>
+														<a href="_esports_blog-post-1.html"><img src="~assets/images/esports/samples/post-img4-sidebar-xs.jpg" alt=""></a>
 													</figure>
 													<div class="posts__inner">
 														<div class="posts__cat">
@@ -1692,7 +1692,7 @@
 												</li>
 												<li class="posts__item posts__item--category-2 ">
 													<figure class="posts__thumb posts__thumb--hover">
-														<a href="_esports_blog-post-1.html"><img src="assets/images/esports/samples/post-img2-sidebar-xs.jpg" alt=""></a>
+														<a href="_esports_blog-post-1.html"><img src="~assets/images/esports/samples/post-img2-sidebar-xs.jpg" alt=""></a>
 													</figure>
 													<div class="posts__inner">
 														<div class="posts__cat">
@@ -1704,7 +1704,7 @@
 												</li>
 												<li class="posts__item posts__item--category-3 ">
 													<figure class="posts__thumb posts__thumb--hover">
-														<a href="_esports_blog-post-1.html"><img src="assets/images/esports/samples/post-img8-sidebar-xs.jpg" alt=""></a>
+														<a href="_esports_blog-post-1.html"><img src="~assets/images/esports/samples/post-img8-sidebar-xs.jpg" alt=""></a>
 													</figure>
 													<div class="posts__inner">
 														<div class="posts__cat">
@@ -1716,7 +1716,7 @@
 												</li>
 												<li class="posts__item posts__item--category-1 posts__item--category-4 ">
 													<figure class="posts__thumb posts__thumb--hover">
-														<a href="_esports_blog-post-1.html"><img src="assets/images/esports/samples/post-img1-sidebar-xs.jpg" alt=""></a>
+														<a href="_esports_blog-post-1.html"><img src="~assets/images/esports/samples/post-img1-sidebar-xs.jpg" alt=""></a>
 													</figure>
 													<div class="posts__inner">
 														<div class="posts__cat">
@@ -1728,7 +1728,7 @@
 												</li>
 												<li class="posts__item posts__item--category-1 ">
 													<figure class="posts__thumb posts__thumb--hover">
-														<a href="_esports_blog-post-1.html"><img src="assets/images/esports/samples/post-img6-sidebar-xs.jpg" alt=""></a>
+														<a href="_esports_blog-post-1.html"><img src="~assets/images/esports/samples/post-img6-sidebar-xs.jpg" alt=""></a>
 													</figure>
 													<div class="posts__inner">
 														<div class="posts__cat">
@@ -1745,7 +1745,7 @@
 											<ul class="posts posts--simple-list">
 												<li class="posts__item posts__item--category-3 ">
 													<figure class="posts__thumb posts__thumb--hover">
-														<a href="_esports_blog-post-1.html"><img src="assets/images/esports/samples/post-img8-sidebar-xs.jpg" alt=""></a>
+														<a href="_esports_blog-post-1.html"><img src="~assets/images/esports/samples/post-img8-sidebar-xs.jpg" alt=""></a>
 													</figure>
 													<div class="posts__inner">
 														<div class="posts__cat">
@@ -1757,7 +1757,7 @@
 												</li>
 												<li class="posts__item posts__item--category-1 posts__item--category-4 ">
 													<figure class="posts__thumb posts__thumb--hover">
-														<a href="_esports_blog-post-1.html"><img src="assets/images/esports/samples/post-img4-sidebar-xs.jpg" alt=""></a>
+														<a href="_esports_blog-post-1.html"><img src="~assets/images/esports/samples/post-img4-sidebar-xs.jpg" alt=""></a>
 													</figure>
 													<div class="posts__inner">
 														<div class="posts__cat">
@@ -1769,7 +1769,7 @@
 												</li>
 												<li class="posts__item posts__item--category-1 ">
 													<figure class="posts__thumb posts__thumb--hover">
-														<a href="_esports_blog-post-1.html"><img src="assets/images/esports/samples/post-img6-sidebar-xs.jpg" alt=""></a>
+														<a href="_esports_blog-post-1.html"><img src="~assets/images/esports/samples/post-img6-sidebar-xs.jpg" alt=""></a>
 													</figure>
 													<div class="posts__inner">
 														<div class="posts__cat">
@@ -1781,7 +1781,7 @@
 												</li>
 												<li class="posts__item posts__item--category-4 ">
 													<figure class="posts__thumb posts__thumb--hover">
-														<a href="_esports_blog-post-1.html"><img src="assets/images/esports/samples/post-img1-sidebar-xs.jpg" alt=""></a>
+														<a href="_esports_blog-post-1.html"><img src="~assets/images/esports/samples/post-img1-sidebar-xs.jpg" alt=""></a>
 													</figure>
 													<div class="posts__inner">
 														<div class="posts__cat">
@@ -1793,7 +1793,7 @@
 												</li>
 												<li class="posts__item posts__item--category-2 ">
 													<figure class="posts__thumb posts__thumb--hover">
-														<a href="_esports_blog-post-1.html"><img src="assets/images/esports/samples/post-img2-sidebar-xs.jpg" alt=""></a>
+														<a href="_esports_blog-post-1.html"><img src="~assets/images/esports/samples/post-img2-sidebar-xs.jpg" alt=""></a>
 													</figure>
 													<div class="posts__inner">
 														<div class="posts__cat">
@@ -1810,7 +1810,7 @@
 											<ul class="posts posts--simple-list">
 												<li class="posts__item posts__item--category-1 ">
 													<figure class="posts__thumb posts__thumb--hover">
-														<a href="_esports_blog-post-1.html"><img src="assets/images/esports/samples/post-img6-sidebar-xs.jpg" alt=""></a>
+														<a href="_esports_blog-post-1.html"><img src="~assets/images/esports/samples/post-img6-sidebar-xs.jpg" alt=""></a>
 													</figure>
 													<div class="posts__inner">
 														<div class="posts__cat">
@@ -1822,7 +1822,7 @@
 												</li>
 												<li class="posts__item posts__item--category-2 ">
 													<figure class="posts__thumb posts__thumb--hover">
-														<a href="_esports_blog-post-1.html"><img src="assets/images/esports/samples/post-img2-sidebar-xs.jpg" alt=""></a>
+														<a href="_esports_blog-post-1.html"><img src="~assets/images/esports/samples/post-img2-sidebar-xs.jpg" alt=""></a>
 													</figure>
 													<div class="posts__inner">
 														<div class="posts__cat">
@@ -1834,7 +1834,7 @@
 												</li>
 												<li class="posts__item posts__item--category-4 ">
 													<figure class="posts__thumb posts__thumb--hover">
-														<a href="_esports_blog-post-1.html"><img src="assets/images/esports/samples/post-img1-sidebar-xs.jpg" alt=""></a>
+														<a href="_esports_blog-post-1.html"><img src="~assets/images/esports/samples/post-img1-sidebar-xs.jpg" alt=""></a>
 													</figure>
 													<div class="posts__inner">
 														<div class="posts__cat">
@@ -1846,7 +1846,7 @@
 												</li>
 												<li class="posts__item posts__item--category-1 posts__item--category-4 ">
 													<figure class="posts__thumb posts__thumb--hover">
-														<a href="_esports_blog-post-1.html"><img src="assets/images/esports/samples/post-img4-sidebar-xs.jpg" alt=""></a>
+														<a href="_esports_blog-post-1.html"><img src="~assets/images/esports/samples/post-img4-sidebar-xs.jpg" alt=""></a>
 													</figure>
 													<div class="posts__inner">
 														<div class="posts__cat">
@@ -1858,7 +1858,7 @@
 												</li>
 												<li class="posts__item posts__item--category-3 ">
 													<figure class="posts__thumb posts__thumb--hover">
-														<a href="_esports_blog-post-1.html"><img src="assets/images/esports/samples/post-img8-sidebar-xs.jpg" alt=""></a>
+														<a href="_esports_blog-post-1.html"><img src="~assets/images/esports/samples/post-img8-sidebar-xs.jpg" alt=""></a>
 													</figure>
 													<div class="posts__inner">
 														<div class="posts__cat">
@@ -2017,22 +2017,22 @@
 					<div class="sponsors">
 						<ul class="sponsors-logos">
 							<li class="sponsors__item">
-								<a href="http://www.darkgamestudios.com" target="_blank"><img src="assets/images/esports/sponsor-darkgame.png" alt="Dark Game"></a>
+								<a href="http://www.darkgamestudios.com" target="_blank"><img src="~assets/images/esports/sponsor-darkgame.png" alt="Dark Game"></a>
 							</li>
 							<li class="sponsors__item">
-								<a href="http://www.thegeniusgeek.com" target="_blank"><img src="assets/images/esports/sponsor-geniusgeek.png" alt="GeniusGeek"></a>
+								<a href="http://www.thegeniusgeek.com" target="_blank"><img src="~assets/images/esports/sponsor-geniusgeek.png" alt="GeniusGeek"></a>
 							</li>
 							<li class="sponsors__item">
-								<a href="http://www.ghostgamess.com" target="_blank"><img src="assets/images/esports/sponsor-ghostgames.png" alt="GhostGames"></a>
+								<a href="http://www.ghostgamess.com" target="_blank"><img src="~assets/images/esports/sponsor-ghostgames.png" alt="GhostGames"></a>
 							</li>
 							<li class="sponsors__item">
-								<a href="http://www.gamechatapp.com" target="_blank"><img src="assets/images/esports/sponsor-gamechat.png" alt="GameChat"></a>
+								<a href="http://www.gamechatapp.com" target="_blank"><img src="~assets/images/esports/sponsor-gamechat.png" alt="GameChat"></a>
 							</li>
 							<li class="sponsors__item">
-								<a href="http://www.elite-s-productions.com" target="_blank"><img src="assets/images/esports/sponsor-elitesound.png" alt="eliteSound"></a>
+								<a href="http://www.elite-s-productions.com" target="_blank"><img src="~assets/images/esports/sponsor-elitesound.png" alt="eliteSound"></a>
 							</li>
 							<li class="sponsors__item">
-								<a href="http://www.dragonfireagency.com" target="_blank"><img src="assets/images/esports/sponsor-dragonfire.png" alt="DragonFire"></a>
+								<a href="http://www.dragonfireagency.com" target="_blank"><img src="~assets/images/esports/sponsor-dragonfire.png" alt="DragonFire"></a>
 							</li>
 						</ul>
 					</div>
@@ -2136,7 +2136,7 @@
 
 												<li class="posts__item posts__item--category-4 ">
 													<figure class="posts__thumb posts__thumb--hover">
-														<a href="#"><img src="assets/images/esports/samples/post-img4-xs.jpg" alt=""></a>
+														<a href="#"><img src="~assets/images/esports/samples/post-img4-xs.jpg" alt=""></a>
 													</figure>
 													<div class="posts__inner">
 														<div class="posts__cat">
@@ -2148,7 +2148,7 @@
 												</li>
 												<li class="posts__item posts__item--category-2 ">
 													<figure class="posts__thumb posts__thumb--hover">
-														<a href="#"><img src="assets/images/esports/samples/post-img2-xs.jpg" alt=""></a>
+														<a href="#"><img src="~assets/images/esports/samples/post-img2-xs.jpg" alt=""></a>
 													</figure>
 													<div class="posts__inner">
 														<div class="posts__cat">
@@ -2177,7 +2177,7 @@
 
 												<li class="posts__item posts__item--category-1 posts__item--category-3 ">
 													<figure class="posts__thumb posts__thumb--hover">
-														<a href="#"><img src="assets/images/esports/samples/post-img3-xs.jpg" alt=""></a>
+														<a href="#"><img src="~assets/images/esports/samples/post-img3-xs.jpg" alt=""></a>
 													</figure>
 													<div class="posts__inner">
 														<div class="posts__cat">
@@ -2189,7 +2189,7 @@
 												</li>
 												<li class="posts__item posts__item--category-4 ">
 													<figure class="posts__thumb posts__thumb--hover">
-														<a href="#"><img src="assets/images/esports/samples/post-img13-xs.jpg" alt=""></a>
+														<a href="#"><img src="~assets/images/esports/samples/post-img13-xs.jpg" alt=""></a>
 													</figure>
 													<div class="posts__inner">
 														<div class="posts__cat">
