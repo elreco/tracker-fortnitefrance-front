@@ -13,7 +13,7 @@ module.exports = {
     'plugin:nuxt/recommended',
   ],
   plugins: [],
-  ignorePatterns: ['/static/*', '.nuxt'],
+  ignorePatterns: ['/static/*', '.nuxt', '/plugins/*'],
   // add your custom rules here
   rules: {},
 }

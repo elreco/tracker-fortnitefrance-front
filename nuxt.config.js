@@ -184,15 +184,21 @@ export default {
   css: ['~/assets/scss/style-esports.scss', '~/assets/scss/custom.scss'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [
+    { src: '~/plugins/revslider.js', mode: 'client' },
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
-
+  loading: {
+    color: '#2575DC'
+  },
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/eslint
-    '@nuxtjs/eslint-module',
+    ['@nuxtjs/eslint-module', {
+      fix: true
+    }],
     '@nuxtjs/dotenv',
   ],
 

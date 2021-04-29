@@ -1,5 +1,5 @@
 var revapi, tpj;
-	(function() {
+	/* (function() {
 		if (!/loaded|interactive|complete/.test(document.readyState)) document.addEventListener("DOMContentLoaded", onLoad); else onLoad();
 
 		function onLoad() {
@@ -86,13 +86,13 @@ var revapi, tpj;
 						disableFocusListener:false,
 					}
 				});
-			}; /* END OF revapi call */
+			};
 
-			//RsRevealerAddOn(tpj, revapi, "<div class='rsaddon-revealer-spinner rsaddon-revealer-spinner-2'><div class='rsaddon-revealer-2' style='border-top-color: {{color}}0.65); border-bottom-color: {{color}}0.15); border-left-color: {{color}}0.65); border-right-color: {{color}}0.15)'><\/div><\/div>");
-			//RsTypewriterAddOn(tpj, revapi);
+			RsRevealerAddOn(tpj, revapi, "<div class='rsaddon-revealer-spinner rsaddon-revealer-spinner-2'><div class='rsaddon-revealer-2' style='border-top-color: {{color}}0.65); border-bottom-color: {{color}}0.15); border-left-color: {{color}}0.65); border-right-color: {{color}}0.15)'><\/div><\/div>");
+			RsTypewriterAddOn(tpj, revapi);
 
-		}; /* END OF ON LOAD FUNCTION */
-	}()); /* END OF WRAPPING FUNCTION */
+		};
+	}()); */
 /**
 	* @package Alchemists HTML
 	*
