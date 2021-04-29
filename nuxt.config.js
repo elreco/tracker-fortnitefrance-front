@@ -70,11 +70,25 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
+    '@nuxtjs/dotenv'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/axios',
+    '@nuxtjs/auth-next'
+  ],
 
+  axios: {
+    baseURL: process.env.VUE_APP_API_URL,
+    timeout: 1000,
+    headers: {
+        'X-Parse-REST-API-Key': process.env.VUE_APP_REST_API_KEY,
+        'X-Parse-Application-Id': process.env.VUE_APP_APP_ID,
+        'Content-Type': 'application/json'
+    }
+  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 }

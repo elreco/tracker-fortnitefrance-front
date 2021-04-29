@@ -1,0 +1,12 @@
+{
+  "discord": {
+    "link": "https://discord.com/invite/3xsGnmK",
+    "icon": "fab fa-discord",
+    "title": "Discord"
+  },
+  "twitter": {
+    "link": "https://twitter.com/el__reco",
+    "icon": "fab fa-twitter",
+    "title": "Twitter"
+  }
+}
