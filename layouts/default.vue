@@ -296,7 +296,7 @@
                     type="text"
                     class="form-control header-mobile__search-control"
                     value=""
-                    placeholder="Enter your search here..."
+                    placeholder="Recherchez les statistiques d'un joueur"
                   />
                   <button type="submit" class="header-mobile__search-submit">
                     <i class="fas fa-search"></i>
