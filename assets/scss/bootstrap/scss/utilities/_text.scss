@@ -48,10 +48,6 @@
   @include text-emphasis-variant(".text-#{$color}", $value, true);
 }
 
-.text-shadow {
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 1) !important;
-}
-
 .text-body { color: $body-color !important; }
 .text-muted { color: $text-muted !important; }
 

@@ -163,7 +163,7 @@
 
               <div
                 id="slide2-layer5"
-                class="tp-caption tp-resizeme alc-hero-slider__h alc-hero-slider__h--h5 rs-parallaxlevel-11"
+                class="tp-caption tp-resizeme alc-hero-slider__h alc-hero-slider__h--h5 rs-parallaxlevel-11 text-shadow"
                 data-x="['left','left','left','left']"
                 data-hoffset="['120','40','30','20']"
                 data-y="['top','top','top','top']"
@@ -187,7 +187,7 @@
 
               <div
                 id="slide2-layer6"
-                class="tp-caption tp-resizeme alc-hero-slider__text rs-parallaxlevel-11 text-white"
+                class="tp-caption tp-resizeme alc-hero-slider__text rs-parallaxlevel-11 text-white text-shadow font-weight-bold"
                 data-x="['left','left','left','left']"
                 data-hoffset="['120','40','30','20']"
                 data-y="['top','top','top','top']"
@@ -207,10 +207,11 @@
                 data-paddingleft="[0,0,0,0]"
                 style="z-index: 9"
               >
-                {{ $voca.truncate($voca.stripTags(n.text), 75, '...') }}
+                <p style="max-width: 230px">
+                  {{ $voca.truncate($voca.stripTags(n.text), 125, '...') }}
+                </p>
               </div>
 
-              <!-- LAYER NR. 7 -->
               <div
                 id="slide2-layer7"
                 class="tp-caption tp-resizeme rs-parallaxlevel-10"
@@ -258,7 +259,7 @@ export default {
   methods: {
     getNews() {
       const params = {
-        limit: 5,
+        limit: 3,
         count: 1,
         order: 'date',
         where: {

@@ -206,9 +206,14 @@ export default {
     ['@nuxtjs/eslint-module', {
       fix: true
     }],
+    '@nuxtjs/moment',
     '@nuxtjs/dotenv',
   ],
 
+  moment: {
+    defaultLocale: 'fr',
+    locales: ['fr']
+  },
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: ['@nuxtjs/axios', '@nuxtjs/axios', '@nuxtjs/auth-next'],
 
