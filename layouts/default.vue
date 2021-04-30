@@ -7,8 +7,8 @@
         <div class="header-mobile__logo">
           <a href="_esports_index.html"
             ><img
-              src="~assets/images/esports/logo-tracker.png"
-              srcset="~assets/images/esports/logo-tracker.png 2x"
+              src="~assets/images/esports/logo-mini.png"
+              srcset="~assets/images/esports/logo-mini.png 2x"
               alt="Alchemists"
               class="header-mobile__logo-img"
           /></a>

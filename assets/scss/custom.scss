@@ -6,3 +6,11 @@ Description:  You can add your custom CSS here and it will overwrite template st
 .text-shadow {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 1) !important;
 }
+
+.header-logo__img {
+  height: 121px !important;
+}
+
+.header-mobile__logo-img {
+  margin-top: 1rem;
+}
