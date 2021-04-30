@@ -228,7 +228,15 @@ export default {
   },
   methods: {
     getNews() {
-      this.$store.dispatch('news/fetch').then((news) => {
+      const params = {
+        limit: 5,
+        count: 1,
+        order: 'createdAt',
+        where: {
+          type: 'br',
+        },
+      }
+      this.$store.dispatch('news/fetch', params).then((news) => {
         const { results } = news
         this.news = results
         this.loading = false
