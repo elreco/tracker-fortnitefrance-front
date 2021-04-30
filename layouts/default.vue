@@ -7,8 +7,8 @@
         <div class="header-mobile__logo">
           <a href="_esports_index.html"
             ><img
-              src="~assets/images/esports/logo-mini.png"
-              srcset="~assets/images/esports/logo-mini.png 2x"
+              src="/images/esports/logo-mini.png"
+              srcset="/images/esports/logo-mini.png 2x"
               alt="Alchemists"
               class="header-mobile__logo-img"
           /></a>
@@ -48,8 +48,8 @@
               <div class="header-logo">
                 <a href="_esports_index.html"
                   ><img
-                    src="~assets/images/esports/logo-tracker.png"
-                    srcset="~assets/images/esports/logo-tracker.png 2x"
+                    src="/images/esports/logo-tracker.png"
+                    srcset="/images/esports/logo-tracker.png 2x"
                     alt="Alchemists"
                     class="header-logo__img"
                 /></a>
@@ -77,7 +77,7 @@
                                   >
                                     <a href="#"
                                       ><img
-                                        src="~assets/images/esports/samples/nav-post-img-1.jpg"
+                                        src="/images/esports/samples/nav-post-img-1.jpg"
                                         alt=""
                                     /></a>
                                   </figure>
@@ -109,7 +109,7 @@
                                   >
                                     <a href="#"
                                       ><img
-                                        src="~assets/images/esports/samples/nav-post-img-2.jpg"
+                                        src="/images/esports/samples/nav-post-img-2.jpg"
                                         alt=""
                                     /></a>
                                   </figure>
@@ -141,7 +141,7 @@
                                   >
                                     <a href="#"
                                       ><img
-                                        src="~assets/images/esports/samples/nav-post-img-3.jpg"
+                                        src="/images/esports/samples/nav-post-img-3.jpg"
                                         alt=""
                                     /></a>
                                   </figure>
@@ -316,42 +316,42 @@
                 <li class="sponsors__item">
                   <a href="http://www.darkgamestudios.com" target="_blank"
                     ><img
-                      src="~assets/images/esports/sponsor-darkgame.png"
+                      src="/images/esports/sponsor-darkgame.png"
                       alt="Dark Game"
                   /></a>
                 </li>
                 <li class="sponsors__item">
                   <a href="http://www.thegeniusgeek.com" target="_blank"
                     ><img
-                      src="~assets/images/esports/sponsor-geniusgeek.png"
+                      src="/images/esports/sponsor-geniusgeek.png"
                       alt="GeniusGeek"
                   /></a>
                 </li>
                 <li class="sponsors__item">
                   <a href="http://www.ghostgamess.com" target="_blank"
                     ><img
-                      src="~assets/images/esports/sponsor-ghostgames.png"
+                      src="/images/esports/sponsor-ghostgames.png"
                       alt="GhostGames"
                   /></a>
                 </li>
                 <li class="sponsors__item">
                   <a href="http://www.gamechatapp.com" target="_blank"
                     ><img
-                      src="~assets/images/esports/sponsor-gamechat.png"
+                      src="/images/esports/sponsor-gamechat.png"
                       alt="GameChat"
                   /></a>
                 </li>
                 <li class="sponsors__item">
                   <a href="http://www.elite-s-productions.com" target="_blank"
                     ><img
-                      src="~assets/images/esports/sponsor-elitesound.png"
+                      src="/images/esports/sponsor-elitesound.png"
                       alt="eliteSound"
                   /></a>
                 </li>
                 <li class="sponsors__item">
                   <a href="http://www.dragonfireagency.com" target="_blank"
                     ><img
-                      src="~assets/images/esports/sponsor-dragonfire.png"
+                      src="/images/esports/sponsor-dragonfire.png"
                       alt="DragonFire"
                   /></a>
                 </li>
@@ -548,7 +548,7 @@
                             <figure class="posts__thumb posts__thumb--hover">
                               <a href="#"
                                 ><img
-                                  src="~assets/images/esports/samples/post-img4-xs.jpg"
+                                  src="/images/esports/samples/post-img4-xs.jpg"
                                   alt=""
                               /></a>
                             </figure>
@@ -576,7 +576,7 @@
                             <figure class="posts__thumb posts__thumb--hover">
                               <a href="#"
                                 ><img
-                                  src="~assets/images/esports/samples/post-img2-xs.jpg"
+                                  src="/images/esports/samples/post-img2-xs.jpg"
                                   alt=""
                               /></a>
                             </figure>
@@ -619,7 +619,7 @@
                             <figure class="posts__thumb posts__thumb--hover">
                               <a href="#"
                                 ><img
-                                  src="~assets/images/esports/samples/post-img3-xs.jpg"
+                                  src="/images/esports/samples/post-img3-xs.jpg"
                                   alt=""
                               /></a>
                             </figure>
@@ -650,7 +650,7 @@
                             <figure class="posts__thumb posts__thumb--hover">
                               <a href="#"
                                 ><img
-                                  src="~assets/images/esports/samples/post-img13-xs.jpg"
+                                  src="/images/esports/samples/post-img13-xs.jpg"
                                   alt=""
                               /></a>
                             </figure>

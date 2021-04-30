@@ -38,7 +38,6 @@ export default {
       newsFirst: [],
       newsSecond: [],
       bigNews: [],
-      loading: true,
     }
   },
   async mounted() {
@@ -48,6 +47,9 @@ export default {
     this.newsFirst = await this.getNews('normal', 3, 6)
     this.newsSecond = await this.getNews('normal', 10, 6)
     this.bigNews = await this.getNews('big', 0, 1)
+    this.$nextTick(() => {
+      this.$nuxt.$loading.finish()
+    })
   },
   methods: {
     getNews(type, skip, limit) {
@@ -55,16 +57,13 @@ export default {
         skip,
         limit,
         order: 'date',
+        include: 'author',
         where: {
           type,
         },
       }
       return this.$store.dispatch('news/fetch', params).then((news) => {
         const { results } = news
-        this.loading = false
-        this.$nextTick(() => {
-          this.$nuxt.$loading.finish()
-        })
         return results
       })
     },

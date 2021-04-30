@@ -42,70 +42,6 @@
               />
 
               <div
-                id="slide2-layer1"
-                class="tp-caption tp-resizeme"
-                data-x="['right','right','right','right']"
-                data-hoffset="['0','0','0','0']"
-                data-y="['top','top','top','top']"
-                data-voffset="['0','0','0','0']"
-                data-width="none"
-                data-height="none"
-                data-whitespace="nowrap"
-                data-type="image"
-                data-basealign="slide"
-                data-responsive_offset="on"
-                data-frames='[{"delay":1200,"speed":800,"frame":"0","from":"rX:90deg;sX:1;sY:1;skY:0;opacity:0;z:1;","to":"o:1;tO:50% 100%;z:1;","ease":"Power4.easeOut"},{"delay":"wait","speed":1000,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                data-textAlign="['inherit','inherit','inherit','inherit']"
-                data-paddingtop="[0,0,0,0]"
-                data-paddingright="[0,0,0,0]"
-                data-paddingbottom="[0,0,0,0]"
-                data-paddingleft="[0,0,0,0]"
-                style="z-index: 1"
-              >
-                <img
-                  src="assets/images/esports/hero-slider/hero-decor.png"
-                  alt=""
-                  data-ww="['593px','420px','300px','290px']"
-                  data-hh="['431px','480px','420px','340px']"
-                  width="593"
-                  height="431"
-                  data-no-retina
-                />
-              </div>
-
-              <div
-                id="slide2-layer2"
-                class="tp-caption tp-resizeme rs-parallaxlevel-5"
-                data-x="['right','right','right','right']"
-                data-hoffset="['0','0','0','0']"
-                data-y="['bottom','bottom','bottom','bottom']"
-                data-voffset="['0','0','0','0']"
-                data-width="none"
-                data-height="none"
-                data-whitespace="nowrap"
-                data-type="image"
-                data-basealign="slide"
-                data-responsive_offset="on"
-                data-frames='[{"delay":800,"speed":1000,"frame":"0","from":"rX:90deg;sX:1;sY:1;skY:10px;opacity:0;z:5;","to":"o:1;tO:50% 100%;z:5;","ease":"Power4.easeOut"},{"delay":"wait","speed":1000,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'
-                data-textAlign="['inherit','inherit','inherit','inherit']"
-                data-paddingtop="[0,0,0,0]"
-                data-paddingright="[0,0,0,0]"
-                data-paddingbottom="[0,0,0,0]"
-                data-paddingleft="[0,0,0,0]"
-                style="z-index: 5"
-              >
-                <img
-                  src="assets/images/esports/hero-slider/hero-character-2.png"
-                  alt=""
-                  data-ww="['949px','760px','580px','460px']"
-                  data-hh="['503px','403px','307px','244px']"
-                  width="949"
-                  height="503"
-                  data-no-retina
-                />
-              </div>
-
-              <div
                 id="slide2-layer3"
                 class="tp-caption tp-resizeme alc-hero-slider__h alc-hero-slider__h--h1 rs-parallaxlevel-10"
                 data-x="['left','left','left','left']"
@@ -247,7 +183,6 @@ export default {
   data() {
     return {
       news: [],
-      loading: true,
     }
   },
   mounted() {
@@ -269,7 +204,6 @@ export default {
       this.$store.dispatch('news/fetch', params).then((news) => {
         const { results } = news
         this.news = results
-        this.loading = false
         this.$nextTick(() => {
           this.$initRevSlider()
           this.$nuxt.$loading.finish()

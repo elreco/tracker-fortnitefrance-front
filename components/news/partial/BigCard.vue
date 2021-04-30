@@ -1,11 +1,15 @@
 <template>
-  <div class="main-news-banner main-news-banner--bg main-news-banner--img-left">
-    <figure class="main-news-banner__img">
-      <img
-        src="~assets/images/esports/samples/character-news-banner__img.png"
-        alt=""
-      />
-    </figure>
+  <div
+    class="main-news-banner main-news-banner--bg main-news-banner--img-left"
+    :style="`background:url(${
+      news.image ? news.image.url : ''
+    });    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;`"
+  >
+    <!-- <figure class="main-news-banner__img">
+      <img :src="news.image ? news.image.url : ''" alt="" />
+    </figure> -->
     <div class="main-news-banner__inner">
       <div class="posts posts--simple-list posts--simple-list--xlg">
         <div class="posts__item posts__item--category-1">
@@ -20,10 +24,12 @@
             <h6 class="posts__title">
               <a href="_esports_blog-post-2.html">{{ news.title }}</a>
             </h6>
-            <time datetime="2017-08-23" class="posts__date"
-              >August 27th, 2018</time
+            <time
+              :datetime="$moment(news.date.iso).format('YYYY-MM-DD')"
+              class="posts__date"
+              >{{ $moment(news.date.iso).format('Do MMMM YYYY') }}</time
             >
-            <div class="posts__excerpt">
+            <div class="posts__excerpt text-white">
               {{ $voca.truncate($voca.stripTags(news.text), 200, '...') }}
             </div>
             <div class="posts__more">

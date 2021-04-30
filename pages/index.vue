@@ -32,7 +32,7 @@
                           <div class="team-meta">
                             <figure class="team-meta__logo">
                               <img
-                                src="~assets/images/samples/logos/pirates_shield.png"
+                                src="/images/samples/logos/pirates_shield.png"
                                 alt="L.A. Pirates"
                               />
                             </figure>
@@ -52,7 +52,7 @@
                           <div class="team-meta">
                             <figure class="team-meta__logo">
                               <img
-                                src="~assets/images/samples/logos/sharks_shield.png"
+                                src="/images/samples/logos/sharks_shield.png"
                                 alt="Sharks"
                               />
                             </figure>
@@ -70,7 +70,7 @@
                           <div class="team-meta">
                             <figure class="team-meta__logo">
                               <img
-                                src="~assets/images/esports/logos/alchemists-22x25.png"
+                                src="/images/esports/logos/alchemists-22x25.png"
                                 alt="The Alchemists"
                               />
                             </figure>
@@ -90,7 +90,7 @@
                           <div class="team-meta">
                             <figure class="team-meta__logo">
                               <img
-                                src="~assets/images/samples/logos/ocean_kings_shield.png"
+                                src="/images/samples/logos/ocean_kings_shield.png"
                                 alt="Ocean Kings"
                               />
                             </figure>
@@ -108,7 +108,7 @@
                           <div class="team-meta">
                             <figure class="team-meta__logo">
                               <img
-                                src="~assets/images/samples/logos/red_wings_shield.png"
+                                src="/images/samples/logos/red_wings_shield.png"
                                 alt="Red Wings"
                               />
                             </figure>
@@ -126,7 +126,7 @@
                           <div class="team-meta">
                             <figure class="team-meta__logo">
                               <img
-                                src="~assets/images/samples/logos/lucky_clovers_shield.png"
+                                src="/images/samples/logos/lucky_clovers_shield.png"
                                 alt="Lucky Clovers"
                               />
                             </figure>
@@ -162,7 +162,7 @@
                       class="twitch-stream__img twitch-stream__img--extra-top"
                     >
                       <img
-                        src="~assets/images/esports/samples/twitch-streamer-1.png"
+                        src="/images/esports/samples/twitch-streamer-1.png"
                         alt=""
                       />
                     </figure>
@@ -190,7 +190,7 @@
                         data-id="amaz"
                         data-controls="false"
                         data-provider="twitch"
-                        data-thumbnail="~assets/images/esports/samples/twitch-stream-cover.jpg"
+                        data-thumbnail="/images/esports/samples/twitch-stream-cover.jpg"
                         data-easy-embed
                       >
                         <div class="alc-embeded-player__overlay">
@@ -209,7 +209,7 @@
                     ></div>
                     <figure class="twitch-stream__img">
                       <img
-                        src="~assets/images/esports/samples/twitch-streamer-2.png"
+                        src="/images/esports/samples/twitch-streamer-2.png"
                         alt=""
                       />
                     </figure>
@@ -238,7 +238,7 @@
                     ></div>
                     <figure class="twitch-stream__img">
                       <img
-                        src="~assets/images/esports/samples/twitch-streamer-3.png"
+                        src="/images/esports/samples/twitch-streamer-3.png"
                         alt=""
                       />
                     </figure>
@@ -271,7 +271,7 @@
                     ></div>
                     <figure class="twitch-stream__img">
                       <img
-                        src="~assets/images/esports/samples/twitch-streamer-4.png"
+                        src="/images/esports/samples/twitch-streamer-4.png"
                         alt=""
                       />
                     </figure>
@@ -336,7 +336,7 @@
                         <figure class="widget-game-result__team-logo">
                           <a href="#"
                             ><img
-                              src="~assets/images/esports/logos/alchemists-86x98.png"
+                              src="/images/esports/logos/alchemists-86x98.png"
                               alt=""
                           /></a>
                         </figure>
@@ -380,7 +380,7 @@
                         <figure class="widget-game-result__team-logo">
                           <a href="#"
                             ><img
-                              src="~assets/images/esports/logos/pirates-114x98.png"
+                              src="/images/esports/logos/pirates-114x98.png"
                               alt=""
                           /></a>
                         </figure>
@@ -686,7 +686,7 @@
                           <figure class="posts__thumb posts__thumb--hover">
                             <a href="_esports_blog-post-1.html"
                               ><img
-                                src="~assets/images/esports/samples/post-img4-sidebar-xs.jpg"
+                                src="/images/esports/samples/post-img4-sidebar-xs.jpg"
                                 alt=""
                             /></a>
                           </figure>
@@ -712,7 +712,7 @@
                           <figure class="posts__thumb posts__thumb--hover">
                             <a href="_esports_blog-post-1.html"
                               ><img
-                                src="~assets/images/esports/samples/post-img2-sidebar-xs.jpg"
+                                src="/images/esports/samples/post-img2-sidebar-xs.jpg"
                                 alt=""
                             /></a>
                           </figure>
@@ -737,7 +737,7 @@
                           <figure class="posts__thumb posts__thumb--hover">
                             <a href="_esports_blog-post-1.html"
                               ><img
-                                src="~assets/images/esports/samples/post-img8-sidebar-xs.jpg"
+                                src="/images/esports/samples/post-img8-sidebar-xs.jpg"
                                 alt=""
                             /></a>
                           </figure>
@@ -765,7 +765,7 @@
                           <figure class="posts__thumb posts__thumb--hover">
                             <a href="_esports_blog-post-1.html"
                               ><img
-                                src="~assets/images/esports/samples/post-img1-sidebar-xs.jpg"
+                                src="/images/esports/samples/post-img1-sidebar-xs.jpg"
                                 alt=""
                             /></a>
                           </figure>
@@ -793,7 +793,7 @@
                           <figure class="posts__thumb posts__thumb--hover">
                             <a href="_esports_blog-post-1.html"
                               ><img
-                                src="~assets/images/esports/samples/post-img6-sidebar-xs.jpg"
+                                src="/images/esports/samples/post-img6-sidebar-xs.jpg"
                                 alt=""
                             /></a>
                           </figure>
@@ -828,7 +828,7 @@
                           <figure class="posts__thumb posts__thumb--hover">
                             <a href="_esports_blog-post-1.html"
                               ><img
-                                src="~assets/images/esports/samples/post-img8-sidebar-xs.jpg"
+                                src="/images/esports/samples/post-img8-sidebar-xs.jpg"
                                 alt=""
                             /></a>
                           </figure>
@@ -856,7 +856,7 @@
                           <figure class="posts__thumb posts__thumb--hover">
                             <a href="_esports_blog-post-1.html"
                               ><img
-                                src="~assets/images/esports/samples/post-img4-sidebar-xs.jpg"
+                                src="/images/esports/samples/post-img4-sidebar-xs.jpg"
                                 alt=""
                             /></a>
                           </figure>
@@ -884,7 +884,7 @@
                           <figure class="posts__thumb posts__thumb--hover">
                             <a href="_esports_blog-post-1.html"
                               ><img
-                                src="~assets/images/esports/samples/post-img6-sidebar-xs.jpg"
+                                src="/images/esports/samples/post-img6-sidebar-xs.jpg"
                                 alt=""
                             /></a>
                           </figure>
@@ -910,7 +910,7 @@
                           <figure class="posts__thumb posts__thumb--hover">
                             <a href="_esports_blog-post-1.html"
                               ><img
-                                src="~assets/images/esports/samples/post-img1-sidebar-xs.jpg"
+                                src="/images/esports/samples/post-img1-sidebar-xs.jpg"
                                 alt=""
                             /></a>
                           </figure>
@@ -936,7 +936,7 @@
                           <figure class="posts__thumb posts__thumb--hover">
                             <a href="_esports_blog-post-1.html"
                               ><img
-                                src="~assets/images/esports/samples/post-img2-sidebar-xs.jpg"
+                                src="/images/esports/samples/post-img2-sidebar-xs.jpg"
                                 alt=""
                             /></a>
                           </figure>
@@ -970,7 +970,7 @@
                           <figure class="posts__thumb posts__thumb--hover">
                             <a href="_esports_blog-post-1.html"
                               ><img
-                                src="~assets/images/esports/samples/post-img6-sidebar-xs.jpg"
+                                src="/images/esports/samples/post-img6-sidebar-xs.jpg"
                                 alt=""
                             /></a>
                           </figure>
@@ -996,7 +996,7 @@
                           <figure class="posts__thumb posts__thumb--hover">
                             <a href="_esports_blog-post-1.html"
                               ><img
-                                src="~assets/images/esports/samples/post-img2-sidebar-xs.jpg"
+                                src="/images/esports/samples/post-img2-sidebar-xs.jpg"
                                 alt=""
                             /></a>
                           </figure>
@@ -1021,7 +1021,7 @@
                           <figure class="posts__thumb posts__thumb--hover">
                             <a href="_esports_blog-post-1.html"
                               ><img
-                                src="~assets/images/esports/samples/post-img1-sidebar-xs.jpg"
+                                src="/images/esports/samples/post-img1-sidebar-xs.jpg"
                                 alt=""
                             /></a>
                           </figure>
@@ -1049,7 +1049,7 @@
                           <figure class="posts__thumb posts__thumb--hover">
                             <a href="_esports_blog-post-1.html"
                               ><img
-                                src="~assets/images/esports/samples/post-img4-sidebar-xs.jpg"
+                                src="/images/esports/samples/post-img4-sidebar-xs.jpg"
                                 alt=""
                             /></a>
                           </figure>
@@ -1077,7 +1077,7 @@
                           <figure class="posts__thumb posts__thumb--hover">
                             <a href="_esports_blog-post-1.html"
                               ><img
-                                src="~assets/images/esports/samples/post-img8-sidebar-xs.jpg"
+                                src="/images/esports/samples/post-img8-sidebar-xs.jpg"
                                 alt=""
                             /></a>
                           </figure>

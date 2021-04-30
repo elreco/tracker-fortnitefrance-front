@@ -30,21 +30,21 @@
       <div class="post-author">
         <figure class="post-author__avatar">
           <img
-            src="~assets/images/samples/avatar-12-xs.jpg"
+            :src="
+              news.author && news.author.avatar && news.author.avatar.url
+                ? news.author.avatar.url
+                : '/images/esports/avatar-placeholder-80x80.jpg'
+            "
             alt="Post Author Avatar"
           />
         </figure>
         <div class="post-author__info">
-          <h4 class="post-author__name">Erick Rodgers</h4>
+          <h4 class="post-author__name">{{ news.author.pseudo }}</h4>
         </div>
       </div>
       <ul class="post__meta meta">
-        <li class="meta__item meta__item--views">2369</li>
-        <li class="meta__item meta__item--likes">
-          <a href="#"><i class="meta-like icon-heart"></i> 530</a>
-        </li>
-        <li class="meta__item meta__item--comments">
-          <a href="#">18</a>
+        <li class="meta__item meta__item--views">
+          {{ $numeral(news.views).format('0,0') }}
         </li>
       </ul>
     </footer>
