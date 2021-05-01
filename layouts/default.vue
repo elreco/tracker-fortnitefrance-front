@@ -31,11 +31,26 @@
               <social-bar />
 
               <ul class="nav-account">
-                <li class="nav-account__item">
-                  <a href="_esports_shop-account.html">Votre compte</a>
-                </li>
-                <li class="nav-account__item nav-account__item--logout">
-                  <a href="_esports_shop-login.html">Déconnexion</a>
+                <template v-if="$auth.loggedIn">
+                  <li class="nav-account__item has-children">
+                    <NuxtLink to="/login"
+                      >Bonjour,
+                      <span class="highlight">{{
+                        $auth.user.pseudo
+                      }}</span></NuxtLink
+                    >
+                    <ul class="main-nav__sub">
+                      <li><a href="#">Mon compte</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-account__item nav-account__item--logout">
+                    <a href="javascript:void()" @click="logout()"
+                      >Déconnexion</a
+                    >
+                  </li>
+                </template>
+                <li v-else class="nav-account__item">
+                  <NuxtLink to="/login">Connexion ou Inscription</NuxtLink>
                 </li>
               </ul>
             </div>
@@ -766,11 +781,24 @@
 </template>
 
 <script>
-import SocialBar from '@/components/SocialBar.vue'
+import SocialBar from '~/components/global/SocialBar.vue'
+import Toast from '~/components/global/Toast.vue'
 
 export default {
   components: {
     SocialBar,
+  },
+  methods: {
+    async logout() {
+      await this.$auth.logout()
+      this.$toast({
+        component: Toast,
+        props: {
+          text: 'Vous êtes déconnecté !',
+          type: 'success',
+        },
+      })
+    },
   },
 }
 </script>

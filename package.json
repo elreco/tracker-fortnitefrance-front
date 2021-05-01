@@ -18,7 +18,8 @@
     "numeral": "^2.0.6",
     "nuxt": "^2.15.3",
     "placeholder-loading": "^0.4.0",
-    "voca": "^1.4.0"
+    "voca": "^1.4.0",
+    "vue-toastification": "^1.7.11"
   },
   "devDependencies": {
     "@nuxtjs/dotenv": "^1.4.1",

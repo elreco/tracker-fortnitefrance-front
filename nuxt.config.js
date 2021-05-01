@@ -239,7 +239,8 @@ export default {
     },
     {
       src: '~/plugins/numeral.js'
-    }
+    },
+    { src: '~/plugins/vue-toastification.js', mode: 'client' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -262,8 +263,15 @@ export default {
     locales: ['fr']
   },
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxtjs/axios', '@nuxtjs/axios', '@nuxtjs/auth-next'],
+  modules: ['@nuxtjs/axios', '@nuxtjs/auth-next'],
 
+  // Build Configuration: https://go.nuxtjs.dev/config-build
+  build: {},
+  env: {
+    appName: process.env.APP_NAME || 'Fortnite France'
+  },
+
+  // Plugins config
   axios: {
     baseURL: process.env.VUE_APP_API_URL,
     timeout: 1000,
@@ -273,6 +281,30 @@ export default {
       'Content-Type': 'application/json',
     },
   },
-  // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+
+  auth: {
+    redirect: {
+      login: '/login',
+      logout: '/',
+      callback: '/login',
+      home: '/'
+    },
+    strategies: {
+      local: {
+        token: {
+          property: 'sessionToken',
+          name: 'X-Parse-Session-Token',
+          type: false
+        },
+        user: {
+          property: false,
+        },
+        endpoints: {
+          login: { url: 'login', method: 'get' },
+          user: { url: 'users/me', method: 'get' },
+          logout: { url: 'logout', method: 'post' }
+        }
+      }
+    }
+  }
 }

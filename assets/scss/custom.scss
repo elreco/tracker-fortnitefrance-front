@@ -1,8 +1,3 @@
-/*
-File Name: 		custom.css
-Description:  You can add your custom CSS here and it will overwrite template styles
-*/
-
 .text-shadow {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 1) !important;
 }
@@ -13,4 +8,19 @@ Description:  You can add your custom CSS here and it will overwrite template st
 
 .header-mobile__logo-img {
   margin-top: 1rem;
+}
+
+.Vue-Toastification__toast {
+  box-shadow: none !important;
+  min-width: 426px !important;
+}
+.Vue-Toastification__toast--default {
+  background: none !important;
+}
+
+.Vue-Toastification__progress-bar {
+  z-index: -1000 !important;
+  bottom: 42px !important;
+  left: 82px !important;
+  width: 75% !important;
 }

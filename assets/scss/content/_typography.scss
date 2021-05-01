@@ -98,7 +98,7 @@ a {
 
 	&:hover,
 	&:focus {
-		color: $link-color-hover;
+		color: $link-color-hover !important;
 		text-decoration: $link-decoration-hover;
 		outline: none;
 	}
