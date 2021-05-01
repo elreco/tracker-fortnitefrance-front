@@ -4,43 +4,56 @@
       <h4>Inscrivez-vous gratuitement</h4>
     </div>
     <div class="card__content">
-      <form action="#">
+      <form @submit.prevent="register()">
         <div class="form-group">
-          <label for="register-name">Adresse Email</label>
+          <label for="register-pseudo">Pseudo</label>
           <input
-            id="register-name"
+            id="register-pseudo"
+            v-model="form.pseudo"
+            required
+            maxlength="30"
+            type="text"
+            class="form-control"
+            placeholder="Entrez votre pseudo..."
+          />
+        </div>
+        <div class="form-group">
+          <label for="register-email">Adresse Email</label>
+          <input
+            id="register-email"
+            v-model="form.email"
             type="email"
-            name="register-name"
+            required
             class="form-control"
             placeholder="Entrez votre adresse email..."
           />
         </div>
         <div class="form-group">
-          <label for="register-password">Votre adresse Email</label>
+          <label for="register-password">Mot de passe</label>
           <input
             id="register-password"
+            v-model="form.password"
             type="password"
-            name="register-password"
+            required
             class="form-control"
-            placeholder="Enter your password..."
+            placeholder="Entrez votre mot de passe..."
           />
         </div>
         <div class="form-group">
-          <label for="repeat-password">Repeat Password</label>
+          <label for="repeat-password">Répétez votre mot de passe</label>
           <input
             id="repeat-password"
+            v-model="form.confirmPassword"
             type="password"
-            name="repeat-password"
+            required
             class="form-control"
-            placeholder="Repeat your password..."
+            placeholder="Répétez votre mot de passe..."
           />
         </div>
         <div class="form-group">
-          <a
-            href="_esports_shop-account.html"
-            class="btn btn-default btn-lg btn-block"
-            >Create Your Account</a
-          >
+          <button type="submit" class="btn btn-default btn-lg btn-block">
+            Créer mon compte
+          </button>
         </div>
       </form>
     </div>
@@ -48,5 +61,91 @@
 </template>
 
 <script>
-export default {}
+import Toast from '~/components/global/Toast.vue'
+
+export default {
+  data() {
+    return {
+      appName: process.env.appName,
+      form: {
+        pseudo: null,
+        email: null,
+        password: null,
+        confirmPassword: null,
+        username: null,
+      },
+      loading: false,
+    }
+  },
+  methods: {
+    register() {
+      this.form.username = this.form.email
+      if (this.form.password !== this.form.confirmPassword) {
+        this.$toast({
+          component: Toast,
+          props: {
+            text: "La confirmation du mot de passe n'est pas bonne.",
+            type: 'danger',
+          },
+        })
+        return
+      }
+      this.$axios
+        .post('users', this.form)
+        .then(() => {
+          this.$toast({
+            component: Toast,
+            props: {
+              text:
+                'Votre compte est créé ! Nous vous avons envoyé un mail pour activer votre compte (vérifiez vos spams)',
+              type: 'success',
+            },
+          })
+          this.reset()
+        })
+        .catch((error) => {
+          const { code } = error.response.data
+          switch (code) {
+            case 202:
+              this.$toast({
+                component: Toast,
+                props: {
+                  text: 'Le compte existe déjà.',
+                  type: 'danger',
+                },
+              })
+              break
+            case 142:
+              this.$toast({
+                component: Toast,
+                props: {
+                  text: error.response.data.error,
+                  type: 'danger',
+                },
+              })
+              break
+            default:
+              this.$toast({
+                component: Toast,
+                props: {
+                  text:
+                    'Un problème est survenu lors de la connexion. Veuillez réessayer svp.',
+                  type: 'danger',
+                },
+              })
+              break
+          }
+        })
+    },
+    reset() {
+      this.form = {
+        pseudo: null,
+        email: null,
+        password: null,
+        confirmPassword: null,
+        username: null,
+      }
+    },
+  },
+}
 </script>
