@@ -10,15 +10,20 @@
       <div class="posts__cat">
         <news-partial-tag v-for="tag in news.tags" :key="tag" :tag="tag" />
       </div>
-      {{ { path: '/news', params: { id: news.objectId, slug: news.slug } } }}
       <nuxt-link
-        :to="{ path: '/news', params: { id: news.objectId, slug: news.slug } }"
+        :to="{
+          name: 'news.view',
+          params: { id: news.objectId, slug: news.slug },
+        }"
         ><img :src="news.image ? news.image.url : ''" alt=""
       /></nuxt-link>
     </figure>
     <div class="posts__inner card__content">
       <nuxt-link
-        :to="{ path: '/news', params: { slug: news.slug } }"
+        :to="{
+          name: 'news.view',
+          params: { id: news.objectId, slug: news.slug },
+        }"
         class="posts__cta"
       ></nuxt-link>
       <time
@@ -27,9 +32,13 @@
         >{{ $moment(news.date.iso).format('Do MMMM YYYY') }}</time
       >
       <h6 class="posts__title posts__title--color-hover">
-        <nuxt-link :to="{ path: '/news', params: { slug: news.slug } }">{{
-          news.title
-        }}</nuxt-link>
+        <nuxt-link
+          :to="{
+            name: 'news.view',
+            params: { id: news.objectId, slug: news.slug },
+          }"
+          >{{ news.title }}</nuxt-link
+        >
       </h6>
       <div class="posts__excerpt">
         {{ $voca.truncate($voca.stripTags(news.text), 200, '...') }}

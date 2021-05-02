@@ -22,9 +22,13 @@
               />
             </div>
             <h6 class="posts__title">
-              <nuxt-link :to="{ path: '/news', params: { slug: news.slug } }">{{
-                news.title
-              }}</nuxt-link>
+              <nuxt-link
+                :to="{
+                  name: 'news.view',
+                  params: { id: news.objectId, slug: news.slug },
+                }"
+                >{{ news.title }}</nuxt-link
+              >
             </h6>
             <time
               :datetime="$moment(news.date.iso).format('YYYY-MM-DD')"
@@ -36,7 +40,10 @@
             </div>
             <div class="posts__more">
               <nuxt-link
-                :to="{ path: '/news', params: { slug: news.slug } }"
+                :to="{
+                  name: 'news.view',
+                  params: { id: news.objectId, slug: news.slug },
+                }"
                 class="btn btn-primary-inverse btn-icon-right"
                 >En lire plus <i class="fas fa-angle-right"></i
               ></nuxt-link>

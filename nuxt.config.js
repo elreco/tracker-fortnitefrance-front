@@ -273,6 +273,7 @@ export default {
   router: {
     extendRoutes(routes, resolve) {
       routes.push({
+        name: 'news.view',
         path: '/news/:id/:slug?',
         component: resolve(__dirname, 'pages/news/view.vue')
       })
