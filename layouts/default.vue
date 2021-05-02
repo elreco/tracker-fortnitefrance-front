@@ -33,11 +33,11 @@
               <ul class="nav-account">
                 <template v-if="$auth.loggedIn">
                   <li class="nav-account__item has-children">
-                    <NuxtLink to="/login"
+                    <nuxt-link to="/login"
                       >Bonjour,
                       <span class="highlight">{{
                         $auth.user.pseudo
-                      }}</span></NuxtLink
+                      }}</span></nuxt-link
                     >
                     <ul class="main-nav__sub">
                       <li><a href="#">Mon compte</a></li>
@@ -50,7 +50,7 @@
                   </li>
                 </template>
                 <li v-else class="nav-account__item">
-                  <NuxtLink to="/login">Connexion ou Inscription</NuxtLink>
+                  <nuxt-link to="/login">Connexion ou Inscription</nuxt-link>
                 </li>
               </ul>
             </div>
@@ -61,22 +61,22 @@
           <div class="container">
             <div class="header__primary-inner">
               <div class="header-logo">
-                <a href="_esports_index.html"
-                  ><img
+                <nuxt-link to="/">
+                  <img
                     src="/images/esports/logo-tracker.png"
                     srcset="/images/esports/logo-tracker.png 2x"
-                    alt="Alchemists"
+                    alt="Logo Fortnite France"
                     class="header-logo__img"
-                /></a>
+                /></nuxt-link>
               </div>
               <nav class="main-nav">
                 <ul class="main-nav__list">
-                  <li>
-                    <NuxtLink to="/">Accueil</NuxtLink>
+                  <li :class="isRouteActive('/')">
+                    <nuxt-link to="/">Accueil</nuxt-link>
                   </li>
-                  <li>
-                    <a href="#">News</a>
-                    <div class="main-nav__megamenu">
+                  <li :class="isRouteActive('/news')">
+                    <nuxt-link to="/news">News</nuxt-link>
+                    <!-- <div class="main-nav__megamenu">
                       <div class="row">
                         <div class="col-12">
                           <div
@@ -292,10 +292,10 @@
                           </li>
                         </ul>
                       </div>
-                    </div>
+                    </div> -->
                   </li>
                   <li>
-                    <NuxtLink to="/">Tournois</NuxtLink>
+                    <nuxt-link to="/">Tournois</nuxt-link>
                   </li>
                   <li>
                     <a href="#">Classement</a>
@@ -798,6 +798,11 @@ export default {
           type: 'success',
         },
       })
+    },
+    isRouteActive(path) {
+      if (path === this.$route.path) {
+        return 'active'
+      }
     },
   },
 }

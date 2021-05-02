@@ -41,11 +41,11 @@
                 compte.
               </div>
               <footer class="error__cta">
-                <NuxtLink to="/login" class="btn btn-primary"
-                  >Connexion</NuxtLink
+                <nuxt-link to="/login" class="btn btn-primary"
+                  >Connexion</nuxt-link
                 >
-                <NuxtLink to="/" class="btn btn-primary-inverse"
-                  >Retour à l'accueil</NuxtLink
+                <nuxt-link to="/" class="btn btn-primary-inverse"
+                  >Retour à l'accueil</nuxt-link
                 >
               </footer>
             </div>

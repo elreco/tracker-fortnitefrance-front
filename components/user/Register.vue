@@ -51,7 +51,11 @@
           />
         </div>
         <div class="form-group">
-          <button type="submit" class="btn btn-default btn-lg btn-block">
+          <button
+            :disabled="loading"
+            type="submit"
+            class="btn btn-default btn-lg btn-block"
+          >
             Créer mon compte
           </button>
         </div>
@@ -79,6 +83,7 @@ export default {
   },
   methods: {
     register() {
+      this.loading = true
       this.form.username = this.form.email
       if (this.form.password !== this.form.confirmPassword) {
         this.$toast({
@@ -136,6 +141,7 @@ export default {
               break
           }
         })
+        .finally(() => (this.loading = false))
     },
     reset() {
       this.form = {

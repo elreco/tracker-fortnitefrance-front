@@ -2725,9 +2725,6 @@ var revapi, tpj;
 
 			}
 
-			// Duotone effect
-			$('.effect-duotone').prepend('<div class="effect-duotone__layer"><div class="effect-duotone__layer-inner"></div></div>');
-
 		},
 
 	};

@@ -37,13 +37,15 @@
             Remember Me <span class="checkbox-indicator"></span
           ></label> -->
           <span class="password-reminder text-right w-100"
-            >Mot de passe oublié ? <a href="#">Cliquez ici</a></span
+            >Mot de passe oublié ?
+            <nuxt-link to="/user/forgot-password">Cliquez ici</nuxt-link></span
           >
         </div>
         <div class="form-group form-group--sm">
           <button
             type="submit"
             class="btn btn-primary-inverse btn-lg btn-block"
+            :disabled="loading"
           >
             Connexion à votre compte
           </button>
@@ -81,6 +83,7 @@ export default {
   },
   methods: {
     login() {
+      this.loading = true
       this.$auth
         .loginWith('local', { params: this.form })
         .then(() => {
@@ -126,6 +129,7 @@ export default {
               break
           }
         })
+        .finally(() => (this.loading = false))
     },
   },
 }

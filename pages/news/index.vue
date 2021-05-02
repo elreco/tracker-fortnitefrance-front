@@ -10,7 +10,7 @@
         <div class="row">
           <div class="col align-self-start">
             <h1 class="page-heading__title">
-              Connexion ou <span class="highlight">Inscription</span>
+              Toutes les <span class="highlight">News</span>
             </h1>
           </div>
         </div>
@@ -19,11 +19,8 @@
     <div class="site-content">
       <div class="container">
         <div class="row">
-          <div class="col-lg-6">
-            <login />
-          </div>
-          <div class="col-lg-6">
-            <register />
+          <div class="col-lg-12">
+            <news-full-grid />
           </div>
         </div>
       </div>
@@ -32,15 +29,11 @@
 </template>
 
 <script>
-import Login from '@/components/user/Login'
-import Register from '@/components/user/Register'
+import NewsFullGrid from '@/components/news/FullGrid'
 
 export default {
   components: {
-    Login,
-    Register,
+    NewsFullGrid,
   },
-  middleware: 'auth',
-  auth: 'guest',
 }
 </script>

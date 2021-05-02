@@ -1,26 +1,35 @@
 <template>
   <div
-    :class="`posts__item posts__item--card posts__item--${getColor(
-      news.tags[0]
-    )} posts__item--${getColor(news.tags[0])} card`"
+    :class="`posts__item posts__item--card posts__item--${
+      news.tags && news.tags[0] ? getColor(news.tags[0]) : getColor()
+    } posts__item--${
+      news.tags && news.tags[0] ? getColor(news.tags[0]) : getColor()
+    } card`"
   >
     <figure class="posts__thumb">
       <div class="posts__cat">
         <news-partial-tag v-for="tag in news.tags" :key="tag" :tag="tag" />
       </div>
-      <a href="_esports_blog-post-1.html"
+      {{ { path: '/news', params: { id: news.objectId, slug: news.slug } } }}
+      <nuxt-link
+        :to="{ path: '/news', params: { id: news.objectId, slug: news.slug } }"
         ><img :src="news.image ? news.image.url : ''" alt=""
-      /></a>
+      /></nuxt-link>
     </figure>
     <div class="posts__inner card__content">
-      <a href="_esports_blog-post-1.html" class="posts__cta"></a>
+      <nuxt-link
+        :to="{ path: '/news', params: { slug: news.slug } }"
+        class="posts__cta"
+      ></nuxt-link>
       <time
         :datetime="$moment(news.date.iso).format('YYYY-MM-DD')"
         class="posts__date"
         >{{ $moment(news.date.iso).format('Do MMMM YYYY') }}</time
       >
       <h6 class="posts__title posts__title--color-hover">
-        <a href="_esports_blog-post-1.html">{{ news.title }}</a>
+        <nuxt-link :to="{ path: '/news', params: { slug: news.slug } }">{{
+          news.title
+        }}</nuxt-link>
       </h6>
       <div class="posts__excerpt">
         {{ $voca.truncate($voca.stripTags(news.text), 200, '...') }}

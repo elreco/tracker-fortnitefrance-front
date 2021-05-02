@@ -22,7 +22,9 @@
               />
             </div>
             <h6 class="posts__title">
-              <a href="_esports_blog-post-2.html">{{ news.title }}</a>
+              <nuxt-link :to="{ path: '/news', params: { slug: news.slug } }">{{
+                news.title
+              }}</nuxt-link>
             </h6>
             <time
               :datetime="$moment(news.date.iso).format('YYYY-MM-DD')"
@@ -33,11 +35,11 @@
               {{ $voca.truncate($voca.stripTags(news.text), 200, '...') }}
             </div>
             <div class="posts__more">
-              <a
-                href="_esports_blog-post-2.html"
+              <nuxt-link
+                :to="{ path: '/news', params: { slug: news.slug } }"
                 class="btn btn-primary-inverse btn-icon-right"
                 >En lire plus <i class="fas fa-angle-right"></i
-              ></a>
+              ></nuxt-link>
             </div>
           </div>
         </div>

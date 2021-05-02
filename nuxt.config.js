@@ -127,10 +127,10 @@ export default {
         src: '//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js',
         body: true,
       },
-      {
+      /* {
         src: '/plugins/jpreloader2/js/jpreloader.js',
         body: true
-      },
+      }, */
       {
         src: '//cdnjs.cloudflare.com/ajax/libs/svg4everybody/2.1.9/svg4everybody.min.js',
         body: true,
@@ -175,10 +175,10 @@ export default {
         src: '//cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.7.0/nouislider.min.js',
         body: true,
       },
-      {
+      /* {
         src: '/plugins/easyembed/jquery.easyembed.js',
         body: true
-      },
+      }, */
       {
         src: '//cdnjs.cloudflare.com/ajax/libs/jQuery.Marquee/1.6.0/jquery.marquee.min.js',
         body: true,
@@ -269,6 +269,14 @@ export default {
   build: {},
   env: {
     appName: process.env.APP_NAME || 'Fortnite France'
+  },
+  router: {
+    extendRoutes(routes, resolve) {
+      routes.push({
+        path: '/news/:id/:slug?',
+        component: resolve(__dirname, 'pages/news/view.vue')
+      })
+    }
   },
 
   // Plugins config
