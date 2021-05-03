@@ -6,11 +6,11 @@
         :key="n.objectId"
         class="post-grid__item col-sm-6"
       >
-        <news-partial-card :news="n" />
+        <news-card :news="n" />
       </div>
     </div>
     <template v-for="n in bigNews">
-      <news-partial-big-card :key="n.objectId" :news="n" />
+      <news-big-card :key="n.objectId" :news="n" />
     </template>
     <div class="posts posts--cards post-grid post-grid--2cols row">
       <div
@@ -18,20 +18,20 @@
         :key="n.objectId"
         class="post-grid__item col-sm-6"
       >
-        <news-partial-card :news="n" />
+        <news-card :news="n" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import NewsPartialCard from './partial/Card'
-import NewsPartialBigCard from './partial/BigCard'
+import NewsCard from './partial/Card'
+import NewsBigCard from './partial/BigCard'
 
 export default {
   components: {
-    NewsPartialCard,
-    NewsPartialBigCard,
+    NewsCard,
+    NewsBigCard,
   },
   data() {
     return {

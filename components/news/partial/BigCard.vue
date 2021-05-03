@@ -15,11 +15,7 @@
         <div class="posts__item posts__item--category-1">
           <div class="posts__inner">
             <div class="posts__cat">
-              <news-partial-tag
-                v-for="tag in news.tags"
-                :key="tag"
-                :tag="tag"
-              />
+              <news-tag v-for="tag in news.tags" :key="tag" :tag="tag" />
             </div>
             <h6 class="posts__title">
               <nuxt-link
@@ -57,11 +53,11 @@
 
 <script>
 import tagColors from '@/static/json/tag-colors.json'
-import NewsPartialTag from './Tag'
+import NewsTag from './Tag'
 
 export default {
   components: {
-    NewsPartialTag,
+    NewsTag,
   },
   props: {
     news: {

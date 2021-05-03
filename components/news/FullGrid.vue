@@ -2,7 +2,7 @@
   <div>
     <div class="posts posts--cards post-grid post-grid--2cols row">
       <div v-for="n in news" :key="n.objectId" class="post-grid__item col-sm-6">
-        <news-partial-card :news="n" />
+        <news-card :news="n" />
       </div>
     </div>
     <pagination
@@ -17,11 +17,11 @@
 
 <script>
 import Pagination from '@/components/global/Pagination'
-import NewsPartialCard from './partial/Card'
+import NewsCard from './partial/Card'
 
 export default {
   components: {
-    NewsPartialCard,
+    NewsCard,
     Pagination,
   },
   data() {

@@ -8,7 +8,7 @@
   >
     <figure class="posts__thumb">
       <div class="posts__cat">
-        <news-partial-tag v-for="tag in news.tags" :key="tag" :tag="tag" />
+        <news-tag v-for="tag in news.tags" :key="tag" :tag="tag" />
       </div>
       <nuxt-link
         :to="{
@@ -27,6 +27,7 @@
         class="posts__cta"
       ></nuxt-link>
       <time
+        v-if="news.date"
         :datetime="$moment(news.date.iso).format('YYYY-MM-DD')"
         class="posts__date"
         >{{ $moment(news.date.iso).format('Do MMMM YYYY') }}</time
@@ -45,21 +46,7 @@
       </div>
     </div>
     <footer class="posts__footer card__footer">
-      <div class="post-author">
-        <figure class="post-author__avatar">
-          <img
-            :src="
-              news.author && news.author.avatar && news.author.avatar.url
-                ? news.author.avatar.url
-                : '/images/esports/avatar-placeholder-80x80.jpg'
-            "
-            alt="Post Author Avatar"
-          />
-        </figure>
-        <div class="post-author__info">
-          <h4 class="post-author__name">{{ news.author.pseudo }}</h4>
-        </div>
-      </div>
+      <news-post-author v-if="news.author" :author="news.author" />
       <ul class="post__meta meta">
         <li class="meta__item meta__item--views">
           {{ $numeral(news.views).format('0,0') }}
@@ -71,11 +58,13 @@
 
 <script>
 import tagColors from '@/static/json/tag-colors.json'
-import NewsPartialTag from './Tag'
+import NewsTag from './Tag'
+import NewsPostAuthor from './PostAuthor'
 
 export default {
   components: {
-    NewsPartialTag,
+    NewsTag,
+    NewsPostAuthor,
   },
   props: {
     news: {
