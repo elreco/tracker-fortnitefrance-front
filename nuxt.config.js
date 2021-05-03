@@ -240,7 +240,8 @@ export default {
     {
       src: '~/plugins/numeral.js'
     },
-    { src: '~/plugins/vue-toastification.js', mode: 'client' }
+    { src: '~/plugins/vue-toastification.js', mode: 'client' },
+    { src: '~/plugins/vue-video-player.js' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

@@ -55,21 +55,17 @@
     </div>
     <div class="site-content">
       <div class="container">
+        <div v-if="news.video" class="card">
+          <div class="card__content">
+            <div
+              ref="videoPlayer"
+              v-video-player:myVideoPlayer="playerOptions"
+            ></div>
+          </div>
+        </div>
+
         <div class="row">
           <div class="content col-lg-6 offset-lg-3">
-            <div class="alc-video-player js-alc-video-player">
-              <div class="alc-video-player__item">
-                <figure class="posts__thumb posts__thumb--video">
-                  <a
-                    href="https://www.youtube.com/watch?v&#x3D;XE0fU9PCrWE"
-                    class="mp_iframe"
-                    ><img
-                      src="assets/images/esports/samples/team-video1-lg.jpg"
-                      alt=""
-                  /></a>
-                </figure>
-              </div>
-            </div>
             <article class="post post--single">
               <div class="post__content" v-html="news.text"></div>
             </article>
@@ -316,6 +312,17 @@ export default {
   data() {
     return {
       news: {},
+      playerOptions: {
+        // videojs options
+        muted: true,
+        language: 'fr',
+        sources: [
+          {
+            src:
+              'https://cdn.theguardian.tv/webM/2015/07/20/150716YesMen_synd_768k_vp8.webm',
+          },
+        ],
+      },
     }
   },
   mounted() {
