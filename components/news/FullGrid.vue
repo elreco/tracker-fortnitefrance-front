@@ -54,13 +54,19 @@ export default {
     getNews() {
       const params = {
         skip: (this.currentPage() - 1) * this.perPage,
-        limit: this.currentPage() * this.perPage,
+        limit: this.perPage,
         count: true,
         order: 'date',
         include: 'author',
       }
       return this.$store.dispatch('news/fetch', params).then((news) => {
         const { results, count } = news
+        if (!results.length) {
+          return this.$nuxt.error({
+            statusCode: 404,
+            message: 'La page que vous demandez est introuvable',
+          })
+        }
         this.news = results
         this.total = count
         this.$nextTick(() => {
