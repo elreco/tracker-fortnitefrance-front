@@ -110,6 +110,11 @@ export default {
         type: 'text/css',
         href: '/plugins/revolution-addons/reveal/css/revolution.addon.revealer.preloaders.css',
       },
+      {
+        rel: 'stylesheet',
+        type: 'text/css',
+        href: '/plugins/magnific-popup/dist/magnific-popup.css',
+      },
     ],
     script: [{
         src: '//cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js',
@@ -175,10 +180,6 @@ export default {
         src: '//cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.7.0/nouislider.min.js',
         body: true,
       },
-      /* {
-        src: '/plugins/easyembed/jquery.easyembed.js',
-        body: true
-      }, */
       {
         src: '//cdnjs.cloudflare.com/ajax/libs/jQuery.Marquee/1.6.0/jquery.marquee.min.js',
         body: true,
@@ -216,8 +217,8 @@ export default {
         body: true,
       },
       {
-        src: '/js/init.js',
-        body: true
+        src: '/plugins/magnific-popup/dist/jquery.magnific-popup.min.js',
+        body: true,
       },
       {
         src: '/js/custom.js',
@@ -231,7 +232,11 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [{
-      src: '~/plugins/revslider.js',
+      src: '~/plugins/client/revslider.js',
+      mode: 'client'
+  },
+    {
+      src: '~/plugins/client/mp-iframe.js',
       mode: 'client'
     },
     {
@@ -240,8 +245,7 @@ export default {
     {
       src: '~/plugins/numeral.js'
     },
-    { src: '~/plugins/vue-toastification.js', mode: 'client' },
-    { src: '~/plugins/vue-video-player.js' }
+    { src: '~/plugins/vue-toastification.js', mode: 'client' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

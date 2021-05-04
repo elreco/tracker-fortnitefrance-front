@@ -164,11 +164,14 @@
                 data-frames='[{"delay":1500,"speed":1000,"frame":"0","from":"rX:90deg;sX:1;sY:1;opacity:0;","to":"o:1;tO:50% 0%;","ease":"Power4.easeOut"},{"delay":"wait","speed":500,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"200","ease":"Power1.easeInOut","to":"o:1;rX:0;rY:0;rZ:0;z:0;"}]'
                 style="z-index: 10"
               >
-                <a
-                  href="_esports_team-overview.html"
+                <nuxt-link
+                  :to="{
+                    name: 'news.view',
+                    params: { id: n.objectId, slug: n.slug },
+                  }"
                   class="btn btn-primary-inverse btn-icon-right"
                   >En savoir plus <i class="fas fa-angle-right"></i
-                ></a>
+                ></nuxt-link>
               </div>
             </li>
           </template>

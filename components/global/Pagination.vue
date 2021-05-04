@@ -1,16 +1,12 @@
 <template>
   <nav>
     <ul class="pagination pagination--circle justify-content-center">
-      <li class="page-item">
-        <nuxt-link
-          :disabled="isInFirstPage"
-          class="page-link"
-          :to="getRoute(1)"
-        >
+      <li class="page-item" :class="isInFirstPage && 'disabled'">
+        <nuxt-link class="page-link" :to="getRoute(1)">
           <i class="fas fa-angle-double-left"></i>
         </nuxt-link>
       </li>
-      <li class="page-item">
+      <li class="page-item" :class="isInFirstPage && 'disabled'">
         <nuxt-link
           :to="getRoute(currentPage - 1)"
           :disabled="isInFirstPage"
@@ -32,21 +28,13 @@
           >{{ page.name }}</nuxt-link
         >
       </li>
-      <li class="page-item">
-        <nuxt-link
-          :disabled="isInLastPage"
-          class="page-link"
-          :to="getRoute(currentPage + 1)"
-        >
+      <li class="page-item" :class="isInLastPage && 'disabled'">
+        <nuxt-link class="page-link" :to="getRoute(currentPage + 1)">
           <i class="fas fa-angle-right"></i>
         </nuxt-link>
       </li>
-      <li class="page-item">
-        <nuxt-link
-          :disabled="isInLastPage"
-          class="page-link"
-          :to="getRoute(totalPages)"
-        >
+      <li class="page-item" :class="isInLastPage && 'disabled'">
+        <nuxt-link class="page-link" :to="getRoute(totalPages)">
           <i class="fas fa-angle-double-right"></i>
         </nuxt-link>
       </li>
@@ -77,7 +65,7 @@ export default {
   },
   data() {
     return {
-      totalPages: Math.round(this.total / this.perPage),
+      totalPages: Math.ceil(this.total / this.perPage),
     }
   },
   computed: {
@@ -87,7 +75,12 @@ export default {
       }
 
       if (this.currentPage === this.totalPages) {
-        return this.totalPages - this.maxVisibleButtons + 1
+        const calculatePage = this.totalPages - this.maxVisibleButtons + 1
+        if (calculatePage === 0) {
+          return 1
+        } else {
+          return calculatePage
+        }
       }
 
       return this.currentPage - 1

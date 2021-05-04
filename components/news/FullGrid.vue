@@ -47,12 +47,14 @@ export default {
   },
   methods: {
     currentPage() {
-      return this.$route.query.page ? parseInt(this.$route.query.page) : 1
+      return this.$route.query.page
+        ? parseInt(this.$route.query.page)
+        : parseInt(1)
     },
     getNews() {
       const params = {
-        skip: this.currentPage() * this.perPage,
-        limit: this.perPage,
+        skip: (this.currentPage() - 1) * this.perPage,
+        limit: this.currentPage() * this.perPage,
         count: true,
         order: 'date',
         include: 'author',

@@ -57,10 +57,15 @@
       <div class="container">
         <div v-if="news.video" class="card">
           <div class="card__content">
-            <div
-              ref="videoPlayer"
-              v-video-player:myVideoPlayer="playerOptions"
-            ></div>
+            <div class="alc-video-player js-alc-video-player">
+              <div class="alc-video-player__item">
+                <figure class="posts__thumb posts__thumb--video">
+                  <a :href="news.video" class="mp_iframe"
+                    ><img :src="news.image && news.image.url" alt=""
+                  /></a>
+                </figure>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -341,6 +346,7 @@ export default {
         .then((news) => {
           this.news = news
           this.$nextTick(() => {
+            this.$initMpIframe()
             this.$nuxt.$loading.finish()
           })
         })
