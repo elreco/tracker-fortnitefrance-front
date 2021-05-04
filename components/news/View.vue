@@ -305,26 +305,26 @@ export default {
       news: {},
     }
   },
-  mounted() {
-    this.$nextTick(() => {
-      this.$nuxt.$loading.start()
-    })
-    this.getNews()
+  async fetch() {
+    this.news = await this.getNews()
+  },
+  watch: {
+    '$fetchState.pending'() {
+      if (!this.$fetchState.pending) {
+        this.$initMpIframe()
+      }
+    },
   },
   methods: {
-    getNews() {
+    async getNews() {
       const params = {
         include: 'author',
       }
-      this.$store
-        .dispatch('news/get', { id: this.$route.params.id, params })
-        .then((news) => {
-          this.news = news
-          this.$nextTick(() => {
-            this.$initMpIframe()
-            this.$nuxt.$loading.finish()
-          })
-        })
+      const news = await this.$store.dispatch('news/get', {
+        id: this.$route.params.id,
+        params,
+      })
+      return news
     },
     getColor(tag) {
       if (tagColors[tag]) {

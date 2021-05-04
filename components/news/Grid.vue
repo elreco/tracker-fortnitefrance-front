@@ -47,19 +47,13 @@ export default {
       bigNews: [],
     }
   },
-  async mounted() {
-    this.$nextTick(() => {
-      this.$nuxt.$loading.start()
-    })
+  async fetch() {
     this.newsFirst = await this.getNews('normal', 3, 6)
     this.newsSecond = await this.getNews('normal', 10, 6)
     this.bigNews = await this.getNews('big', 0, 1)
-    this.$nextTick(() => {
-      this.$nuxt.$loading.finish()
-    })
   },
   methods: {
-    getNews(type, skip, limit) {
+    async getNews(type, skip, limit) {
       const params = {
         skip,
         limit,
@@ -69,10 +63,8 @@ export default {
           type,
         },
       }
-      return this.$store.dispatch('news/fetch', params).then((news) => {
-        const { results } = news
-        return results
-      })
+      const { results } = await this.$store.dispatch('news/fetch', params)
+      return results
     },
   },
 }

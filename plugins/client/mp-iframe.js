@@ -5,7 +5,11 @@ export default (context, inject) => {
       removalDelay: 300,
       mainClass: 'mfp-fade',
       autoFocusLast: false,
-
+      callbacks: {
+          open: function() {
+              $('iframe').attr('allow', 'autoplay');
+          },
+      },
       patterns: {
         youtube: {
           index: 'youtube.com/', // String that detects type of video (in this case YouTube). Simply via url.indexOf(index).

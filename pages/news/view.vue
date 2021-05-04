@@ -19,5 +19,20 @@ export default {
       return false
     return true
   },
+  head() {
+    return {
+      title: `${this.$store.state.news.meta.title} - Fortnite France`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.$voca.truncate(
+            this.$voca.stripTags(this.$store.state.news.meta.text),
+            150
+          ),
+        },
+      ],
+    }
+  },
 }
 </script>

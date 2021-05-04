@@ -48,5 +48,18 @@ export default {
     }
     return true
   },
+  head() {
+    return {
+      title: 'News - Fortnite France',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content:
+            "Ne manquez rien de l'actualité du jeu Fortnite : Battle royale ! Découvrez toutes les news officielles.",
+        },
+      ],
+    }
+  },
 }
 </script>

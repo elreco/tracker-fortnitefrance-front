@@ -5,13 +5,13 @@
 
       <div id="header-mobile" class="header-mobile clearfix">
         <div class="header-mobile__logo">
-          <a href="_esports_index.html"
+          <nuxt-link to="/"
             ><img
               src="/images/esports/logo-mini.png"
               srcset="/images/esports/logo-mini.png 2x"
-              alt="Alchemists"
+              alt="Fortnite France Tracker Battle Royale"
               class="header-mobile__logo-img"
-          /></a>
+          /></nuxt-link>
         </div>
         <div class="header-mobile__inner">
           <a id="header-mobile__toggle" class="burger-menu-icon"

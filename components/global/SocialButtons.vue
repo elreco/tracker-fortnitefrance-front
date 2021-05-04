@@ -31,10 +31,12 @@ export default {
     description: {
       type: String,
       required: false,
+      default: '',
     },
     title: {
       type: String,
       required: false,
+      default: '',
     },
   },
   data() {

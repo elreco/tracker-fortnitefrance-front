@@ -188,14 +188,19 @@ export default {
       news: [],
     }
   },
-  mounted() {
-    this.$nextTick(() => {
-      this.$nuxt.$loading.start()
-    })
-    this.getNews()
+  async fetch() {
+    this.news = await this.getNews()
+  },
+  fetchDelay: 800,
+  watch: {
+    '$fetchState.pending'() {
+      if (!this.$fetchState.pending) {
+        this.$initRevSlider()
+      }
+    },
   },
   methods: {
-    getNews() {
+    async getNews() {
       const params = {
         limit: 3,
         count: 1,
@@ -204,14 +209,8 @@ export default {
           type: 'normal',
         },
       }
-      this.$store.dispatch('news/fetch', params).then((news) => {
-        const { results } = news
-        this.news = results
-        this.$nextTick(() => {
-          this.$initRevSlider()
-          this.$nuxt.$loading.finish()
-        })
-      })
+      const { results } = await this.$store.dispatch('news/fetch', params)
+      return results
     },
   },
 }

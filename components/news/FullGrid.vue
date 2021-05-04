@@ -31,19 +31,14 @@ export default {
       total: 0,
     }
   },
-  watch: {
-    $route(to, from) {
-      if (to.query.page !== from.query.page) {
-        this.getNews()
-        window.scrollTo(0, 0)
-      }
-    },
+  async fetch() {
+    const { results, count } = await this.getNews()
+    this.news = results
+    this.total = count
+    window.scrollTo(0, 0)
   },
-  mounted() {
-    this.$nextTick(() => {
-      this.$nuxt.$loading.start()
-    })
-    this.getNews()
+  watch: {
+    '$route.query': '$fetch',
   },
   methods: {
     currentPage() {
@@ -51,7 +46,7 @@ export default {
         ? parseInt(this.$route.query.page)
         : parseInt(1)
     },
-    getNews() {
+    async getNews() {
       const params = {
         skip: (this.currentPage() - 1) * this.perPage,
         limit: this.perPage,
@@ -59,14 +54,7 @@ export default {
         order: 'date',
         include: 'author',
       }
-      return this.$store.dispatch('news/fetch', params).then((news) => {
-        const { results, count } = news
-        this.news = results
-        this.total = count
-        this.$nextTick(() => {
-          this.$nuxt.$loading.finish()
-        })
-      })
+      return await this.$store.dispatch('news/fetch', params)
     },
   },
 }
