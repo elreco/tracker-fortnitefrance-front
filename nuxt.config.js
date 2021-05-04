@@ -288,7 +288,7 @@ export default {
       })
       routes.push({
         name: 'stats.view',
-        path: '/stats/:pseudo/:platform?',
+        path: '/stats/:name/:platform?',
         component: resolve(__dirname, 'pages/stats/view.vue')
       })
     }
