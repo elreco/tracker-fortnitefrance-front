@@ -32,21 +32,7 @@
                     >
                   </li>
                 </ul>
-                <div class="post-sharing-compact">
-                  <a
-                    href="#"
-                    class="btn btn-default btn-sm btn-facebook btn-icon"
-                    ><i class="fab fa-facebook"></i
-                  ></a>
-                  <a
-                    href="#"
-                    class="btn btn-default btn-sm btn-twitter btn-icon"
-                    ><i class="fab fa-twitter"></i
-                  ></a>
-                  <a href="#" class="btn btn-default btn-sm btn-gplus btn-icon"
-                    ><i class="fab fa-google-plus-g"></i
-                  ></a>
-                </div>
+                <social-buttons />
               </div>
             </div>
           </div>
@@ -78,7 +64,7 @@
         </div>
       </div>
     </div>
-    <div class="section section--bg1">
+    <!-- <div class="section section--bg1">
       <div class="container">
         <div class="row">
           <div class="col-lg-6 offset-lg-3">
@@ -241,9 +227,7 @@
                 </div>
               </footer>
             </div>
-            <!-- Post Comments / End -->
             <div class="spacer-lg"></div>
-            <!-- Post Comment Form -->
             <div class="post-comment-form">
               <header class="post-comment-form__header">
                 <h4>Write a Comment</h4>
@@ -300,12 +284,13 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script>
 import tagColors from '@/static/json/tag-colors.json'
+import SocialButtons from '@/components/global/SocialButtons'
 import NewsTag from './partial/Tag'
 import NewsPostAuthor from './partial/PostAuthor'
 
@@ -313,21 +298,11 @@ export default {
   components: {
     NewsTag,
     NewsPostAuthor,
+    SocialButtons,
   },
   data() {
     return {
       news: {},
-      playerOptions: {
-        // videojs options
-        muted: true,
-        language: 'fr',
-        sources: [
-          {
-            src:
-              'https://cdn.theguardian.tv/webM/2015/07/20/150716YesMen_synd_768k_vp8.webm',
-          },
-        ],
-      },
     }
   },
   mounted() {

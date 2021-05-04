@@ -19,6 +19,7 @@
     "nuxt": "^2.15.3",
     "placeholder-loading": "^0.4.0",
     "voca": "^1.4.0",
+    "vue-social-sharing": "^3.0.7",
     "vue-toastification": "^1.7.11",
     "vue-video-player": "^5.0.2"
   },

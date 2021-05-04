@@ -132,10 +132,6 @@ export default {
         src: '//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js',
         body: true,
       },
-      /* {
-        src: '/plugins/jpreloader2/js/jpreloader.js',
-        body: true
-      }, */
       {
         src: '//cdnjs.cloudflare.com/ajax/libs/svg4everybody/2.1.9/svg4everybody.min.js',
         body: true,
@@ -224,6 +220,10 @@ export default {
         src: '/js/custom.js',
         body: true
       },
+      {
+        src: '/js/init.js',
+        body: true
+      },
     ],
   },
 
@@ -238,6 +238,9 @@ export default {
     {
       src: '~/plugins/client/mp-iframe.js',
       mode: 'client'
+    },
+    {
+      src: '~/plugins/axios.js'
     },
     {
       src: '~/plugins/voca.js'
@@ -268,12 +271,13 @@ export default {
     locales: ['fr']
   },
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxtjs/axios', '@nuxtjs/auth-next'],
+  modules: ['@nuxtjs/axios', '@nuxtjs/auth-next', 'vue-social-sharing/nuxt'],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
   env: {
-    appName: process.env.APP_NAME || 'Fortnite France'
+    appName: process.env.APP_NAME || 'Fortnite France',
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000',
   },
   router: {
     extendRoutes(routes, resolve) {
@@ -281,6 +285,11 @@ export default {
         name: 'news.view',
         path: '/news/:id/:slug?',
         component: resolve(__dirname, 'pages/news/view.vue')
+      })
+      routes.push({
+        name: 'stats.view',
+        path: '/stats/:pseudo/:platform?',
+        component: resolve(__dirname, 'pages/stats/view.vue')
       })
     }
   },

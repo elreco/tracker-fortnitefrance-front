@@ -35,5 +35,18 @@ export default {
   components: {
     NewsFullGrid,
   },
+  validate({ query }) {
+    if (query && Object.keys(query).length !== 0) {
+      let isAccepted = true
+      Object.keys(query).forEach((key) => {
+        if (key !== 'page') isAccepted = false
+      })
+      if (isAccepted === false) {
+        return false
+      }
+      if (query.page && !Number.isInteger(parseInt(query.page))) return false
+    }
+    return true
+  },
 }
 </script>

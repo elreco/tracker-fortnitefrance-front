@@ -61,12 +61,6 @@ export default {
       }
       return this.$store.dispatch('news/fetch', params).then((news) => {
         const { results, count } = news
-        if (!results.length) {
-          return this.$nuxt.error({
-            statusCode: 404,
-            message: 'La page que vous demandez est introuvable',
-          })
-        }
         this.news = results
         this.total = count
         this.$nextTick(() => {

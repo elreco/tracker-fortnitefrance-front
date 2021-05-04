@@ -10,7 +10,7 @@
 	&:hover,
 	&:focus,
 	&.focus {
-		color: $btn-default-color;
+		color: $btn-default-color!important;
 	}
 
 	&:active,

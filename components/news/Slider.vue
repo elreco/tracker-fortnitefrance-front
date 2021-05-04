@@ -144,7 +144,7 @@
                 style="z-index: 9"
               >
                 <p style="max-width: 230px">
-                  {{ $voca.truncate($voca.stripTags(n.text), 125, '...') }}
+                  {{ $voca.truncate($voca.stripTags(n.text), 100, '...') }}
                 </p>
               </div>
 

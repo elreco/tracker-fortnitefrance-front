@@ -1,10 +1,10 @@
 <template>
   <div>
-    <div class="posts posts--cards post-grid post-grid--2cols row">
+    <div class="posts posts--cards post-grid post-grid--3cols row">
       <div
         v-for="n in newsFirst"
         :key="n.objectId"
-        class="post-grid__item col-sm-6"
+        class="post-grid__item col-sm-4"
       >
         <news-card :news="n" />
       </div>
@@ -12,13 +12,20 @@
     <template v-for="n in bigNews">
       <news-big-card :key="n.objectId" :news="n" />
     </template>
-    <div class="posts posts--cards post-grid post-grid--2cols row">
+    <div class="posts posts--cards post-grid post-grid--3cols row">
       <div
         v-for="n in newsSecond"
         :key="n.objectId"
-        class="post-grid__item col-sm-6"
+        class="post-grid__item col-sm-4"
       >
         <news-card :news="n" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <nuxt-link to="/news" class="btn btn-primary btn-lg my-2">
+          Voir toutes les news
+        </nuxt-link>
       </div>
     </div>
   </div>
