@@ -5,7 +5,7 @@
 
       <div id="header-mobile" class="header-mobile clearfix">
         <div class="header-mobile__logo">
-          <nuxt-link to="/"
+          <nuxt-link :to="{ name: 'index' }"
             ><img
               src="/images/esports/logo-mini.png"
               srcset="/images/esports/logo-mini.png 2x"
@@ -32,7 +32,7 @@
               <ul class="nav-account">
                 <template v-if="$auth.loggedIn">
                   <li class="nav-account__item has-children">
-                    <nuxt-link to="/login"
+                    <nuxt-link :to="{ name: 'login' }"
                       >Bonjour,
                       <span class="highlight">{{
                         $auth.user.pseudo
@@ -49,7 +49,9 @@
                   </li>
                 </template>
                 <li v-else class="nav-account__item">
-                  <nuxt-link to="/login">Connexion ou Inscription</nuxt-link>
+                  <nuxt-link :to="{ name: 'login' }"
+                    >Connexion ou Inscription</nuxt-link
+                  >
                 </li>
               </ul>
             </div>
@@ -60,7 +62,7 @@
           <div class="container">
             <div class="header__primary-inner">
               <div class="header-logo">
-                <nuxt-link to="/">
+                <nuxt-link :to="{ name: 'index' }">
                   <img
                     src="/images/esports/logo-tracker.png"
                     srcset="/images/esports/logo-tracker.png 2x"
@@ -71,10 +73,10 @@
               <nav class="main-nav">
                 <ul class="main-nav__list">
                   <li :class="isRouteActive('/')">
-                    <nuxt-link to="/">Accueil</nuxt-link>
+                    <nuxt-link :to="{ name: 'index' }">Accueil</nuxt-link>
                   </li>
                   <li :class="isRouteActive('/news')">
-                    <nuxt-link to="/news">News</nuxt-link>
+                    <nuxt-link :to="{ name: 'news' }">News</nuxt-link>
                     <!-- <div class="main-nav__megamenu">
                       <div class="row">
                         <div class="col-12">
@@ -294,7 +296,7 @@
                     </div> -->
                   </li>
                   <li>
-                    <nuxt-link to="/">Tournois</nuxt-link>
+                    <nuxt-link :to="{ name: 'index' }">Tournois</nuxt-link>
                   </li>
                   <li>
                     <a href="#">Classement</a>

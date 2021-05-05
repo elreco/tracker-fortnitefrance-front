@@ -36,10 +36,12 @@
                 Vous pouvez vous connecter avec votre nouveau mot de passe.
               </div>
               <footer class="error__cta">
-                <nuxt-link to="/login" class="btn btn-primary"
+                <nuxt-link :to="{ name: 'login' }" class="btn btn-primary"
                   >Connexion</nuxt-link
                 >
-                <nuxt-link to="/" class="btn btn-primary-inverse"
+                <nuxt-link
+                  :to="{ name: 'index' }"
+                  class="btn btn-primary-inverse"
                   >Retour à l'accueil</nuxt-link
                 >
               </footer>

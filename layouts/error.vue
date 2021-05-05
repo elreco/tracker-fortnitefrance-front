@@ -34,7 +34,7 @@
                 {{ error.message }}
               </div>
               <footer class="error__cta">
-                <nuxt-link to="/" class="btn btn-primary"
+                <nuxt-link :to="{ name: 'index' }" class="btn btn-primary"
                   >Retourner à l'accueil</nuxt-link
                 >
               </footer>

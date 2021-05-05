@@ -23,7 +23,7 @@
     </div>
     <div class="row">
       <div class="col-lg-12 text-center">
-        <nuxt-link to="/news" class="btn btn-primary btn-lg my-2">
+        <nuxt-link :to="{ name: 'news' }" class="btn btn-primary btn-lg my-2">
           Voir toutes les news
         </nuxt-link>
       </div>

@@ -38,7 +38,9 @@
           ></label> -->
           <span class="password-reminder text-right w-100"
             >Mot de passe oublié ?
-            <nuxt-link to="/user/forgot-password">Cliquez ici</nuxt-link></span
+            <nuxt-link :to="{ name: 'user-auth-forgot-password' }"
+              >Cliquez ici</nuxt-link
+            ></span
           >
         </div>
         <div class="form-group form-group--sm">
