@@ -44,39 +44,20 @@ export default {
   },
   methods: {
     resetPassword() {
-      this.$axios
-        .post('requestPasswordReset', this.form)
-        .then(() => {
-          this.$router.push({ path: '/login' })
-          this.$toast(
-            {
-              component: Toast,
-              props: {
-                text:
-                  'Si votre adresse email existe dans notre base de données, un email pour réinitialisation de votre mot de passe vous a été envoyé par email !',
-                type: 'success',
-              },
+      this.$axios.post('requestPasswordReset', this.form).then(() => {
+        this.$router.push({ path: '/login' })
+        this.$toast(
+          {
+            component: Toast,
+            props: {
+              text:
+                'Si votre adresse email existe dans notre base de données, un email pour réinitialisation de votre mot de passe vous a été envoyé par email !',
+              type: 'success',
             },
-            { timeout: 5000 }
-          )
-        })
-        .catch((error) => {
-          if (error && error.response) {
-            const { code } = error.response.data
-            switch (code) {
-              default:
-                this.$toast({
-                  component: Toast,
-                  props: {
-                    text:
-                      'Un problème est survenu lors de la connexion. Veuillez réessayer svp.',
-                    type: 'danger',
-                  },
-                })
-                break
-            }
-          }
-        })
+          },
+          { timeout: 5000 }
+        )
+      })
     },
   },
 }

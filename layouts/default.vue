@@ -29,7 +29,6 @@
           <div class="container">
             <div class="header__top-bar-inner">
               <social-bar />
-
               <ul class="nav-account">
                 <template v-if="$auth.loggedIn">
                   <li class="nav-account__item has-children">

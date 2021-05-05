@@ -46,11 +46,6 @@ export default {
           content: this.description,
         },
         {
-          hid: 'twitter:image',
-          name: 'twitter:image',
-          content: this.image,
-        },
-        {
           hid: 'og:title',
           property: 'og:title',
           content: this.title,
@@ -59,16 +54,6 @@ export default {
           hid: 'og:description',
           property: 'og:description',
           content: this.description,
-        },
-        {
-          hid: 'og:image',
-          property: 'og:image',
-          content: this.image,
-        },
-        {
-          hid: 'og:image:secure_url',
-          property: 'og:image:secure_url',
-          content: this.image,
         },
         {
           hid: 'description',

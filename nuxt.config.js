@@ -18,6 +18,21 @@ export default {
         content: 'Premier site de statistiques et leaderboards en France sur Fortnite Battle Royale. Analysez votre profil de manière approfondie grâce à nos graphiques.'
       },
       {
+        hid: 'twitter:image',
+        name: 'twitter:image',
+        content: '/images/seo-image.png'
+      },
+      {
+        hid: 'og:image',
+        name: 'og:image',
+        content: '/images/seo-image.png'
+      },
+      {
+        hid: 'og:image:secure_url',
+        name: 'og:image:secure_url',
+        content: '/images/seo-image.png'
+      },
+      {
         name: 'msapplication-TileColor',
         content: '#2d89ef'
       },
@@ -248,7 +263,6 @@ export default {
     {
       src: '~/plugins/numeral.js'
     },
-    { src: '~/plugins/vue-toastification.js', mode: 'client' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -271,7 +285,7 @@ export default {
     locales: ['fr']
   },
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxtjs/axios', '@nuxtjs/auth-next', 'vue-social-sharing/nuxt'],
+  modules: ['@nuxtjs/axios', '@nuxtjs/auth-next', 'vue-social-sharing/nuxt', 'vue-toastification/nuxt'],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
@@ -304,6 +318,7 @@ export default {
       'Content-Type': 'application/json',
     },
   },
+  toast: { timeout: 3000, icon: false, closeButton: false },
 
   auth: {
     redirect: {
@@ -327,6 +342,12 @@ export default {
           user: { url: 'users/me', method: 'get' },
           logout: { url: 'logout', method: 'post' }
         }
+      }
+    },
+    cookie: {
+      prefix: 'auth.',
+      options: {
+        path: '/'
       }
     }
   }

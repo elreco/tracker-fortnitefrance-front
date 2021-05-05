@@ -93,23 +93,6 @@ export default {
             },
           })
         })
-        .catch((error) => {
-          if (error && error.response) {
-            const { code } = error.response.data
-            switch (code) {
-              default:
-                this.$toast({
-                  component: Toast,
-                  props: {
-                    text:
-                      'Un problème est survenu lors de la connexion. Veuillez réessayer svp.',
-                    type: 'danger',
-                  },
-                })
-                break
-            }
-          }
-        })
         .finally(() => (this.loading = false))
     },
   },

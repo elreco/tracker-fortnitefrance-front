@@ -87,6 +87,7 @@ export default {
       this.$auth
         .loginWith('local', { params: this.form })
         .then(() => {
+          this.$router.back()
           this.$toast({
             component: Toast,
             props: {
@@ -94,40 +95,6 @@ export default {
               type: 'success',
             },
           })
-        })
-        .catch((error) => {
-          const { code } = error.response.data
-          switch (code) {
-            case 101:
-              this.$toast({
-                component: Toast,
-                props: {
-                  text: 'Email ou mot de passe invalide.',
-                  type: 'danger',
-                },
-              })
-              break
-            case 205:
-              this.$toast({
-                component: Toast,
-                props: {
-                  text:
-                    "Votre adresse email n'est pas vérifiée. Veuillez consulter votre boîte mail.",
-                  type: 'danger',
-                },
-              })
-              break
-            default:
-              this.$toast({
-                component: Toast,
-                props: {
-                  text:
-                    'Un problème est survenu lors de la connexion. Veuillez réessayer svp.',
-                  type: 'danger',
-                },
-              })
-              break
-          }
         })
         .finally(() => (this.loading = false))
     },

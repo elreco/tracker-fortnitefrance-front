@@ -108,39 +108,6 @@ export default {
           })
           this.reset()
         })
-        .catch((error) => {
-          const { code } = error.response.data
-          switch (code) {
-            case 202:
-              this.$toast({
-                component: Toast,
-                props: {
-                  text: 'Le compte existe déjà.',
-                  type: 'danger',
-                },
-              })
-              break
-            case 142:
-              this.$toast({
-                component: Toast,
-                props: {
-                  text: error.response.data.error,
-                  type: 'danger',
-                },
-              })
-              break
-            default:
-              this.$toast({
-                component: Toast,
-                props: {
-                  text:
-                    'Un problème est survenu lors de la connexion. Veuillez réessayer svp.',
-                  type: 'danger',
-                },
-              })
-              break
-          }
-        })
         .finally(() => (this.loading = false))
     },
     reset() {

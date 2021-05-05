@@ -1,6 +1,7 @@
 <template>
   <form class="search-form" @submit.prevent="search">
     <input
+      ref="searchInput"
       v-model="searchInput"
       type="text"
       class="form-control header-mobile__search-control"
@@ -22,12 +23,14 @@ export default {
   },
   methods: {
     search() {
-      return this.$router.push({
+      this.$router.push({
         name: 'stat.view',
         params: {
           name: this.searchInput,
         },
       })
+      this.searchInput = null
+      this.$refs.searchInput.blur()
     },
   },
 }

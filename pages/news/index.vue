@@ -48,15 +48,41 @@ export default {
     }
     return true
   },
-  head() {
+  data() {
     return {
       title: 'News - Fortnite France',
+      description:
+        "Ne manquez rien de l'actualité du jeu Fortnite : Battle royale ! Découvrez toutes les news officielles.",
+    }
+  },
+  head() {
+    return {
+      title: this.title,
       meta: [
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: this.title,
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: this.description,
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: this.title,
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: this.description,
+        },
         {
           hid: 'description',
           name: 'description',
-          content:
-            "Ne manquez rien de l'actualité du jeu Fortnite : Battle royale ! Découvrez toutes les news officielles.",
+          content: this.title,
         },
       ],
     }
