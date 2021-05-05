@@ -33,6 +33,12 @@ export default {
   },
   async fetch() {
     const { results, count } = await this.getNews()
+    if (results.length === 0) {
+      this.$nuxt.error({
+        statusCode: 404,
+        message: "Il n'y a pas de news pour cette page.",
+      })
+    }
     this.news = results
     this.total = count
     window.scrollTo(0, 0)

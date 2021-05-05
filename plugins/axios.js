@@ -7,9 +7,9 @@ export default function ({ $axios, error: nuxtError }) {
     return Promise.resolve(false);
   })
   $axios.onResponse(response => {
-    if (!response.data || (response.data.results && response.data.results.length === 0)) {
+    if (!response.data) {
       nuxtError({
-        statusCode: "404",
+        statusCode: 404,
         message: "La page que vous demandez est introuvable",
       });
       return Promise.resolve(false);

@@ -306,17 +306,7 @@
               <div class="header__primary-spacer"></div>
 
               <div class="header-search-form">
-                <form id="mobile-search-form" action="#" class="search-form">
-                  <input
-                    type="text"
-                    class="form-control header-mobile__search-control"
-                    value=""
-                    placeholder="Recherchez les statistiques d'un joueur"
-                  />
-                  <button type="submit" class="header-mobile__search-submit">
-                    <i class="fas fa-search"></i>
-                  </button>
-                </form>
+                <stat-search />
               </div>
             </div>
           </div>
@@ -782,11 +772,13 @@
 
 <script>
 import SocialBar from '~/components/global/SocialBar.vue'
+import StatSearch from '~/components/stat/partial/Search.vue'
 import Toast from '~/components/global/Toast.vue'
 
 export default {
   components: {
     SocialBar,
+    StatSearch,
   },
   methods: {
     async logout() {

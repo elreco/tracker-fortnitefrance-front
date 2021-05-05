@@ -287,9 +287,9 @@ export default {
         component: resolve(__dirname, 'pages/news/view.vue')
       })
       routes.push({
-        name: 'stats.view',
+        name: 'stat.view',
         path: '/stats/:name/:platform?',
-        component: resolve(__dirname, 'pages/stats/view.vue')
+        component: resolve(__dirname, 'pages/stat/view.vue')
       })
     }
   },
