@@ -8,7 +8,7 @@ export default (context, inject) => {
       }
     }
     if (tpj("#hero-revslider").revolution == undefined) {
-      revslider_showDoubleJqueryError("#hero-revslider");
+      //revslider_showDoubleJqueryError("#hero-revslider");
     } else {
       revapi = tpj("#hero-revslider").show().revolution({
         sliderType: "standard",
@@ -89,5 +89,16 @@ export default (context, inject) => {
     RsRevealerAddOn(tpj, revapi, "<div class='rsaddon-revealer-spinner rsaddon-revealer-spinner-2'><div class='rsaddon-revealer-2' style='border-top-color: {{color}}0.65); border-bottom-color: {{color}}0.15); border-left-color: {{color}}0.65); border-right-color: {{color}}0.15)'><\/div><\/div>");
     RsTypewriterAddOn(tpj, revapi);
   }
+  var killRevSlider = () => {
+    var tpj;
+    if (tpj === undefined) {
+      tpj = jQuery;
+      if ("off" == "on") {
+        tpj.noConflict();
+      }
+    }
+    tpj("#hero-revslider").revkill();
+  }
+  inject('killRevSlider', killRevSlider)
   inject('initRevSlider', initRevSlider)
 }

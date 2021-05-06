@@ -65,7 +65,7 @@
                   data-radius="2px"
                   data-origin="50% 50%"
                 >
-                  {{ $voca.truncate(n.title, 30, '...') }}
+                  {{ $voca.truncate(n.title, 20, '...') }}
                 </div>
               </div>
 
@@ -93,7 +93,7 @@
                   data-radius="2px"
                   data-origin="50% 50%"
                 >
-                  {{ $voca.truncate(n.subtitle, 30, '...') }}
+                  {{ $voca.truncate(n.subtitle, 20, '...') }}
                 </div>
               </div>
 
@@ -192,6 +192,84 @@ export default {
     this.news = await this.getNews()
   },
   fetchDelay: 800,
+  head() {
+    return {
+      script: [
+        {
+          src:
+            '/plugins/revolution-addons/reveal/js/revolution.addon.revealer.min.js?ver=1.0.0',
+          body: true,
+        },
+        {
+          src:
+            '/plugins/revolution-addons/typewriter/js/revolution.addon.typewriter.min.js',
+          body: true,
+        },
+        {
+          src: '/plugins/revolution/js/jquery.themepunch.tools.min.js',
+          body: true,
+        },
+        {
+          src: '/plugins/revolution/js/jquery.themepunch.revolution.min.js',
+          body: true,
+        },
+        {
+          src:
+            '/plugins/revolution/js/extensions/revolution.extension.layeranimation.min.js',
+          body: true,
+        },
+        {
+          src:
+            '/plugins/revolution/js/extensions/revolution.extension.migration.min.js',
+          body: true,
+        },
+        {
+          src:
+            '/plugins/revolution/js/extensions/revolution.extension.parallax.min.js',
+          body: true,
+        },
+        {
+          src:
+            '/plugins/revolution/js/extensions/revolution.extension.slideanims.min.js',
+          body: true,
+        },
+      ],
+      link: [
+        {
+          rel: 'stylesheet',
+          type: 'text/css',
+          href: '/plugins/revolution/css/settings.css',
+        },
+        {
+          rel: 'stylesheet',
+          type: 'text/css',
+          href: '/plugins/revolution/css/layers.css',
+        },
+        {
+          rel: 'stylesheet',
+          type: 'text/css',
+          href: '/plugins/revolution/css/navigation.css',
+        },
+        {
+          rel: 'stylesheet',
+          type: 'text/css',
+          href:
+            '/plugins/revolution-addons/reveal/css/revolution.addon.revealer.css',
+        },
+        {
+          rel: 'stylesheet',
+          type: 'text/css',
+          href:
+            '/plugins/revolution-addons/reveal/css/revolution.addon.revealer.preloaders.css',
+        },
+        {
+          rel: 'stylesheet',
+          type: 'text/css',
+          href: '/plugins/magnific-popup/dist/magnific-popup.css',
+        },
+      ],
+    }
+  },
   watch: {
     '$fetchState.pending'() {
       if (!this.$fetchState.pending) {

@@ -10,7 +10,10 @@
             <label class="form-group__avatar-wrapper"
               ><figure class="form-group__avatar-img">
                 <img
-                  src="/images/esports/avatar-placeholder-80x80.jpg"
+                  class="img-avatar"
+                  :src="
+                    url ? url : '/images/esports/avatar-placeholder-80x80.jpg'
+                  "
                   alt=""
                 />
               </figure>
@@ -18,7 +21,11 @@
                 <h6>Avatar</h6>
                 <span>Taille minimum conseillée 80x80px</span>
               </div>
-              <input type="file" style="display: none"
+              <input
+                type="file"
+                accept="image/*"
+                style="display: none"
+                @change="onFileChange"
             /></label>
           </div>
         </div>
@@ -37,6 +44,10 @@
                 class="form-control"
                 placeholder="Entrez votre adresse email..."
               />
+              <em class="small"
+                >Si vous modifiez votre adresse email, vous recevrez un email
+                pour la vérifier</em
+              >
             </div>
           </div>
           <div class="col-md-6">
@@ -65,10 +76,13 @@
                 id="register-password"
                 v-model="form.password"
                 type="password"
-                required
                 class="form-control"
                 placeholder="*********"
               />
+              <em class="small"
+                >Ne renseignez pas ce champ si vous ne voulez pas changer votre
+                mot de passe</em
+              >
             </div>
           </div>
           <div class="col-md-6">
@@ -78,7 +92,7 @@
                 id="repeat-password"
                 v-model="form.confirmPassword"
                 type="password"
-                required
+                :required="form.password ? true : false"
                 class="form-control"
                 placeholder="*********"
               />
@@ -105,23 +119,40 @@ import Toast from '~/components/global/Toast.vue'
 export default {
   data() {
     return {
+      url: '',
       form: {
-        pseudo: null,
-        email: null,
-        password: null,
-        confirmPassword: null,
+        avatar: null,
+        pseudo: '',
+        email: '',
+        password: '',
+        confirmPassword: '',
       },
       loading: false,
     }
   },
-  mounted() {
-    this.form.email = this.$auth.user.email
-    this.form.pseudo = this.$auth.user.pseudo
+  created() {
+    this.form.email = this.$auth.user && this.$auth.user.email
+    this.form.pseudo = this.$auth.user && this.$auth.user.pseudo
+    this.url =
+      this.$auth.user && this.$auth.user.avatar && this.$auth.user.avatar.url
   },
   methods: {
-    register() {
+    onFileChange(e) {
+      const files = e.target.files || e.dataTransfer.files
+      if (!files.length) return
+      if (files[0].type.split('/')[0] !== 'image') return
+      this.createImage(files[0])
+    },
+    createImage(image) {
+      this.form.avatar = image
+      this.url = URL.createObjectURL(image)
+    },
+    update() {
       this.loading = true
-      if (this.form.password !== this.form.confirmPassword) {
+      if (
+        this.form.password &&
+        this.form.password !== this.form.confirmPassword
+      ) {
         this.$toast({
           component: Toast,
           props: {
@@ -129,10 +160,15 @@ export default {
             type: 'danger',
           },
         })
+        this.loading = true
         return
       }
+      const params = {
+        id: this.$auth.user.objectId,
+        data: this.form,
+      }
       this.$store
-        .dispatch(`user/update/${this.$auth.user.objectId}`, this.form)
+        .dispatch('user/update', params)
         .then(() => {
           this.$toast({
             component: Toast,
@@ -141,17 +177,8 @@ export default {
               type: 'success',
             },
           })
-          this.reset()
         })
         .finally(() => (this.loading = false))
-    },
-    reset() {
-      this.form = {
-        pseudo: null,
-        email: null,
-        password: null,
-        confirmPassword: null,
-      }
     },
   },
 }

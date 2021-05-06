@@ -50,8 +50,8 @@ export default {
   data() {
     return {
       form: {
-        password: null,
-        confirmPassword: null,
+        password: '',
+        confirmPassword: '',
       },
       loading: false,
     }
@@ -67,6 +67,7 @@ export default {
             type: 'danger',
           },
         })
+        this.loading = false
         return
       }
       // obligé de passer ca en body car aucun endpoint de dispo via Parse

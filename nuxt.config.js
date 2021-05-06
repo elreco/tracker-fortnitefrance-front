@@ -100,36 +100,6 @@ export default {
         type: 'text/css',
         href: '//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css',
       },
-      {
-        rel: 'stylesheet',
-        type: 'text/css',
-        href: '/plugins/revolution/css/settings.css',
-      },
-      {
-        rel: 'stylesheet',
-        type: 'text/css',
-        href: '/plugins/revolution/css/layers.css',
-      },
-      {
-        rel: 'stylesheet',
-        type: 'text/css',
-        href: '/plugins/revolution/css/navigation.css',
-      },
-      {
-        rel: 'stylesheet',
-        type: 'text/css',
-        href: '/plugins/revolution-addons/reveal/css/revolution.addon.revealer.css',
-      },
-      {
-        rel: 'stylesheet',
-        type: 'text/css',
-        href: '/plugins/revolution-addons/reveal/css/revolution.addon.revealer.preloaders.css',
-      },
-      {
-        rel: 'stylesheet',
-        type: 'text/css',
-        href: '/plugins/magnific-popup/dist/magnific-popup.css',
-      },
     ],
     script: [{
         src: '//cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js',
@@ -193,38 +163,6 @@ export default {
       },
       {
         src: '//cdnjs.cloudflare.com/ajax/libs/jQuery.Marquee/1.6.0/jquery.marquee.min.js',
-        body: true,
-      },
-      {
-        src: '/plugins/revolution-addons/reveal/js/revolution.addon.revealer.min.js?ver=1.0.0',
-        body: true,
-      },
-      {
-        src: '/plugins/revolution-addons/typewriter/js/revolution.addon.typewriter.min.js',
-        body: true,
-      },
-      {
-        src: '/plugins/revolution/js/jquery.themepunch.tools.min.js',
-        body: true,
-      },
-      {
-        src: '/plugins/revolution/js/jquery.themepunch.revolution.min.js',
-        body: true,
-      },
-      {
-        src: '/plugins/revolution/js/extensions/revolution.extension.layeranimation.min.js',
-        body: true,
-      },
-      {
-        src: '/plugins/revolution/js/extensions/revolution.extension.migration.min.js',
-        body: true,
-      },
-      {
-        src: '/plugins/revolution/js/extensions/revolution.extension.parallax.min.js',
-        body: true,
-      },
-      {
-        src: '/plugins/revolution/js/extensions/revolution.extension.slideanims.min.js',
         body: true,
       },
       {

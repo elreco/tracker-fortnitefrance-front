@@ -2,6 +2,12 @@
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 1) !important;
 }
 
+.img-avatar {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
 .header-logo__img {
   height: 121px !important;
 }

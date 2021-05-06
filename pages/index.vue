@@ -36,5 +36,9 @@ export default {
     Faq,
     AboutBox,
   },
+  beforeRouteLeave(to, from, next) {
+    this.$killRevSlider()
+    return next()
+  },
 }
 </script>

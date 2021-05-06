@@ -37,7 +37,7 @@ export default {
     return {
       appName: process.env.appName,
       form: {
-        email: null,
+        email: '',
       },
       loading: false,
     }

@@ -36,7 +36,6 @@ export default {
   components: {
     ForgotPassword,
   },
-  middleware: 'auth',
-  auth: 'guest',
+  middleware: 'auth-guest',
 }
 </script>

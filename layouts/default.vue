@@ -793,6 +793,7 @@ export default {
   },
   methods: {
     async logout() {
+      await this.$store.dispatch('user/logout')
       await this.$auth.logout()
       this.$toast({
         component: Toast,

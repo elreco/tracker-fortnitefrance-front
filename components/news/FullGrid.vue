@@ -41,10 +41,12 @@ export default {
     }
     this.news = results
     this.total = count
-    window.scrollTo(0, 0)
   },
   watch: {
-    '$route.query': '$fetch',
+    '$route.query'() {
+      this.$fetch()
+      window.scrollTo(0, 0)
+    },
   },
   methods: {
     currentPage() {

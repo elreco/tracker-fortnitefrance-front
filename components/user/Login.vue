@@ -77,8 +77,8 @@ export default {
     return {
       appName: process.env.appName,
       form: {
-        email: null,
-        password: null,
+        email: '',
+        password: '',
       },
       loading: false,
     }

@@ -72,11 +72,11 @@ export default {
     return {
       appName: process.env.appName,
       form: {
-        pseudo: null,
-        email: null,
-        password: null,
-        confirmPassword: null,
-        username: null,
+        pseudo: '',
+        email: '',
+        password: '',
+        confirmPassword: '',
+        username: '',
       },
       loading: false,
     }
@@ -93,6 +93,7 @@ export default {
             type: 'danger',
           },
         })
+        this.loading = false
         return
       }
       this.$store
