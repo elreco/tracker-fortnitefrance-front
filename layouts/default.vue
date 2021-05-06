@@ -52,16 +52,10 @@
                     >
                   </li>
                 </template>
-                <li
-                  v-else-if="!$cookies.get('auth._token.local')"
-                  class="nav-account__item"
-                >
+                <li v-else class="nav-account__item">
                   <nuxt-link :to="{ name: 'login' }"
                     >Connexion ou Inscription</nuxt-link
                   >
-                </li>
-                <li v-else class="nav-account__item">
-                  <nuxt-link :to="{ name: 'index' }">Chargement...</nuxt-link>
                 </li>
               </ul>
             </div>

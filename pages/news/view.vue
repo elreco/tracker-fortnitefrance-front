@@ -19,43 +19,43 @@ export default {
       return false
     return true
   },
-  data() {
-    return {
-      title: `${this.$store.state.news.meta.title} - Fortnite France`,
-      description: this.$voca.truncate(
-        this.$voca.stripTags(this.$store.state.news.meta.text),
-        150
-      ),
-    }
-  },
   head() {
     return {
-      title: this.title,
+      title: `${this.$store.state.news.meta.title} - Fortnite France`,
       meta: [
         {
           hid: 'twitter:title',
           name: 'twitter:title',
-          content: this.title,
+          content: `${this.$store.state.news.meta.title} - Fortnite France`,
         },
         {
           hid: 'twitter:description',
           name: 'twitter:description',
-          content: this.description,
+          content: this.$voca.truncate(
+            this.$voca.stripTags(this.$store.state.news.meta.text),
+            150
+          ),
         },
         {
           hid: 'og:title',
           property: 'og:title',
-          content: this.title,
+          content: `${this.$store.state.news.meta.title} - Fortnite France`,
         },
         {
           hid: 'og:description',
           property: 'og:description',
-          content: this.description,
+          content: this.$voca.truncate(
+            this.$voca.stripTags(this.$store.state.news.meta.text),
+            150
+          ),
         },
         {
           hid: 'description',
           name: 'description',
-          content: this.title,
+          content: this.$voca.truncate(
+            this.$voca.stripTags(this.$store.state.news.meta.text),
+            150
+          ),
         },
       ],
     }
