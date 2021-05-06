@@ -40,7 +40,6 @@ export default {
     Login,
     Register,
   },
-  middleware: 'auth',
-  auth: 'guest',
+  middleware: 'auth-guest',
 }
 </script>

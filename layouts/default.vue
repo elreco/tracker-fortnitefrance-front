@@ -39,7 +39,11 @@
                       }}</span></nuxt-link
                     >
                     <ul class="main-nav__sub">
-                      <li><a href="#">Mon compte</a></li>
+                      <li>
+                        <nuxt-link :to="{ name: 'account' }"
+                          >Mon compte</nuxt-link
+                        >
+                      </li>
                     </ul>
                   </li>
                   <li class="nav-account__item nav-account__item--logout">
@@ -48,10 +52,16 @@
                     >
                   </li>
                 </template>
-                <li v-else class="nav-account__item">
+                <li
+                  v-else-if="!$cookies.get('auth._token.local')"
+                  class="nav-account__item"
+                >
                   <nuxt-link :to="{ name: 'login' }"
                     >Connexion ou Inscription</nuxt-link
                   >
+                </li>
+                <li v-else class="nav-account__item">
+                  <nuxt-link :to="{ name: 'index' }">Chargement...</nuxt-link>
                 </li>
               </ul>
             </div>

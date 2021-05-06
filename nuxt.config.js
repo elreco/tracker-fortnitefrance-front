@@ -285,7 +285,7 @@ export default {
     locales: ['fr']
   },
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxtjs/axios', '@nuxtjs/auth-next', 'vue-social-sharing/nuxt', 'vue-toastification/nuxt'],
+  modules: ['@nuxtjs/axios', '@nuxtjs/auth-next', 'vue-social-sharing/nuxt', 'vue-toastification/nuxt', 'cookie-universal-nuxt'],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
@@ -321,10 +321,10 @@ export default {
   toast: { timeout: 3000, icon: false, closeButton: false },
 
   auth: {
+    localStorage: false,
     redirect: {
       login: '/login',
-      logout: '/',
-      callback: '/login',
+      logout: '/login',
       home: '/'
     },
     strategies: {
@@ -335,12 +335,12 @@ export default {
           type: false
         },
         user: {
-          property: false,
+          property: false
         },
         endpoints: {
           login: { url: 'login', method: 'get' },
           user: { url: 'users/me', method: 'get' },
-          logout: { url: 'logout', method: 'post' }
+          logout: false
         }
       }
     },
@@ -349,6 +349,6 @@ export default {
       options: {
         path: '/'
       }
-    }
+    },
   }
 }

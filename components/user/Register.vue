@@ -6,7 +6,7 @@
     <div class="card__content">
       <form @submit.prevent="register()">
         <div class="form-group">
-          <label for="register-pseudo">Pseudo</label>
+          <label for="register-pseudo">Pseudo Fortnite</label>
           <input
             id="register-pseudo"
             v-model="form.pseudo"
@@ -95,8 +95,8 @@ export default {
         })
         return
       }
-      this.$axios
-        .post('users', this.form)
+      this.$store
+        .dispatch('user/register', this.form)
         .then(() => {
           this.$toast({
             component: Toast,

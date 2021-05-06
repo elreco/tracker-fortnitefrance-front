@@ -19,11 +19,8 @@
     <div class="site-content">
       <div class="container">
         <div class="row">
-          <div class="col-lg-6">
-            <login />
-          </div>
-          <div class="col-lg-6">
-            <register />
+          <div class="col-lg-12">
+            <account-edit-form />
           </div>
         </div>
       </div>
@@ -32,15 +29,12 @@
 </template>
 
 <script>
-import Login from '@/components/user/Login'
-import Register from '@/components/user/Register'
+import AccountEditForm from '@/components/account/EditForm'
 
 export default {
   components: {
-    Login,
-    Register,
+    AccountEditForm,
   },
-  middleware: 'auth',
-  auth: 'guest',
+  middleware: 'auth-user',
 }
 </script>
