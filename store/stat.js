@@ -34,11 +34,15 @@ export const actions = {
         params,
       })
       .then((response) => {
-        if (!response.results || response.results.length === 0) {
+        if (
+          !response.data ||
+          !response.data.results ||
+          response.data.results.length === 0
+        ) {
           throw response
         } else {
-          ctx.commit('SET_META_TITLE', response.results[0].name)
-          return response.results[0]
+          ctx.commit('SET_META_TITLE', response.data.results[0].name)
+          return response.data.results[0]
         }
       })
   },

@@ -1,6 +1,7 @@
-$ph-color:                $color-dark !default;
+$ph-color:                $color-dark-lighten-2 !default;
 $ph-border:               1px solid $color-dark-lighten-2 !default;
 $ph-border-radius:        4px !default;
 $ph-animation-duration:   0.8s !default;
+$ph-bg:                   $color-dark-lighten !default;
 
 @import "~/node_modules/placeholder-loading/src/scss/placeholder-loading";

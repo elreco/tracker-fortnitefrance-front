@@ -15,19 +15,19 @@
 		display: block;
 		font-size: 40px;
 		line-height: 1em;
-		margin-bottom: .22em;
+		margin-bottom: .50em;
 		letter-spacing: -0.03em;
 
 		@media (min-width: 768px) {
-			font-size: 54px;
+			font-size: 12px;
 		}
 
 		@media (min-width: 992px) {
-			font-size: 60px;
+			font-size: 20px;
 		}
 
 		@media (min-width: 1200px) {
-			font-size: 90px;
+			font-size: 40px;
 		}
 
 		.highlight {

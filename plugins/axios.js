@@ -47,7 +47,7 @@ export default function ({
             },
           })
           break
-        /* default:
+        default:
           $toast({
             component: Toast,
             props: {
@@ -55,7 +55,7 @@ export default function ({
               type: 'danger',
             },
           })
-          break */
+          break
       }
     }
   })

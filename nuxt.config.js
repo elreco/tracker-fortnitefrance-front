@@ -83,11 +83,6 @@ export default {
       {
         rel: 'stylesheet',
         type: 'text/css',
-        href: '//unpkg.com/placeholder-loading/dist/css/placeholder-loading.min.css',
-      },
-      {
-        rel: 'stylesheet',
-        type: 'text/css',
         href: '//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css',
       },
       {

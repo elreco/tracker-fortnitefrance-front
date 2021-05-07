@@ -1,7 +1,11 @@
 
 export default (context, inject) => {
-  var circularBar = () => {
-    easyPieChart({
+  var initCircularBar = () => {
+    var $color_primary = '#2575DC';
+    var $track_color = '#4b3b60';
+    var $track_line_cap = 'round';
+
+    $('.circular__bar').easyPieChart({
       barColor: $color_primary,
       trackColor: $track_color,
       lineCap: $track_line_cap,
@@ -10,5 +14,5 @@ export default (context, inject) => {
       scaleLength: 0
     });
   }
-  inject('circularBar', circularBar)
+  inject('initCircularBar', initCircularBar)
 }

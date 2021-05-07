@@ -1,6 +1,10 @@
 <template>
-  <div v-if="stat">
-    <div class="team-roster team-roster--card mb-0 pb-0">
+  <div>
+    <stat-view-loader v-if="loading" />
+    <div
+      v-else-if="!loading && stat"
+      class="team-roster team-roster--card mb-0 pb-0"
+    >
       <div class="team-roster__item card card--no-paddings">
         <div class="card__content">
           <div class="team-roster__content-wrapper">
@@ -230,34 +234,47 @@
 
 <script>
 import SocialButtons from '@/components/global/SocialButtons'
+import StatViewLoader from './partial/ViewLoader'
 
 export default {
   components: {
     SocialButtons,
+    StatViewLoader,
   },
   data() {
     return {
+      loading: true,
       stat: {},
     }
   },
   async fetch() {
     this.stat = await this.getStat()
   },
+  watch: {
+    '$fetchState.pending'() {
+      if (!this.$fetchState.pending) {
+        this.$initCircularBar()
+      }
+    },
+  },
   methods: {
     async getStat() {
       /* const params = {
-        include: 'author',
+        include: 'matches',
       } */
       const stat = await this.$store
         .dispatch('stat/get', {
           name: this.$route.params.name,
         })
-        .catch(() => {
-          this.$nuxt.error({
-            statusCode: 404,
-            message: "Nous n'avons pas trouvé de joueur portant ce pseudo",
-          })
+        .catch((error) => {
+          if (error) {
+            this.$nuxt.error({
+              statusCode: 404,
+              message: "Nous n'avons pas trouvé de joueur portant ce pseudo",
+            })
+          }
         })
+        .finally(() => (this.loading = false))
       return stat
     },
   },

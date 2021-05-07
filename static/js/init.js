@@ -23,7 +23,6 @@
 	var $template_var = $('body').data('template');
 	var $color_primary = '#ffdc11';
 	var $main_nav     = $('.main-nav');
-	var $circular_bar = $('.circular__bar');
 	var $gmap         = $('.gm-map');
 	var $mp_single    = $('.mp_single-img');
 	var $mp_gallery   = $('.mp_gallery');
@@ -91,8 +90,6 @@
 			this.headerNav();
 
 			/* this.countDown(); */
-
-			this.circularBar();
 
 			this.MagnificPopup();
 
@@ -236,34 +233,6 @@
 					$(this.el).html("<div class='countdown-counter__item countdown-counter__item--days'>" + this.leadingZeros(data.days, 2) + " <span class='countdown-counter__label'>days</span></div><div class='countdown-counter__item countdown-counter__item--hours'>" + this.leadingZeros(data.hours, 2) + " <span class='countdown-counter__label'>hours</span></div><div class='countdown-counter__item countdown-counter__item--mins'>" + this.leadingZeros(data.min, 2) + " <span class='countdown-counter__label'>mins</span></div><div class='countdown-counter__item countdown-counter__item--secs'>" + this.leadingZeros(data.sec, 2) + " <span class='countdown-counter__label'>secs</span></div>");
 				}
 			});
-		},
-
-		circularBar: function() {
-
-			var $track_color = '#ecf0f6';
-			var $track_line_cap = 'square';
-
-			if ( $template_var == 'template-esports' ) {
-				$track_line_cap = 'round';
-			}
-
-			if ( $template_var == 'template-football' ) {
-				$track_color = '#4e4d73';
-			} else if ( $template_var == 'template-esports' ) {
-				$track_color = '#4b3b60';
-			}
-
-			if ( $circular_bar.exists() ) {
-				$circular_bar.easyPieChart({
-					barColor: $color_primary,
-					trackColor: $track_color,
-					lineCap: $track_line_cap,
-					lineWidth: 8,
-					size: 90,
-					scaleLength: 0
-				});
-			}
-
 		},
 
 		MagnificPopup: function(){
