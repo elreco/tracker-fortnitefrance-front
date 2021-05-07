@@ -187,7 +187,11 @@ export default {
   plugins: [{
       src: '~/plugins/client/revslider.js',
       mode: 'client'
-  },
+    },
+    {
+      src: '~/plugins/client/circular-bar.js',
+      mode: 'client'
+    },
     {
       src: '~/plugins/client/mp-iframe.js',
       mode: 'client'
@@ -256,7 +260,11 @@ export default {
       'Content-Type': 'application/json',
     },
   },
-  toast: { timeout: 3000, icon: false, closeButton: false },
+  toast: {
+    timeout: 3000,
+    icon: false,
+    closeButton: false
+  },
 
   auth: {
     localStorage: false,
@@ -276,8 +284,14 @@ export default {
           property: false
         },
         endpoints: {
-          login: { url: 'login', method: 'get' },
-          user: { url: 'users/me', method: 'get' },
+          login: {
+            url: 'login',
+            method: 'get'
+          },
+          user: {
+            url: 'users/me',
+            method: 'get'
+          },
           logout: false
         }
       }

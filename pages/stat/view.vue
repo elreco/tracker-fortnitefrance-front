@@ -1,5 +1,27 @@
 <template>
-  <stat-view />
+  <div>
+    <div
+      class="page-heading page-heading--horizontal effect-duotone effect-duotone--primary"
+    >
+      <div class="effect-duotone__layer">
+        <div class="effect-duotone__layer-inner"></div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col align-self-start">
+            <h1 class="page-heading__title">
+              Les statistiques <span class="highlight">{{ appName }}</span>
+            </h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="site-content">
+      <div class="container">
+        <stat-view />
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -21,6 +43,11 @@ export default {
     if (!Object.prototype.toString.call(params.name) === '[object String]')
       return false
     return true
+  },
+  data() {
+    return {
+      appName: process.env.appName,
+    }
   },
   head() {
     return {

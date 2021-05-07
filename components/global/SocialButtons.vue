@@ -1,5 +1,5 @@
 <template>
-  <div class="post-sharing-compact">
+  <div>
     <share-network
       network="facebook"
       :url="url"
@@ -7,7 +7,7 @@
       :description="description"
       hashtags="fortnite,france,tracker,statistiques"
     >
-      <a href="#" class="btn btn-default btn-sm btn-facebook btn-icon"
+      <a href="#" class="btn btn-default btn-sm btn-facebook btn-icon mr-2"
         ><i class="fab fa-facebook"></i
       ></a>
     </share-network>

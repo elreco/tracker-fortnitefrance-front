@@ -47,15 +47,15 @@ export default function ({
             },
           })
           break
-        default:
+        /* default:
           $toast({
             component: Toast,
             props: {
-              text: 'Un problème est survenu lors de la connexion. Veuillez réessayer svp.',
+              text: 'Un problème est survenu. Veuillez réessayer svp.',
               type: 'danger',
             },
           })
-          break
+          break */
       }
     }
   })

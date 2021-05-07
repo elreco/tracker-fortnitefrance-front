@@ -32,7 +32,9 @@
                     >
                   </li>
                 </ul>
-                <social-buttons />
+                <div class="post-sharing-compact">
+                  <social-buttons />
+                </div>
               </div>
             </div>
           </div>

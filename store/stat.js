@@ -30,7 +30,7 @@ export const actions = {
       }
     }
     return await this.$axios
-      .$get(`classes/Stat`, {
+      .get(`classes/Stat`, {
         params,
       })
       .then((response) => {

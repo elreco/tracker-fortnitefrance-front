@@ -303,7 +303,7 @@
                     <nuxt-link :to="{ name: 'index' }">Tournois</nuxt-link>
                   </li>
                   <li>
-                    <a href="#">Classement</a>
+                    <a :href="discord.link">{{ discord.title }}</a>
                   </li>
                 </ul>
               </nav>
@@ -776,6 +776,7 @@
 </template>
 
 <script>
+import socials from '@/static/json/socials.json'
 import SocialBar from '~/components/global/SocialBar.vue'
 import StatSearch from '~/components/stat/partial/Search.vue'
 import Toast from '~/components/global/Toast.vue'
@@ -784,6 +785,11 @@ export default {
   components: {
     SocialBar,
     StatSearch,
+  },
+  data() {
+    return {
+      discord: socials.discord,
+    }
   },
   methods: {
     async logout() {
