@@ -313,7 +313,7 @@ export default {
   watch: {
     '$fetchState.pending'() {
       if (!this.$fetchState.pending) {
-        this.$nextTick(() => this.$initMpIframe())
+        this.$initMpIframe()
       }
     },
   },

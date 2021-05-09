@@ -120,7 +120,7 @@ export default {
   watch: {
     '$fetchState.pending'() {
       if (!this.$fetchState.pending) {
-        this.$nextTick(() => this.$initCircularBar())
+        this.$initCircularBar()
       }
     },
   },
