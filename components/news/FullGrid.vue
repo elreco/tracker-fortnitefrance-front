@@ -59,7 +59,7 @@ export default {
         skip: (this.currentPage() - 1) * this.perPage,
         limit: this.perPage,
         count: true,
-        order: 'date',
+        order: '-date',
         include: 'author',
       }
       return await this.$store.dispatch('news/fetch', params)

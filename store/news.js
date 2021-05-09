@@ -31,4 +31,7 @@ export const actions = {
         return response
       })
   },
+  async addView(ctx, id) {
+    return await this.$axios.post(`functions/newsAddView`, { id })
+  },
 }

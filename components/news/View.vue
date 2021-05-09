@@ -1,5 +1,5 @@
 <template>
-  <div v-if="news">
+  <div v-if="news && !$fetchState.pending">
     <div
       class="page-heading page-heading--overlay page-heading--post-bg"
       :style="news.image && `background-image: url(${news.image.url})`"
@@ -313,7 +313,7 @@ export default {
   watch: {
     '$fetchState.pending'() {
       if (!this.$fetchState.pending) {
-        this.$initMpIframe()
+        this.$nextTick(() => this.$initMpIframe())
       }
     },
   },
@@ -326,6 +326,7 @@ export default {
         id: this.$route.params.id,
         params,
       })
+      await this.$store.dispatch('news/addView', news.objectId)
       return news
     },
     getColor(tag) {

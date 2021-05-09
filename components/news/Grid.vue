@@ -57,7 +57,7 @@ export default {
       const params = {
         skip,
         limit,
-        order: 'date',
+        order: '-date',
         include: 'author',
         where: {
           type,

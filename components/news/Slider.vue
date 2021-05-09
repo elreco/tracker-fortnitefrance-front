@@ -273,7 +273,7 @@ export default {
   watch: {
     '$fetchState.pending'() {
       if (!this.$fetchState.pending) {
-        this.$initRevSlider()
+        this.$nextTick(() => this.$initRevSlider())
       }
     },
   },
@@ -282,7 +282,7 @@ export default {
       const params = {
         limit: 3,
         count: 1,
-        order: 'date',
+        order: '-date',
         where: {
           type: 'normal',
         },
