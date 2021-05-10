@@ -49,7 +49,7 @@
       <news-post-author v-if="news.author" :author="news.author" />
       <ul class="post__meta meta">
         <li class="meta__item meta__item--views">
-          {{ $numeral(news.views).format('0,0') }}
+          {{ $numeral(news.views).format('0a') }}
         </li>
       </ul>
     </footer>

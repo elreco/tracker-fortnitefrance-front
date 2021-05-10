@@ -194,7 +194,7 @@ export default {
   watch: {
     '$fetchState.pending'() {
       if (!this.$fetchState.pending) {
-        this.$initRevSlider()
+        this.$nextTick(() => this.$initRevSlider())
       }
     },
   },

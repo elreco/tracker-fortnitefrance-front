@@ -14,9 +14,9 @@ export const mutations = {
 }
 
 export const actions = {
-  async fetch(ctx, queryParams) {
-    return await this.$axios.$get('classes/Stat', {
-      params: queryParams,
+  async fetch(ctx, params) {
+    return await this.$axios.get('classes/Stat', {
+      params,
     })
   },
   async get(ctx, { name, params = {} }) {
@@ -29,7 +29,7 @@ export const actions = {
         name,
       }
     }
-    return await this.$axios
+    const stat = await this.$axios
       .get(`classes/Stat`, {
         params,
       })
@@ -42,8 +42,28 @@ export const actions = {
           throw response
         } else {
           ctx.commit('SET_META_TITLE', response.data.results[0].name)
+
           return response.data.results[0]
         }
       })
+
+    const { results } = await this.$axios.get('classes/Match', {
+      params: {
+        where: {
+          $relatedTo: {
+            object: {
+              __type: 'Relation',
+              className: 'Stat',
+              objectId: stat.objectId,
+            },
+            key: 'matches',
+          },
+        },
+      },
+    })
+
+    stat.matches = results
+
+    return stat
   },
 }

@@ -791,6 +791,7 @@ export default {
       discord: socials.discord,
     }
   },
+  fetchDelay: 2000,
   methods: {
     async logout() {
       await this.$store.dispatch('user/logout')

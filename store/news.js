@@ -15,9 +15,9 @@ export const mutations = {
 }
 
 export const actions = {
-  async fetch(ctx, queryParams) {
-    return await this.$axios.$get('classes/News', {
-      params: queryParams,
+  async fetch(ctx, params) {
+    return await this.$axios.get('classes/News', {
+      params,
     })
   },
   async get(ctx, { id, params }) {

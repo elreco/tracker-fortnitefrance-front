@@ -19,7 +19,9 @@
         <div class="team-roster__content w-50">
           <div class="team-roster__player-details">
             <div class="team-roster__player-info">
-              <h5 class="team-roster__player-realname">#156</h5>
+              <h5 v-if="stat.rank" class="team-roster__player-realname">
+                #{{ stat.rank }}
+              </h5>
               <h3 class="team-roster__player-nickname">
                 {{ stat.name }}
               </h3>
@@ -49,7 +51,7 @@
                 <div class="circular circular--size-80">
                   <div class="circular__bar" :data-percent="winrate()">
                     <span class="circular__percents">
-                      {{ this.$numeral(winrate()).format('0') }}
+                      {{ $numeral(winrate()).format('0') }}
                       <small>%</small>
                       <span class="circular__label">Win Rate</span>
                     </span>
@@ -75,7 +77,7 @@
                     <td
                       class="progress-table__progress-label progress-table__progress-label--highlight"
                     >
-                      {{ this.$numeral(kills()).format('0a') }}
+                      {{ $numeral(kills()).format('0a') }}
                     </td>
                   </tr>
                   <tr>
@@ -92,7 +94,7 @@
                     <td
                       class="progress-table__progress-label progress-table__progress-label--highlight"
                     >
-                      {{ this.$numeral(deaths()).format('(0a)') }}
+                      {{ $numeral(deaths()).format('(0a)') }}
                     </td>
                   </tr>
                 </tbody>

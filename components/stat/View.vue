@@ -1,7 +1,8 @@
 <template>
   <div>
+    <loader-stat-view v-if="$fetchState.pending" />
     <div
-      v-if="stat && !$fetchState.pending"
+      v-else-if="stat && !$fetchState.pending"
       class="team-roster team-roster--card mb-0 pb-0"
     >
       <stat-general-card :stat="stat" />
@@ -98,15 +99,24 @@
         </div>
       </div>
     </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <stat-match-table :matches="stat.matches" />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import StatGeneralCard from './partial/GeneralCard'
+import StatMatchTable from './partial/MatchTable'
+import LoaderStatView from './loader/View'
 
 export default {
   components: {
     StatGeneralCard,
+    LoaderStatView,
+    StatMatchTable,
   },
   data() {
     return {
@@ -120,19 +130,20 @@ export default {
   watch: {
     '$fetchState.pending'() {
       if (!this.$fetchState.pending) {
-        this.$initCircularBar()
+        this.$nextTick(() => this.$initCircularBar())
       }
     },
   },
   methods: {
     async getStat() {
       this.loading = true
-      /* const params = {
+      const params = {
         include: 'matches',
-      } */
+      }
       const stat = await this.$store
         .dispatch('stat/get', {
           name: this.$route.params.name,
+          params,
         })
         .catch((error) => {
           if (error) {
