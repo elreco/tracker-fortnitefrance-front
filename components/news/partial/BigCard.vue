@@ -67,11 +67,7 @@ export default {
   },
   methods: {
     getColor(tag) {
-      if (tagColors[tag]) {
-        return tagColors[tag]
-      } else {
-        return 'category-1'
-      }
+      return tagColors[tag] ? tagColors[tag] : 'category-1'
     },
   },
 }

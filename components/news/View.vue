@@ -291,7 +291,6 @@
 </template>
 
 <script>
-import tagColors from '@/static/json/tag-colors.json'
 import SocialButtons from '@/components/global/SocialButtons'
 import NewsTag from './partial/Tag'
 import NewsPostAuthor from './partial/PostAuthor'
@@ -328,13 +327,6 @@ export default {
       })
       await this.$store.dispatch('news/addView', news.objectId)
       return news
-    },
-    getColor(tag) {
-      if (tagColors[tag]) {
-        return tagColors[tag]
-      } else {
-        return 'category-1'
-      }
     },
   },
 }

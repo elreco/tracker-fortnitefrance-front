@@ -29,7 +29,7 @@ export const actions = {
         name,
       }
     }
-    const stat = await this.$axios
+    return await this.$axios
       .get(`classes/Stat`, {
         params,
       })
@@ -41,26 +41,5 @@ export const actions = {
           return response.results[0]
         }
       })
-
-    const { results } = await this.$axios.get('classes/Match', {
-      params: {
-        where: {
-          $relatedTo: {
-            object: {
-              __type: 'Relation',
-              className: 'Stat',
-              objectId: stat.objectId,
-            },
-            key: 'matches',
-          },
-        },
-        limit: 10,
-      },
-    })
-
-    stat.matches = results
-    console.log(results)
-
-    return stat
   },
 }

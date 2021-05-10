@@ -22,7 +22,7 @@ export const actions = {
   },
   async get(ctx, { id, params }) {
     return await this.$axios
-      .$get(`classes/News/${id}`, {
+      .get(`classes/News/${id}`, {
         params,
       })
       .then((response) => {

@@ -16,8 +16,10 @@
         </div>
       </div>
     </div>
+    <stat-nav />
     <div class="site-content">
       <div class="container">
+        <stat-match v-if="$route.params.type" />
         <stat-view />
       </div>
     </div>
@@ -26,10 +28,13 @@
 
 <script>
 import StatView from '@/components/stat/View'
+import StatMatch from '@/components/stat/Match'
+import StatNav from '@/components/stat/partial/Nav'
 
 export default {
   components: {
     StatView,
+    StatNav,
   },
   validate({ params, query }) {
     if (query.length) {
