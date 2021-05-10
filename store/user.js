@@ -31,8 +31,8 @@ export const actions = {
         }
       )
       updateData.avatar = {
-        name: avatar.data.name,
-        url: avatar.data.url,
+        name: avatar.name,
+        url: avatar.url,
         __type: 'File',
       }
     } else {

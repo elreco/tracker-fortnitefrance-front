@@ -1,9 +1,9 @@
 <template>
   <div class="card card--has-table">
     <div class="card__header"><h4>Matchs récents</h4></div>
+    {{ matches.length }}
     <div class="card__content">
       <div class="table-responsive">
-        {{ matches }}
         <table class="table table-hover game-player-result">
           <thead>
             <tr>
@@ -215,7 +215,7 @@
 export default {
   props: {
     matches: {
-      type: Object,
+      type: Array,
       required: true,
     },
   },

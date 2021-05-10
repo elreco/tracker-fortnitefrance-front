@@ -68,7 +68,7 @@ export default function ({
       });
       return Promise.resolve(false);
     } else {
-      return response
+      return response.data
     }
   })
 }

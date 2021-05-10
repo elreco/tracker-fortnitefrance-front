@@ -99,7 +99,7 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <div v-if="stat && stat.matches" class="row">
       <div class="col-lg-12">
         <stat-match-table :matches="stat.matches" />
       </div>
@@ -137,13 +137,9 @@ export default {
   methods: {
     async getStat() {
       this.loading = true
-      const params = {
-        include: 'matches',
-      }
       const stat = await this.$store
         .dispatch('stat/get', {
           name: this.$route.params.name,
-          params,
         })
         .catch((error) => {
           if (error) {
