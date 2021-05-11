@@ -42,7 +42,11 @@
                   >
                     <span class="circular__percents">
                       <span class="circular__label">Niveau</span>
-                      {{ stat.account && stat.account.level }}
+                      {{
+                        stat.account && stat.account.level
+                          ? stat.account.level
+                          : 0
+                      }}
                     </span>
                   </div>
                 </div>
@@ -122,21 +126,49 @@ export default {
   },
   methods: {
     winrate() {
-      const solo = this.stat.global_stats.solo.winrate
-      const duo = this.stat.global_stats.duo.winrate
-      const squad = this.stat.global_stats.squad.winrate
+      const solo =
+        this.stat.global_stats.solo && this.stat.global_stats.solo.winrate
+          ? this.stat.global_stats.solo.winrate
+          : 0
+      const duo =
+        this.stat.global_stats.duo && this.stat.global_stats.duo.winrate
+          ? this.stat.global_stats.duo.winrate
+          : 0
+      const squad =
+        this.stat.global_stats.squad && this.stat.global_stats.squad.winrate
+          ? this.stat.global_stats.squad.winrate
+          : 0
       return ((solo + duo + squad) * 100) / 3
     },
     kills() {
-      const solo = this.stat.global_stats.solo.kills
-      const duo = this.stat.global_stats.duo.kills
-      const squad = this.stat.global_stats.squad.kills
+      const solo =
+        this.stat.global_stats.solo && this.stat.global_stats.solo.kills
+          ? this.stat.global_stats.solo.kills
+          : 0
+      const duo =
+        this.stat.global_stats.duo && this.stat.global_stats.duo.kills
+          ? this.stat.global_stats.duo.kills
+          : 0
+      const squad =
+        this.stat.global_stats.squad && this.stat.global_stats.squad.kills
+          ? this.stat.global_stats.squad.kills
+          : 0
       return solo + duo + squad
     },
     deaths() {
-      const solo = this.stat.global_stats.solo.matchesplayed
-      const duo = this.stat.global_stats.duo.matchesplayed
-      const squad = this.stat.global_stats.squad.matchesplayed
+      const solo =
+        this.stat.global_stats.solo && this.stat.global_stats.solo.matchesplayed
+          ? this.stat.global_stats.solo.matchesplayed
+          : 0
+      const duo =
+        this.stat.global_stats.duo && this.stat.global_stats.duo.matchesplayed
+          ? this.stat.global_stats.duo.matchesplayed
+          : 0
+      const squad =
+        this.stat.global_stats.squad &&
+        this.stat.global_stats.squad.matchesplayed
+          ? this.stat.global_stats.squad.matchesplayed
+          : 0
       return Math.abs(solo + duo + squad - this.kills())
     },
     killsPct() {

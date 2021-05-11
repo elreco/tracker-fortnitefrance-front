@@ -1,7 +1,7 @@
 <template>
   <div>
     <loader-stat-match v-if="$fetchState.pending" />
-    <template v-else-if="matches && !$fetchState.pending">
+    <template v-else-if="!$fetchState.pending && !$fetchState.error">
       <div class="row">
         <div class="col-lg-12">
           <stat-match-table :matches="matches" title="Tous les matchs" />
@@ -35,21 +35,12 @@ export default {
   },
   methods: {
     async getStat() {
-      const stat = await this.$store
-        .dispatch('stat/get', {
-          name: this.$route.params.name,
-          params: {
-            keys: 'objectId,name',
-          },
-        })
-        .catch((error) => {
-          if (error) {
-            this.$nuxt.error({
-              statusCode: 404,
-              message: "Nous n'avons pas trouvé de joueur portant ce pseudo",
-            })
-          }
-        })
+      const stat = await this.$store.dispatch('stat/get', {
+        name: this.$route.params.name,
+        params: {
+          keys: 'objectId,name',
+        },
+      })
       return stat
     },
     async getMatches() {

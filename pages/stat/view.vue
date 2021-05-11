@@ -10,8 +10,14 @@
         <div class="row">
           <div class="col align-self-start">
             <h1 class="page-heading__title">
-              Les statistiques <span class="highlight">{{ appName }}</span>
+              Les statistiques
+              <span class="highlight">{{ appName }}</span>
             </h1>
+          </div>
+          <div class="col text-right my-auto">
+            <a href="#" class="btn btn-warning btn-sm font-weight-bold"
+              >Ajouter aux favoris</a
+            >
           </div>
         </div>
       </div>
@@ -43,10 +49,7 @@ export default {
     if (query.length) {
       return false
     }
-    if (
-      params.view &&
-      !['overview', 'matches', 'twitch'].includes(params.view)
-    ) {
+    if (params.view && !['matches', 'twitch'].includes(params.view)) {
       return false
     }
     if (!Object.prototype.toString.call(params.name) === '[object String]')
@@ -92,10 +95,16 @@ export default {
   },
   methods: {
     title() {
-      /* switch (this.$router.params.view) {
-
-      } */
-      return `${this.$store.state.stat.meta.title} - Fortnite France`
+      if (this.$router.params && this.$router.params.view) {
+        switch (this.$router.params.view) {
+          case 'matches':
+            return `${this.$store.state.stat.meta.title} - Tous les matchs - Fortnite France`
+          default:
+            return `${this.$store.state.stat.meta.title} - Fortnite France`
+        }
+      } else {
+        return `Fortnite France`
+      }
     },
     description() {
       return `Consultez les statistiques de ${this.$voca.truncate(

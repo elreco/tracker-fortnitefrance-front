@@ -7,9 +7,8 @@ export default function ({
 }) {
   $axios.onResponseError(error => {
     if (error && error.response && error.response.data && error.response.data.code) {
-      const {
-        code
-      } = error.response.data
+      const { code } = error.response.data
+
       switch (code) {
         case 101:
           $toast({
@@ -47,6 +46,15 @@ export default function ({
             },
           })
           break
+        case 141:
+          if (error.response && error.response.config && error.response.config.url === 'classes/Stat' && error.response.config.method === 'get') {
+            nuxtError({
+              statusCode: 404,
+              playerNotFound: true,
+              message: error.response.data.error,
+            });
+          }
+            break
         default:
           $toast({
             component: Toast,
@@ -57,18 +65,7 @@ export default function ({
           })
           break
       }
-    }
-  })
-
-  $axios.onResponse(response => {
-    if (!response.data) {
-      nuxtError({
-        statusCode: 404,
-        message: "La page que vous demandez est introuvable",
-      });
       return Promise.resolve(false);
-    } else {
-      return response.data
     }
   })
 }

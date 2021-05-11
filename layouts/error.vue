@@ -25,15 +25,25 @@
                 <img src="/images/icon-ghost.svg" class="w-75" alt="" />
               </figure>
               <header class="error__header">
-                <h2 class="error__title">OUPS! Il y a une erreur</h2>
-                <h3 class="error__subtitle">
-                  Nous avons une erreur {{ error.statusCode }}!
-                </h3>
+                <template v-if="error.playerNotFound">
+                  <h2 class="error__title">OUPS! Aucun joueur trouvé</h2>
+                  <h3 class="error__subtitle">
+                    Nous ne trouvons pas
+                    {{ $route.params && $route.params.name }} !
+                  </h3>
+                </template>
+                <template v-else>
+                  <h2 class="error__title">OUPS! Il y a une erreur</h2>
+                  <h3 class="error__subtitle">
+                    Nous avons une erreur
+                    <span class="highlight">{{ error.statusCode }}</span> !
+                  </h3>
+                </template>
               </header>
               <div class="header-search-form">
                 <stat-search />
               </div>
-              <div class="error__description">
+              <div v-if="!error.playerNotFound" class="error__description">
                 {{ error.message }}
               </div>
 

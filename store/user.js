@@ -3,10 +3,10 @@ export const actions = {
     if ('confirmPassword' in data) {
       delete data.confirmPassword
     }
-    return await this.$axios.post('users', data)
+    return await this.$axios.$post('users', data)
   },
   async logout(ctx) {
-    return await this.$axios.post('logout')
+    return await this.$axios.$post('logout')
   },
   async update(ctx, { id, data }) {
     const updateData = {}
@@ -21,7 +21,7 @@ export const actions = {
       delete updateData.email
     }
     if (updateData.avatar) {
-      const avatar = await this.$axios.post(
+      const avatar = await this.$axios.$post(
         `files/${updateData.avatar.name}`,
         updateData.avatar,
         {
@@ -38,6 +38,6 @@ export const actions = {
     } else {
       delete updateData.avatar
     }
-    return await this.$axios.put(`users/${id}`, updateData)
+    return await this.$axios.$put(`users/${id}`, updateData)
   },
 }

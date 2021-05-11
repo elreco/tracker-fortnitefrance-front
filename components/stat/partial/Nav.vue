@@ -8,11 +8,7 @@
         <ul class="content-filter__list">
           <li
             class="content-filter__item"
-            :class="
-              !$route.params.view || $route.params.view === 'overview'
-                ? 'content-filter__item--active'
-                : ''
-            "
+            :class="!$route.params.view ? 'content-filter__item--active' : ''"
           >
             <router-link
               :to="{ name: 'stat.view' }"

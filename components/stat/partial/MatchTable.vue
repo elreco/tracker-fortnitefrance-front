@@ -4,7 +4,7 @@
       <h4>{{ title }}</h4>
     </div>
     <div class="card__content">
-      <div class="table-responsive">
+      <div v-if="matches.length" class="table-responsive">
         <table class="table table-hover game-player-result">
           <thead>
             <tr>
@@ -23,16 +23,21 @@
           <tbody>
             <tr v-for="match in matches" :key="match.objectId">
               <td class="game-player-result__date">
-                {{ $moment(match.match_data.date).calendar() }}
+                {{
+                  match.match_data && $moment(match.match_data.date).calendar()
+                }}
               </td>
               <td class="game-player-result__vs">
                 <div class="team-meta">
                   <div class="team-meta__info">
                     <h6 class="team-meta__name">
-                      {{ getPlatform(match.match_data.platform) }}
+                      {{
+                        match.match_data &&
+                        getPlatform(match.match_data.platform)
+                      }}
                     </h6>
                     <span class="team-meta__place">{{
-                      match.match_data.platform
+                      match.match_data && match.match_data.platform
                     }}</span>
                   </div>
                 </div>
@@ -40,25 +45,40 @@
               <td
                 class="game-player-result__character highlight text-left text-capitalize"
               >
-                {{ formatModeName(match.match_data.readable_name) }}
+                {{
+                  match.match_data &&
+                  formatModeName(match.match_data.readable_name)
+                }}
               </td>
               <td class="game-player-result highlight">
-                {{ $numeral(match.match_data.matchesplayed).format('0') }}
+                {{
+                  match.match_data &&
+                  $numeral(match.match_data.matchesplayed).format('0')
+                }}
               </td>
               <td class="game-player-result highlight">
-                {{ formatMinutesPlayed(match.match_data.minutesplayed) }}
+                {{
+                  match.match_data &&
+                  formatMinutesPlayed(match.match_data.minutesplayed)
+                }}
               </td>
               <td class="game-player-result highlight">
-                {{ $numeral(match.match_data.kills).format('0') }}
+                {{
+                  match.match_data &&
+                  $numeral(match.match_data.kills).format('0')
+                }}
               </td>
               <td class="game-player-result highlight">
-                {{ $numeral(match.match_data.placetop1).format('0') }}
+                {{
+                  match.match_data &&
+                  $numeral(match.match_data.placetop1).format('0')
+                }}
               </td>
 
               <td class="game-player-result__mvp">
                 <div
                   :class="
-                    match.match_data.placetop1 > 0
+                    match.match_data && match.match_data.placetop1 > 0
                       ? `alc-icon`
                       : `alc-icon--disabled`
                   "
@@ -70,6 +90,10 @@
             </tr>
           </tbody>
         </table>
+      </div>
+      <div v-else class="alert alert-danger alert--rounded my-3 mx-2">
+        <strong>Aucun match !</strong> Il n'y a aucun match trouvé pour ce
+        joueur. Veuillez réessayer plus tard svp.
       </div>
     </div>
   </div>

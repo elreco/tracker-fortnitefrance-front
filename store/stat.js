@@ -15,22 +15,22 @@ export const mutations = {
 
 export const actions = {
   async fetch(ctx, params) {
-    return await this.$axios.get('classes/Stat', {
+    return await this.$axios.$get('classes/Stat', {
       params,
     })
   },
   async get(ctx, { name, params = {} }) {
     if (params.where) {
       params.where.push({
-        name,
+        name_lowercase: name.toLowerCase(),
       })
     } else {
       params.where = {
-        name,
+        name_lowercase: name.toLowerCase(),
       }
     }
     return await this.$axios
-      .get(`classes/Stat`, {
+      .$get(`classes/Stat`, {
         params,
       })
       .then((response) => {

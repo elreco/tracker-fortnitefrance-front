@@ -16,13 +16,13 @@ export const mutations = {
 
 export const actions = {
   async fetch(ctx, params) {
-    return await this.$axios.get('classes/News', {
+    return await this.$axios.$get('classes/News', {
       params,
     })
   },
   async get(ctx, { id, params }) {
     return await this.$axios
-      .get(`classes/News/${id}`, {
+      .$get(`classes/News/${id}`, {
         params,
       })
       .then((response) => {
@@ -32,6 +32,6 @@ export const actions = {
       })
   },
   async addView(ctx, id) {
-    return await this.$axios.post(`functions/newsAddView`, { id })
+    return await this.$axios.$post(`functions/newsAddView`, { id })
   },
 }

@@ -1,7 +1,7 @@
 <template>
   <div>
     <loader-stat-overview v-if="$fetchState.pending" />
-    <template v-else-if="stat && matches && !$fetchState.pending">
+    <template v-else-if="!$fetchState.pending && !$fetchState.error">
       <div class="team-roster team-roster--card mb-0 pb-0">
         <stat-general-card :stat="stat" />
         <div class="row">
@@ -60,18 +60,9 @@ export default {
   },
   methods: {
     async getStat() {
-      const stat = await this.$store
-        .dispatch('stat/get', {
-          name: this.$route.params.name,
-        })
-        .catch((error) => {
-          if (error) {
-            this.$nuxt.error({
-              statusCode: 404,
-              message: "Nous n'avons pas trouvé de joueur portant ce pseudo",
-            })
-          }
-        })
+      const stat = await this.$store.dispatch('stat/get', {
+        name: this.$route.params.name,
+      })
       return stat
     },
     async getMatches() {
