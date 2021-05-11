@@ -2,11 +2,19 @@
   "discord": {
     "link": "https://discord.com/invite/3xsGnmK",
     "icon": "fab fa-discord",
-    "title": "Discord"
+    "title": "Discord",
+    "name": "Fortnite France"
   },
   "twitter": {
     "link": "https://twitter.com/el__reco",
     "icon": "fab fa-twitter",
-    "title": "Twitter"
+    "title": "Twitter",
+    "name": "@el__reco"
+  },
+  "twitch": {
+    "link": "https://twitch.tv/elreco_",
+    "icon": "fab fa-twitch",
+    "title": "Twitch",
+    "name": "/elreco_"
   }
 }

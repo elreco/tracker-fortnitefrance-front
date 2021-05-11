@@ -6,13 +6,22 @@
         <stat-general-card :stat="stat" />
         <div class="row">
           <div class="col-sm-12 col-lg-4">
-            <stat-playlist-widget :playlist="stat.solo" title="Solo" />
+            <stat-playlist-widget
+              :playlist="stat.global_stats && stat.global_stats.solo"
+              title="Solo"
+            />
           </div>
           <div class="col-sm-12 col-lg-4">
-            <stat-playlist-widget :playlist="stat.duo" title="Duo" />
+            <stat-playlist-widget
+              :playlist="stat.global_stats && stat.global_stats.duo"
+              title="Duo"
+            />
           </div>
           <div class="col-sm-12 col-lg-4">
-            <stat-playlist-widget :playlist="stat.squad" title="Squad" />
+            <stat-playlist-widget
+              :playlist="stat.global_stats && stat.global_stats.squad"
+              title="Squad"
+            />
           </div>
         </div>
       </div>

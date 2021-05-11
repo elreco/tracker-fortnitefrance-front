@@ -299,9 +299,9 @@
                       </div>
                     </div> -->
                   </li>
-                  <li>
+                  <!-- <li>
                     <nuxt-link :to="{ name: 'index' }">Tournois</nuxt-link>
-                  </li>
+                  </li> -->
                   <li>
                     <a :href="discord.link">{{ discord.title }}</a>
                   </li>
@@ -323,46 +323,13 @@
           <div class="container">
             <div class="sponsors">
               <ul class="sponsors-logos">
-                <li class="sponsors__item">
-                  <a href="http://www.darkgamestudios.com" target="_blank"
-                    ><img
-                      src="/images/esports/sponsor-darkgame.png"
-                      alt="Dark Game"
-                  /></a>
-                </li>
-                <li class="sponsors__item">
-                  <a href="http://www.thegeniusgeek.com" target="_blank"
-                    ><img
-                      src="/images/esports/sponsor-geniusgeek.png"
-                      alt="GeniusGeek"
-                  /></a>
-                </li>
-                <li class="sponsors__item">
-                  <a href="http://www.ghostgamess.com" target="_blank"
-                    ><img
-                      src="/images/esports/sponsor-ghostgames.png"
-                      alt="GhostGames"
-                  /></a>
-                </li>
-                <li class="sponsors__item">
-                  <a href="http://www.gamechatapp.com" target="_blank"
-                    ><img
-                      src="/images/esports/sponsor-gamechat.png"
-                      alt="GameChat"
-                  /></a>
-                </li>
-                <li class="sponsors__item">
-                  <a href="http://www.elite-s-productions.com" target="_blank"
-                    ><img
-                      src="/images/esports/sponsor-elitesound.png"
-                      alt="eliteSound"
-                  /></a>
-                </li>
-                <li class="sponsors__item">
-                  <a href="http://www.dragonfireagency.com" target="_blank"
-                    ><img
-                      src="/images/esports/sponsor-dragonfire.png"
-                      alt="DragonFire"
+                <li
+                  v-for="sponsor in sponsors"
+                  :key="sponsor"
+                  class="sponsors__item"
+                >
+                  <a :href="sponsor.link" target="_blank"
+                    ><img class="img-sponsor" :src="sponsor.image" alt=""
                   /></a>
                 </li>
               </ul>
@@ -370,413 +337,112 @@
           </div>
         </div>
         <div class="footer-widgets effect-duotone effect-duotone--base">
+          <div class="effect-duotone__layer">
+            <div class="effect-duotone__layer-inner"></div>
+          </div>
           <div class="footer-widgets__inner">
             <div class="container">
               <div class="row">
-                <div class="col-12 col-lg-6">
-                  <div class="row">
-                    <div class="col-12 col-sm-6 col-md-6">
-                      <div class="footer-col-inner">
-                        <aside class="widget widget--footer widget_nav_menu">
-                          <h4 class="widget__title">Useful Links</h4>
-                          <div class="widget__content">
-                            <div class="row">
-                              <div class="col">
-                                <ul class="widget__list">
-                                  <li>
-                                    <a href="_esports_index.html">Home</a>
-                                  </li>
-                                  <li>
-                                    <a href="_esports_blog-1.html">News Page</a>
-                                  </li>
-                                  <li>
-                                    <a href="_esports_blog-post-1.html"
-                                      >Post Page</a
-                                    >
-                                  </li>
-                                  <li>
-                                    <a href="_esports_team-overview.html"
-                                      >Teams</a
-                                    >
-                                  </li>
-                                  <li>
-                                    <a href="_esports_team-last-results.html"
-                                      >Team Stats</a
-                                    >
-                                  </li>
-                                  <li>
-                                    <a href="_esports_team-roster.html"
-                                      >Roster</a
-                                    >
-                                  </li>
-                                  <li>
-                                    <a href="_esports_event-tournament.html"
-                                      >Tournament</a
-                                    >
-                                  </li>
-                                </ul>
-                              </div>
-                              <div class="col">
-                                <ul class="widget__list">
-                                  <li>
-                                    <a href="_esports_team-player.html"
-                                      >Player Bio</a
-                                    >
-                                  </li>
-                                  <li>
-                                    <a href="_esports_event-overview-1a.html"
-                                      >Match Stats</a
-                                    >
-                                  </li>
-                                  <li>
-                                    <a href="_esports_event-overview-1a.html"
-                                      >Live Stream</a
-                                    >
-                                  </li>
-                                  <li>
-                                    <a href="_esports_team-gallery.html"
-                                      >Gallery</a
-                                    >
-                                  </li>
-                                  <li>
-                                    <a href="_esports_team-videos.html"
-                                      >Videos</a
-                                    >
-                                  </li>
-                                  <li>
-                                    <a href="_esports_shop-fullwidth.html"
-                                      >Merchandise</a
-                                    >
-                                  </li>
-                                  <li>
-                                    <a href="_esports_features-shortcodes.html"
-                                      >Shortcodes</a
-                                    >
-                                  </li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                        </aside>
-                        <!-- Widget: Links / End -->
-                      </div>
-                    </div>
-                    <div class="col-6 col-sm-3 col-md-3">
-                      <div class="footer-col-inner">
-                        <!-- Widget: Links -->
-                        <aside class="widget widget--footer widget_nav_menu">
-                          <h4 class="widget__title">Streams</h4>
-                          <div class="widget__content">
+                <div class="col-12 col-sm-3 col-md-3">
+                  <div class="footer-col-inner">
+                    <aside class="widget widget--footer widget_nav_menu">
+                      <h4 class="widget__title">Liens utiles</h4>
+                      <div class="widget__content">
+                        <div class="row">
+                          <div class="col">
                             <ul class="widget__list">
                               <li>
-                                <a href="_esports_team-player.html"
-                                  >The Destroy</a
+                                <router-link :to="{ name: 'index' }"
+                                  >Accueil</router-link
                                 >
                               </li>
                               <li>
-                                <a href="_esports_team-player.html"
-                                  >FayeDaBebop</a
-                                >
+                                <a :href="discord.link">{{ discord.name }}</a>
                               </li>
                               <li>
-                                <a href="_esports_team-player.html"
-                                  >Crazzzy_80</a
-                                >
-                              </li>
-                              <li>
-                                <a href="_esports_team-player.html"
-                                  >Game Huntress</a
-                                >
-                              </li>
-                              <li>
-                                <a href="_esports_team-player.html">Logan-X</a>
-                              </li>
-                              <li>
-                                <a href="_esports_team-player.html"
-                                  >Kelly_Spiegel9</a
+                                <router-link :to="{ name: 'login' }">
+                                  Mon compte</router-link
                                 >
                               </li>
                             </ul>
                           </div>
-                        </aside>
-                        <!-- Widget: Links / End -->
+                        </div>
                       </div>
-                    </div>
-                    <div class="col-6 col-sm-3 col-md-3">
-                      <div class="footer-col-inner">
-                        <!-- Widget: Pages -->
-                        <aside class="widget widget--footer widget_pages">
-                          <h4 class="widget__title">About Us</h4>
-                          <div class="widget__content">
-                            <ul class="widget__list">
-                              <li>
-                                <a href="_esports_page-contacts.html"
-                                  >Contact</a
-                                >
-                              </li>
-                              <li>
-                                <a href="_esports_page-faqs.html">FAQs</a>
-                              </li>
-                              <li>
-                                <a href="_esports_page-sponsors.html"
-                                  >Sponsors</a
-                                >
-                              </li>
-                              <li>
-                                <a href="_esports_team-schedule.html"
-                                  >Next Events</a
-                                >
-                              </li>
-                              <li>
-                                <a href="_esports_blog-post-3.html">Guides</a>
-                              </li>
-                              <li>
-                                <a href="_esports_shop-login.html"
-                                  >Register/Login</a
-                                >
-                              </li>
-                              <li>
-                                <a href="#">Privacy Policy</a>
-                              </li>
-                            </ul>
-                          </div>
-                        </aside>
-                        <!-- Widget: Pages / End -->
-                      </div>
-                    </div>
+                    </aside>
                   </div>
                 </div>
-
-                <div class="col-sm-6 col-lg-3">
+                <div class="col-12 col-sm-5 col-md-5">
                   <div class="footer-col-inner">
-                    <!-- Widget: Popular Posts / End -->
-                    <div class="widget widget--footer widget-popular-posts">
-                      <h4 class="widget__title">Popular News</h4>
+                    <aside class="widget widget--footer widget_nav_menu">
+                      <h4 class="widget__title">À Propos</h4>
                       <div class="widget__content">
-                        <ul class="posts posts--simple-list">
-                          <li class="posts__item posts__item--category-4">
-                            <figure class="posts__thumb posts__thumb--hover">
-                              <a href="#"
-                                ><img
-                                  src="/images/esports/samples/post-img4-xs.jpg"
-                                  alt=""
-                              /></a>
-                            </figure>
-                            <div class="posts__inner">
-                              <div class="posts__cat">
-                                <span
-                                  class="label posts__cat-label posts__cat-label--category-4"
-                                  >Xenowatch</span
-                                >
-                              </div>
-                              <h6
-                                class="posts__title posts__title--color-hover"
-                              >
-                                <a href="_esports_blog-post-1.html"
-                                  >Xenowatch&#x27;s new patch will fix the faces
-                                  bugs</a
-                                >
-                              </h6>
-                              <time datetime="2017-08-21" class="posts__date"
-                                >August 27th, 2018</time
-                              >
-                            </div>
-                          </li>
-                          <li class="posts__item posts__item--category-2">
-                            <figure class="posts__thumb posts__thumb--hover">
-                              <a href="#"
-                                ><img
-                                  src="/images/esports/samples/post-img2-xs.jpg"
-                                  alt=""
-                              /></a>
-                            </figure>
-                            <div class="posts__inner">
-                              <div class="posts__cat">
-                                <span
-                                  class="label posts__cat-label posts__cat-label--category-2"
-                                  >L.O. Heroes</span
-                                >
-                              </div>
-                              <h6
-                                class="posts__title posts__title--color-hover"
-                              >
-                                <a href="_esports_blog-post-1.html"
-                                  >A new mage character is coming to the
-                                  League</a
-                                >
-                              </h6>
-                              <time datetime="2017-08-21" class="posts__date"
-                                >July 16th, 2018</time
-                              >
-                            </div>
-                          </li>
-                        </ul>
+                        <p>
+                          Fortnite France est un site de statistiques pour
+                          Fortnite non affilié à Epic Games. Retrouvez vos
+                          statistiques en français et partagez-les à vos amis,
+                          n'importe où sur internet et les réseaux sociaux.
+                        </p>
                       </div>
-                    </div>
-                    <!-- Widget: Popular Posts / End -->
+                    </aside>
                   </div>
                 </div>
-                <div class="col-sm-6 col-lg-3">
+                <div class="col-12 col-sm-4 col-md-4">
                   <div class="footer-col-inner">
-                    <!-- Widget: Popular Posts / End -->
-                    <div class="widget widget--footer widget-popular-posts">
-                      <h4 class="widget__title">Featured News</h4>
+                    <aside class="widget widget--footer widget_nav_menu">
+                      <h4 class="widget__title">Serveur Discord</h4>
                       <div class="widget__content">
-                        <ul class="posts posts--simple-list">
-                          <li
-                            class="posts__item posts__item--category-1 posts__item--category-3"
-                          >
-                            <figure class="posts__thumb posts__thumb--hover">
-                              <a href="#"
-                                ><img
-                                  src="/images/esports/samples/post-img3-xs.jpg"
-                                  alt=""
-                              /></a>
-                            </figure>
-                            <div class="posts__inner">
-                              <div class="posts__cat">
-                                <span
-                                  class="label posts__cat-label posts__cat-label--category-1"
-                                  >The Team</span
-                                ><span
-                                  class="label posts__cat-label posts__cat-label--category-3"
-                                  >Striker GO</span
-                                >
-                              </div>
-                              <h6
-                                class="posts__title posts__title--color-hover"
-                              >
-                                <a href="_esports_blog-post-1.html"
-                                  >The Team defeated the L.A. Pirates 2-1 in the
-                                  Pro League...</a
-                                >
-                              </h6>
-                              <time datetime="2017-08-21" class="posts__date"
-                                >September 24th, 2018</time
-                              >
-                            </div>
-                          </li>
-                          <li class="posts__item posts__item--category-4">
-                            <figure class="posts__thumb posts__thumb--hover">
-                              <a href="#"
-                                ><img
-                                  src="/images/esports/samples/post-img13-xs.jpg"
-                                  alt=""
-                              /></a>
-                            </figure>
-                            <div class="posts__inner">
-                              <div class="posts__cat">
-                                <span
-                                  class="label posts__cat-label posts__cat-label--category-4"
-                                  >Xenowatch</span
-                                >
-                              </div>
-                              <h6
-                                class="posts__title posts__title--color-hover"
-                              >
-                                <a href="_esports_blog-post-1.html"
-                                  >New modes are coming in the April update</a
-                                >
-                              </h6>
-                              <time datetime="2017-08-21" class="posts__date"
-                                >June 18th, 2018</time
-                              >
-                            </div>
-                          </li>
-                        </ul>
+                        <p>
+                          Pour rejoindre notre communauté ou pour poser vos
+                          questions concernant les statistiques ou l'api, vous
+                          pouvez rejoindre notre Discord !
+                        </p>
+                        <div class="mx-auto w-50">
+                          <a :href="discord.link">
+                            <img
+                              src="/images/esports/discord.svg"
+                              class="img-fluid"
+                              alt=""
+                            />
+                          </a>
+                        </div>
                       </div>
-                    </div>
-                    <!-- Widget: Popular Posts / End -->
+                    </aside>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <!-- Footer Widgets / End -->
 
-        <!-- Footer Social Links -->
         <div class="footer-social">
           <div class="container">
             <ul class="footer-social__list list-unstyled">
-              <li class="footer-social__item">
-                <a href="#" class="footer-social__link">
+              <li
+                v-for="social in socials"
+                :key="social"
+                class="footer-social__item"
+              >
+                <a :href="social.link" class="footer-social__link">
                   <span class="footer-social__icon">
-                    <i class="fab fa-facebook"></i>
+                    <i :class="social.icon"></i>
                   </span>
                   <div class="footer-social__txt">
-                    <span class="footer-social__name">Facebook</span>
-                    <span class="footer-social__user">/alchemistsgaming</span>
-                  </div>
-                </a>
-              </li>
-              <li class="footer-social__item">
-                <a href="#" class="footer-social__link">
-                  <span class="footer-social__icon">
-                    <i class="fab fa-twitter"></i>
-                  </span>
-                  <div class="footer-social__txt">
-                    <span class="footer-social__name">Twitter</span>
-                    <span class="footer-social__user">@alchemistsgaming</span>
-                  </div>
-                </a>
-              </li>
-              <li class="footer-social__item">
-                <a href="#" class="footer-social__link">
-                  <span class="footer-social__icon">
-                    <i class="fab fa-twitch"></i>
-                  </span>
-                  <div class="footer-social__txt">
-                    <span class="footer-social__name">Twitch</span>
-                    <span class="footer-social__user">@alchemistsgaming</span>
-                  </div>
-                </a>
-              </li>
-              <li class="footer-social__item">
-                <a href="#" class="footer-social__link">
-                  <span class="footer-social__icon">
-                    <i class="fab fa-youtube"></i>
-                  </span>
-                  <div class="footer-social__txt">
-                    <span class="footer-social__name">YouTube</span>
-                    <span class="footer-social__user">@alchemistsgaming</span>
-                  </div>
-                </a>
-              </li>
-              <li class="footer-social__item">
-                <a href="#" class="footer-social__link">
-                  <span class="footer-social__icon">
-                    <i class="fab fa-google-plus-g"></i>
-                  </span>
-                  <div class="footer-social__txt">
-                    <span class="footer-social__name">Google+</span>
-                    <span class="footer-social__user">/alchemistsgaming</span>
-                  </div>
-                </a>
-              </li>
-              <li class="footer-social__item">
-                <a href="#" class="footer-social__link">
-                  <span class="footer-social__icon">
-                    <i class="fab fa-instagram"></i>
-                  </span>
-                  <div class="footer-social__txt">
-                    <span class="footer-social__name">Instagram</span>
-                    <span class="footer-social__user">@alchemistsgaming</span>
+                    <span class="footer-social__name">{{ social.title }}</span>
+                    <span class="footer-social__user">{{ social.name }}</span>
                   </div>
                 </a>
               </li>
             </ul>
           </div>
         </div>
-        <!-- Footer Social Links / End -->
       </footer>
-      <!-- Footer / End -->
     </div>
   </body>
 </template>
 
 <script>
 import socials from '@/static/json/socials.json'
+import sponsors from '@/static/json/sponsors.json'
 import SocialBar from '~/components/global/SocialBar.vue'
 import StatSearch from '~/components/stat/partial/Search.vue'
 import Toast from '~/components/global/Toast.vue'
@@ -789,6 +455,9 @@ export default {
   data() {
     return {
       discord: socials.discord,
+      socials,
+      sponsors,
+      contactMail: process.env.CONTACT_MAIL,
     }
   },
   fetchDelay: 2000,

@@ -8,6 +8,11 @@
   object-fit: cover;
 }
 
+.img-sponsor {
+  width: 200px;
+  filter: brightness(0) invert(1);
+}
+
 .header-logo__img {
   height: 121px !important;
 }

@@ -5,98 +5,78 @@
     </div>
     <div class="widget__content-secondary">
       <div class="widget-player__details">
-        <div class="widget-player__details__item">
-          <div class="widget-player__details-desc-wrapper">
-            <span class="widget-player__details-holder">
-              <span class="widget-player__details-label">Matches Played</span>
-              <span class="widget-player__details-desc">in his career</span>
-            </span>
-            <span class="widget-player__details-value">19</span>
-          </div>
-        </div>
-        <div class="widget-player__details__item">
-          <div class="widget-player__details-desc-wrapper">
-            <span class="widget-player__details-holder">
-              <span class="widget-player__details-label"
-                >Tournaments Played</span
-              >
-              <span class="widget-player__details-desc">in his career</span>
-            </span>
-            <span class="widget-player__details-value">2</span>
-          </div>
-        </div>
-        <div class="widget-player__details__item">
-          <div class="widget-player__details-desc-wrapper">
-            <span class="widget-player__details-holder">
-              <span class="widget-player__details-label">Total Kills</span>
-              <span class="widget-player__details-desc">in his career</span>
-            </span>
-            <span class="widget-player__details-value">3640</span>
-          </div>
-        </div>
-        <div class="widget-player__details__item">
-          <div class="widget-player__details-desc-wrapper">
-            <span class="widget-player__details-holder">
-              <span class="widget-player__details-label">Total Deaths</span>
-              <span class="widget-player__details-desc">in his career</span>
-            </span>
-            <span class="widget-player__details-value">908</span>
-          </div>
-        </div>
-        <div class="widget-player__details__item">
-          <div class="widget-player__details-desc-wrapper">
-            <span class="widget-player__details-holder">
-              <span class="widget-player__details-label">Total Assists</span>
-              <span class="widget-player__details-desc">in his career</span>
-            </span>
-            <span class="widget-player__details-value">1953</span>
-          </div>
-        </div>
-        <div class="widget-player__details__item">
-          <div class="widget-player__details-desc-wrapper">
-            <span class="widget-player__details-holder">
-              <span class="widget-player__details-label">Total Pentakills</span>
-              <span class="widget-player__details-desc">in his career</span>
-            </span>
-            <span class="widget-player__details-value">307</span>
-          </div>
-        </div>
-        <div class="widget-player__details__item">
-          <div class="widget-player__details-desc-wrapper">
-            <span class="widget-player__details-holder">
-              <span class="widget-player__details-label">Total Gold</span>
-              <span class="widget-player__details-desc">in his career</span>
-            </span>
-            <span class="widget-player__details-value">28</span>
-          </div>
-        </div>
-        <div class="widget-player__details__item">
-          <div class="widget-player__details-desc-wrapper">
-            <span class="widget-player__details-holder">
-              <span class="widget-player__details-label">First Blood</span>
-              <span class="widget-player__details-desc">in his career</span>
-            </span>
-            <span class="widget-player__details-value">19</span>
-          </div>
-        </div>
-        <div class="widget-player__details__item">
-          <div class="widget-player__details-desc-wrapper">
-            <span class="widget-player__details-holder">
-              <span class="widget-player__details-label">Damage Made</span>
-              <span class="widget-player__details-desc">in his career</span>
-            </span>
-            <span class="widget-player__details-value">963K</span>
-          </div>
-        </div>
-        <div class="widget-player__details__item">
-          <div class="widget-player__details-desc-wrapper">
-            <span class="widget-player__details-holder">
-              <span class="widget-player__details-label">Damage Received</span>
-              <span class="widget-player__details-desc">in his career</span>
-            </span>
-            <span class="widget-player__details-value">637K</span>
-          </div>
-        </div>
+        <stat-playlist-item
+          v-if="playlist.placetop1"
+          :value="$numeral(playlist.placetop1).format()"
+          title="Victoires"
+        />
+        <stat-playlist-item
+          v-if="playlist.kd"
+          :value="$numeral(playlist.kd).format('0.00')"
+          title="Ratio K/D"
+        />
+        <stat-playlist-item
+          v-if="playlist.kills"
+          :value="$numeral(playlist.kills).format()"
+          title="Kills"
+        />
+        <stat-playlist-item
+          v-if="playlist.kills && playlist.matchesplayed"
+          :value="
+            $numeral(Math.abs(playlist.kills - playlist.matchesplayed)).format()
+          "
+          title="Morts"
+        />
+        <stat-playlist-item
+          v-if="playlist.placetop10"
+          :value="$numeral(playlist.placetop10).format()"
+          title="Top 10"
+        />
+        <stat-playlist-item
+          v-if="playlist.placetop25"
+          :value="$numeral(playlist.placetop25).format()"
+          title="Top 25"
+        />
+        <stat-playlist-item
+          v-if="playlist.placetop5"
+          :value="$numeral(playlist.placetop5).format()"
+          title="Top 5"
+        />
+        <stat-playlist-item
+          v-if="playlist.placetop12"
+          :value="$numeral(playlist.placetop12).format()"
+          title="Top 12"
+        />
+        <stat-playlist-item
+          v-if="playlist.placetop3"
+          :value="$numeral(playlist.placetop3).format()"
+          title="Top 3"
+        />
+        <stat-playlist-item
+          v-if="playlist.placetop6"
+          :value="$numeral(playlist.placetop6).format()"
+          title="Top 6"
+        />
+        <stat-playlist-item
+          v-if="playlist.minutesplayed"
+          :value="formatMinutesPlayed(playlist.minutesplayed)"
+          title="Tps de jeu"
+        />
+        <stat-playlist-item
+          v-if="playlist.kills && playlist.matchesplayed"
+          :value="killsPerMatches(playlist.kills, playlist.matchesplayed)"
+          title="Kills / match"
+        />
+        <stat-playlist-item
+          v-if="playlist.kills && playlist.minutesplayed"
+          :value="killsPerMinutes(playlist.kills, playlist.minutesplayed)"
+          title="Kills / min."
+        />
+        <stat-playlist-item
+          v-if="playlist.score && playlist.minutesplayed"
+          :value="scorePerMinutes(playlist.score, playlist.minutesplayed)"
+          title="Score / min."
+        />
       </div>
     </div>
 
@@ -109,11 +89,11 @@
             <div
               class="widget-player__stat--value widget-player__stat--value-primary"
             >
-              7960
+              {{ $numeral(playlist.placetop1).format() }}
             </div>
             <div class="widget-player__stat-inner">
-              <div class="widget-player__stat--label">Total Minutes Played</div>
-              <div class="widget-player__stat--desc">in his career</div>
+              <div class="widget-player__stat--label">Victoires</div>
+              <div class="widget-player__stat--desc"></div>
             </div>
           </div>
         </div>
@@ -123,11 +103,36 @@
 </template>
 
 <script>
+import StatPlaylistItem from './PlaylistItem'
 export default {
+  components: {
+    StatPlaylistItem,
+  },
   props: {
+    playlist: {
+      type: Object,
+      required: true,
+    },
     title: {
       type: String,
       required: true,
+    },
+  },
+  methods: {
+    formatMinutesPlayed(minutes) {
+      const milliseconds = this.$moment
+        .duration(minutes, 'minutes')
+        .asMilliseconds()
+      return this.$moment.utc(milliseconds).format('D[J]hh[H]mm[M]')
+    },
+    killsPerMatches(kills, matches) {
+      return this.$numeral(kills / matches).format('0.00')
+    },
+    killsPerMinutes(kills, minutes) {
+      return this.$numeral(kills / minutes).format('0.00')
+    },
+    scorePerMinutes(score, minutes) {
+      return this.$numeral(score / minutes).format('0.00')
     },
   },
 }
