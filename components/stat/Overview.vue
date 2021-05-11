@@ -1,42 +1,41 @@
 <template>
   <div>
-    <loader-stat-view v-if="$fetchState.pending" />
-    <div
-      v-else-if="stat && !$fetchState.pending"
-      class="team-roster team-roster--card mb-0 pb-0"
-    >
-      <stat-general-card :stat="stat" />
+    <loader-stat-overview v-if="$fetchState.pending" />
+    <template v-else-if="stat && matches && !$fetchState.pending">
+      <div class="team-roster team-roster--card mb-0 pb-0">
+        <stat-general-card :stat="stat" />
+        <div class="row">
+          <div class="col-sm-12 col-lg-4">
+            <stat-playlist-widget :playlist="stat.solo" title="Solo" />
+          </div>
+          <div class="col-sm-12 col-lg-4">
+            <stat-playlist-widget :playlist="stat.duo" title="Duo" />
+          </div>
+          <div class="col-sm-12 col-lg-4">
+            <stat-playlist-widget :playlist="stat.squad" title="Squad" />
+          </div>
+        </div>
+      </div>
       <div class="row">
-        <div class="col-sm-12 col-lg-4">
-          <stat-playlist-card :playlist="stat.solo" title="Solo" />
-        </div>
-        <div class="col-sm-12 col-lg-4">
-          <stat-playlist-card :playlist="stat.duo" title="Duo" />
-        </div>
-        <div class="col-sm-12 col-lg-4">
-          <stat-playlist-card :playlist="stat.squad" title="Squad" />
+        <div class="col-lg-12">
+          <stat-match-table :matches="matches" title="Matchs récents" />
         </div>
       </div>
-    </div>
-    <div v-if="matches" class="row">
-      <div class="col-lg-12">
-        <stat-match-table :matches="matches" />
-      </div>
-    </div>
+    </template>
   </div>
 </template>
 
 <script>
 import StatGeneralCard from './partial/GeneralCard'
 import StatMatchTable from './partial/MatchTable'
-import StatPlaylistCard from './partial/PlaylistCard'
-import LoaderStatView from './loader/View'
+import StatPlaylistWidget from './partial/PlaylistWidget'
+import LoaderStatOverview from './loader/Overview'
 
 export default {
   components: {
     StatGeneralCard,
-    LoaderStatView,
-    StatPlaylistCard,
+    LoaderStatOverview,
+    StatPlaylistWidget,
     StatMatchTable,
   },
   data() {

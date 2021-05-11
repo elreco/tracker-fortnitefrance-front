@@ -1,5 +1,6 @@
 {
   "gamepad": "Manette",
   "touch": "Mobile",
-  "keyboardandmouse": "Calvier et souris"
+  "keyboardmouse": "Clavier et souris",
+  "bp": "Battle Pass"
 }

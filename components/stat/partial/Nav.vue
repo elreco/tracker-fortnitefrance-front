@@ -6,26 +6,42 @@
       <div class="content-filter__inner">
         <a href="#" class="content-filter__toggle"></a>
         <ul class="content-filter__list">
-          <li class="content-filter__item content-filter__item--active">
-            <a href="_esports_team-overview.html" class="content-filter__link"
-              ><small>Les stats</small>Vue d'ensemble</a
-            >
-          </li>
-          <li class="content-filter__item">
-            <a href="_esports_team-roster.html" class="content-filter__link"
-              ><small>Tous les matchs</small>Matchs</a
-            >
-          </li>
-          <li class="content-filter__item">
-            <a href="_esports_team-standings.html" class="content-filter__link"
-              ><small>Bientôt</small>Graphique</a
-            >
-          </li>
-          <li class="content-filter__item">
-            <a
-              href="_esports_team-last-results.html"
+          <li
+            class="content-filter__item"
+            :class="
+              !$route.params.view || $route.params.view === 'overview'
+                ? 'content-filter__item--active'
+                : ''
+            "
+          >
+            <router-link
+              :to="{ name: 'stat.view' }"
               class="content-filter__link"
-              ><small>Live</small>Chaîne Twitch</a
+              ><small>Les stats</small>Vue d'ensemble</router-link
+            >
+          </li>
+          <li
+            class="content-filter__item"
+            :class="
+              $route.params.view && $route.params.view === 'matches'
+                ? 'content-filter__item--active'
+                : ''
+            "
+          >
+            <router-link
+              :to="{ name: 'stat.view', params: { view: 'matches' } }"
+              class="content-filter__link"
+              ><small>Tous les matchs</small>Matchs</router-link
+            >
+          </li>
+          <li class="content-filter__item">
+            <a href="#" class="content-filter__link"
+              ><small>Bientôt</small>Graphiques</a
+            >
+          </li>
+          <li class="content-filter__item">
+            <a href="#" class="content-filter__link"
+              ><small>Bientôt</small>Chaîne Twitch</a
             >
           </li>
         </ul>

@@ -19,32 +19,36 @@
     <stat-nav />
     <div class="site-content">
       <div class="container">
-        <stat-match v-if="$route.params.type" />
-        <stat-view />
+        <stat-match
+          v-if="$route.params.view && $route.params.view === 'matches'"
+        />
+        <stat-overview v-else />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import StatView from '@/components/stat/View'
+import StatOverview from '@/components/stat/Overview'
 import StatMatch from '@/components/stat/Match'
 import StatNav from '@/components/stat/partial/Nav'
 
 export default {
   components: {
-    StatView,
+    StatOverview,
     StatNav,
+    StatMatch,
   },
   validate({ params, query }) {
     if (query.length) {
       return false
     }
     if (
-      params.platform &&
-      !Object.prototype.toString.call(params.platform) === '[object String]'
-    )
+      params.view &&
+      !['overview', 'matches', 'twitch'].includes(params.view)
+    ) {
       return false
+    }
     if (!Object.prototype.toString.call(params.name) === '[object String]')
       return false
     return true
@@ -56,12 +60,12 @@ export default {
   },
   head() {
     return {
-      title: `${this.$store.state.stat.meta.title} - Fortnite France`,
+      title: this.title(),
       meta: [
         {
           hid: 'twitter:title',
           name: 'twitter:title',
-          content: `${this.$store.state.stat.meta.title} - Fortnite France`,
+          content: this.title(),
         },
         {
           hid: 'twitter:description',
@@ -71,7 +75,7 @@ export default {
         {
           hid: 'og:title',
           property: 'og:title',
-          content: `${this.$store.state.stat.meta.title} - Fortnite France`,
+          content: this.title(),
         },
         {
           hid: 'og:description',
@@ -87,6 +91,12 @@ export default {
     }
   },
   methods: {
+    title() {
+      /* switch (this.$router.params.view) {
+
+      } */
+      return `${this.$store.state.stat.meta.title} - Fortnite France`
+    },
     description() {
       return `Consultez les statistiques de ${this.$voca.truncate(
         this.$voca.stripTags(this.$store.state.stat.meta.title),

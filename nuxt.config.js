@@ -113,14 +113,12 @@ export default {
       {
         rel: 'stylesheet',
         type: 'text/css',
-        href:
-          '/plugins/revolution-addons/reveal/css/revolution.addon.revealer.css',
+        href: '/plugins/revolution-addons/reveal/css/revolution.addon.revealer.css',
       },
       {
         rel: 'stylesheet',
         type: 'text/css',
-        href:
-          '/plugins/revolution-addons/reveal/css/revolution.addon.revealer.preloaders.css',
+        href: '/plugins/revolution-addons/reveal/css/revolution.addon.revealer.preloaders.css',
       },
       {
         rel: 'stylesheet',
@@ -197,13 +195,11 @@ export default {
         body: true,
       },
       {
-        src:
-          '/plugins/revolution-addons/reveal/js/revolution.addon.revealer.min.js?ver=1.0.0',
+        src: '/plugins/revolution-addons/reveal/js/revolution.addon.revealer.min.js?ver=1.0.0',
         body: true,
       },
       {
-        src:
-          '/plugins/revolution-addons/typewriter/js/revolution.addon.typewriter.min.js',
+        src: '/plugins/revolution-addons/typewriter/js/revolution.addon.typewriter.min.js',
         body: true,
       },
       {
@@ -215,23 +211,19 @@ export default {
         body: true,
       },
       {
-        src:
-          '/plugins/revolution/js/extensions/revolution.extension.layeranimation.min.js',
+        src: '/plugins/revolution/js/extensions/revolution.extension.layeranimation.min.js',
         body: true,
       },
       {
-        src:
-          '/plugins/revolution/js/extensions/revolution.extension.migration.min.js',
+        src: '/plugins/revolution/js/extensions/revolution.extension.migration.min.js',
         body: true,
       },
       {
-        src:
-          '/plugins/revolution/js/extensions/revolution.extension.parallax.min.js',
+        src: '/plugins/revolution/js/extensions/revolution.extension.parallax.min.js',
         body: true,
       },
       {
-        src:
-          '/plugins/revolution/js/extensions/revolution.extension.slideanims.min.js',
+        src: '/plugins/revolution/js/extensions/revolution.extension.slideanims.min.js',
         body: true,
       },
       {
@@ -295,7 +287,17 @@ export default {
   modules: ['@nuxtjs/axios', '@nuxtjs/auth-next', 'vue-social-sharing/nuxt', 'vue-toastification/nuxt', 'cookie-universal-nuxt'],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    babel: {
+      plugins: [
+        [
+          "@babel/plugin-proposal-private-methods", {
+            "loose": true
+          }
+        ]
+      ]
+    },
+  },
   env: {
     appName: process.env.APP_NAME || 'Fortnite France',
     baseUrl: process.env.BASE_URL || 'http://localhost:3000',
@@ -309,7 +311,7 @@ export default {
       })
       routes.push({
         name: 'stat.view',
-        path: '/stats/:name/:platform?',
+        path: '/stats/:name/:view?',
         component: resolve(__dirname, 'pages/stat/view.vue')
       })
     }
