@@ -86,11 +86,12 @@ export default {
   methods: {
     async login() {
       this.loading = true
+      this.form.email = this.form.email.toLowerCase()
       await this.$auth
         .loginWith('local', {
           params: this.form,
         })
-        .then((response) => {
+        .then(() => {
           this.$toast({
             component: Toast,
             props: {
