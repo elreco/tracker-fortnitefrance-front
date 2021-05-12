@@ -130,11 +130,12 @@ export default {
       loading: false,
     }
   },
-  created() {
-    this.form.email = this.$auth.user && this.$auth.user.email
-    this.form.pseudo = this.$auth.user && this.$auth.user.pseudo
-    this.url =
-      this.$auth.user && this.$auth.user.avatar && this.$auth.user.avatar.url
+  mounted() {
+    this.form.email = this.$auth.user.email
+    this.form.pseudo = this.$auth.user.pseudo
+    if (this.$auth.user.avatar) {
+      this.url = this.$auth.user.avatar.url
+    }
   },
   methods: {
     onFileChange(e) {

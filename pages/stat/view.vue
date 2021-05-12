@@ -15,9 +15,7 @@
             </h1>
           </div>
           <div class="col text-right my-auto">
-            <a href="#" class="btn btn-warning btn-sm font-weight-bold"
-              >Ajouter aux favoris</a
-            >
+            <stat-add-to-favorite />
           </div>
         </div>
       </div>
@@ -38,12 +36,14 @@
 import StatOverview from '@/components/stat/Overview'
 import StatMatch from '@/components/stat/Match'
 import StatNav from '@/components/stat/partial/Nav'
+import StatAddToFavorite from '@/components/stat/partial/AddToFavorite'
 
 export default {
   components: {
     StatOverview,
     StatNav,
     StatMatch,
+    StatAddToFavorite,
   },
   validate({ params, query }) {
     if (query.length) {

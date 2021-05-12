@@ -84,21 +84,26 @@ export default {
     }
   },
   methods: {
-    login() {
+    async login() {
       this.loading = true
-      this.$auth
-        .loginWith('local', { params: this.form })
-        .then(() => {
-          this.$router.back()
-          this.$toast({
-            component: Toast,
-            props: {
-              text: 'Vous êtes connecté !',
-              type: 'success',
-            },
-          })
+      await this.$auth
+        .loginWith('local', {
+          params: this.form,
+        })
+        .then((response) => {
+          if (response) {
+            this.$router.back()
+            this.$toast({
+              component: Toast,
+              props: {
+                text: 'Vous êtes connecté !',
+                type: 'success',
+              },
+            })
+          }
         })
         .finally(() => (this.loading = false))
+      /*  */
     },
   },
 }

@@ -30,9 +30,12 @@
             <div class="header__top-bar-inner">
               <social-bar />
               <ul class="nav-account">
-                <template v-if="$auth.loggedIn">
-                  <li class="nav-account__item has-children">
-                    <nuxt-link :to="{ name: 'login' }"
+                <template v-if="$cookies.get('auth._token.local')">
+                  <li v-if="!$auth.loggedIn" class="nav-account__item">
+                    <a href="#">Chargement...</a>
+                  </li>
+                  <li v-else class="nav-account__item has-children">
+                    <nuxt-link :to="{ name: 'account' }"
                       >Bonjour,
                       <span class="highlight">{{
                         $auth.user.pseudo
@@ -325,7 +328,7 @@
               <ul class="sponsors-logos">
                 <li
                   v-for="sponsor in sponsors"
-                  :key="sponsor"
+                  :key="sponsor.title"
                   class="sponsors__item"
                 >
                   <a :href="sponsor.link" target="_blank"
@@ -419,7 +422,7 @@
             <ul class="footer-social__list list-unstyled">
               <li
                 v-for="social in socials"
-                :key="social"
+                :key="social.name"
                 class="footer-social__item"
               >
                 <a :href="social.link" class="footer-social__link">

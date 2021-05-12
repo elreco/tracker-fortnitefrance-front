@@ -2,6 +2,7 @@ export const state = () => ({
   meta: {
     title: '',
   },
+  stat: {},
 })
 
 export const mutations = {
@@ -10,6 +11,9 @@ export const mutations = {
   },
   SET_META_TEXT(state, text) {
     state.meta.text = text
+  },
+  SET_STAT(state, stat) {
+    state.stat = stat
   },
 }
 
@@ -38,6 +42,7 @@ export const actions = {
           throw response
         } else {
           ctx.commit('SET_META_TITLE', response.results[0].name)
+          ctx.commit('SET_STAT', response.results[0])
           return response.results[0]
         }
       })

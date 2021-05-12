@@ -49,16 +49,13 @@ export default {
   },
   data() {
     return {
-      loading: true,
       stat: {},
       matches: [],
     }
   },
   async fetch() {
-    this.loading = true
     this.stat = await this.getStat()
     this.matches = await this.getMatches()
-    this.loading = false
   },
   watch: {
     '$fetchState.pending'() {
