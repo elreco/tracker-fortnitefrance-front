@@ -35,7 +35,7 @@ export default {
   },
   methods: {
     async getStat() {
-      const stat = await this.$store.dispatch('stat/get', {
+      const stat = await this.$store.dispatch('stat/getByName', {
         name: this.$route.params.name,
         params: {
           keys: 'objectId,name',

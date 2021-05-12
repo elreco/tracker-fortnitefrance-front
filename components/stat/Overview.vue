@@ -7,19 +7,22 @@
         <div class="row">
           <div class="col-sm-12 col-lg-4">
             <stat-playlist-widget
-              :playlist="stat.global_stats && stat.global_stats.solo"
+              v-if="stat.global_stats && stat.global_stats.solo"
+              :playlist="stat.global_stats.solo"
               title="Solo"
             />
           </div>
           <div class="col-sm-12 col-lg-4">
             <stat-playlist-widget
-              :playlist="stat.global_stats && stat.global_stats.duo"
+              v-if="stat.global_stats && stat.global_stats.duo"
+              :playlist="stat.global_stats.duo"
               title="Duo"
             />
           </div>
           <div class="col-sm-12 col-lg-4">
             <stat-playlist-widget
-              :playlist="stat.global_stats && stat.global_stats.squad"
+              v-if="stat.global_stats && stat.global_stats.squad"
+              :playlist="stat.global_stats.squad"
               title="Squad"
             />
           </div>
@@ -66,7 +69,7 @@ export default {
   },
   methods: {
     async getStat() {
-      const stat = await this.$store.dispatch('stat/get', {
+      const stat = await this.$store.dispatch('stat/getByName', {
         name: this.$route.params.name,
       })
       return stat

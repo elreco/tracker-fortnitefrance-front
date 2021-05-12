@@ -23,7 +23,7 @@ export const actions = {
       params,
     })
   },
-  async get(ctx, { name, params = {} }) {
+  async getByName(ctx, { name, params = {} }) {
     if (params.where) {
       params.where.push({
         name_lowercase: name.toLowerCase(),

@@ -92,7 +92,6 @@ export default {
         })
         .then((response) => {
           if (response) {
-            this.$router.back()
             this.$toast({
               component: Toast,
               props: {
@@ -100,6 +99,7 @@ export default {
                 type: 'success',
               },
             })
+            this.$router.back()
           }
         })
         .finally(() => (this.loading = false))

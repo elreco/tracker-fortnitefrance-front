@@ -34,26 +34,29 @@
                   <li v-if="!$auth.loggedIn" class="nav-account__item">
                     <a href="#">Chargement...</a>
                   </li>
-                  <li v-else class="nav-account__item has-children">
-                    <nuxt-link :to="{ name: 'account' }"
-                      >Bonjour,
-                      <span class="highlight">{{
-                        $auth.user.pseudo
-                      }}</span></nuxt-link
-                    >
-                    <ul class="main-nav__sub">
-                      <li>
-                        <nuxt-link :to="{ name: 'account' }"
-                          >Mon compte</nuxt-link
-                        >
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="nav-account__item nav-account__item--logout">
-                    <a href="javascript:void()" @click="logout()"
-                      >Déconnexion</a
-                    >
-                  </li>
+                  <template v-else>
+                    <account-favorite-list-header />
+                    <li class="nav-account__item has-children">
+                      <nuxt-link :to="{ name: 'account' }"
+                        >Bonjour,
+                        <span class="highlight">{{
+                          $auth.user.pseudo
+                        }}</span></nuxt-link
+                      >
+                      <ul class="main-nav__sub">
+                        <li>
+                          <nuxt-link :to="{ name: 'account' }"
+                            >Mon compte</nuxt-link
+                          >
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="nav-account__item nav-account__item--logout">
+                      <a href="javascript:void()" @click="logout()"
+                        >Déconnexion</a
+                      >
+                    </li>
+                  </template>
                 </template>
                 <li v-else class="nav-account__item">
                   <nuxt-link :to="{ name: 'login' }"
@@ -448,12 +451,14 @@ import socials from '@/static/json/socials.json'
 import sponsors from '@/static/json/sponsors.json'
 import SocialBar from '~/components/global/SocialBar.vue'
 import StatSearch from '~/components/stat/partial/Search.vue'
+import AccountFavoriteListHeader from '~/components/account/partial/FavoriteListHeader.vue'
 import Toast from '~/components/global/Toast.vue'
 
 export default {
   components: {
     SocialBar,
     StatSearch,
+    AccountFavoriteListHeader,
   },
   data() {
     return {

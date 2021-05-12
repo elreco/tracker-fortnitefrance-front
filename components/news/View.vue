@@ -9,7 +9,10 @@
           <div class="col-md-6 offset-md-3">
             <div class="post__meta-block-wrapper">
               <div
-                class="post__meta-block post__meta-block--top posts__item--category-2"
+                class="
+                  post__meta-block post__meta-block--top
+                  posts__item--category-2
+                "
               >
                 <div class="post__category">
                   <news-tag v-for="tag in news.tags" :key="tag" :tag="tag" />
@@ -30,6 +33,11 @@
                       :datetime="$moment(news.date.iso).format('YYYY-MM-DD')"
                       >{{ $moment(news.date.iso).format('Do MMMM YYYY') }}</time
                     >
+                  </li>
+                  <li class="meta__item meta__item--views">
+                    <span>
+                      {{ $numeral(news.views).format('0a') }}
+                    </span>
                   </li>
                 </ul>
                 <div class="post-sharing-compact">

@@ -1,8 +1,8 @@
 <template>
   <button
-    v-if="!$fetchState.error && stat"
+    v-if="!loading && !$fetchState.pending"
     type="button"
-    :disabled="favoritesCount >= 5 || $fetchState.pending || loading"
+    :disabled="favoritesCount >= 5 || $fetchState.pending"
     class="btn btn-sm font-weight-bold"
     :class="favorite ? 'btn-danger' : 'btn-warning'"
     @click="toggleFavorite"
@@ -20,16 +20,18 @@ export default {
       stat: this.$store.state.stat.stat,
       favorite: false,
       favoritesCount: 0,
-      loading: false,
+      loading: true,
     }
   },
   async fetch() {
     this.favorite = await this.getFavorite()
     this.favoritesCount = await this.getFavoritesCount()
   },
+  mounted() {
+    this.loading = false
+  },
   methods: {
     async toggleFavorite() {
-      this.loading = true
       if (!this.$cookies.get('auth._token.local')) {
         this.$toast({
           component: Toast,
@@ -40,6 +42,7 @@ export default {
         })
         return this.$router.push({ name: 'login' })
       }
+
       if (this.favoritesCount < 5) {
         if (this.favorite) {
           await this.$store
@@ -66,6 +69,7 @@ export default {
               objectId: this.stat.objectId,
             },
           }
+
           await this.$store.dispatch('favorite/create', data).then(() =>
             this.$toast({
               component: Toast,
@@ -76,7 +80,6 @@ export default {
             })
           )
         }
-        this.loading = false
         this.$fetch()
       }
     },
@@ -96,7 +99,6 @@ export default {
             },
           },
         })
-
         return favorite.results && favorite.results[0]
           ? favorite.results[0]
           : false
@@ -104,16 +106,7 @@ export default {
     },
     async getFavoritesCount() {
       if (this.$auth && this.$auth.user) {
-        const favorites = await this.$store.dispatch('favorite/fetch', {
-          where: {
-            user: {
-              __type: 'Pointer',
-              className: '_User',
-              objectId: this.$auth.user.objectId,
-            },
-          },
-          count: 1,
-        })
+        const favorites = await this.$store.dispatch('favorite/me')
         return favorites.count
       }
     },

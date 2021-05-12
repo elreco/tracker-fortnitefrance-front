@@ -63,6 +63,12 @@
 	// Views
 	.meta__item--views {
 
+    span {
+			font-weight: 700;
+      font-style: italic;
+      font-size: 12px;
+		}
+
 		&::before {
 			content: "\e087";
 		}
