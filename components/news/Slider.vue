@@ -43,7 +43,11 @@
 
               <div
                 id="slide2-layer3"
-                class="tp-caption tp-resizeme alc-hero-slider__h alc-hero-slider__h--h1 rs-parallaxlevel-10"
+                class="
+                  tp-caption tp-resizeme
+                  alc-hero-slider__h alc-hero-slider__h--h1
+                  rs-parallaxlevel-10
+                "
                 data-x="['left','left','left','left']"
                 data-hoffset="['120','40','30','20']"
                 data-y="['top','top','top','top']"
@@ -71,7 +75,13 @@
 
               <div
                 id="slide2-layer4"
-                class="tp-caption tp-resizeme alc-hero-slider__h alc-hero-slider__h--h1 alc-hero-slider__h--color-primary rs-parallaxlevel-10"
+                class="
+                  tp-caption tp-resizeme
+                  alc-hero-slider__h
+                  alc-hero-slider__h--h1
+                  alc-hero-slider__h--color-primary
+                  rs-parallaxlevel-10
+                "
                 data-x="['left','left','left','left']"
                 data-hoffset="['120','40','30','20']"
                 data-y="['top','top','top','top']"
@@ -99,7 +109,12 @@
 
               <div
                 id="slide2-layer5"
-                class="tp-caption tp-resizeme alc-hero-slider__h alc-hero-slider__h--h5 rs-parallaxlevel-11 text-shadow"
+                class="
+                  tp-caption tp-resizeme
+                  alc-hero-slider__h alc-hero-slider__h--h5
+                  rs-parallaxlevel-11
+                  text-shadow
+                "
                 data-x="['left','left','left','left']"
                 data-hoffset="['120','40','30','20']"
                 data-y="['top','top','top','top']"
@@ -123,7 +138,13 @@
 
               <div
                 id="slide2-layer6"
-                class="tp-caption tp-resizeme alc-hero-slider__text rs-parallaxlevel-11 text-white text-shadow font-weight-bold"
+                class="
+                  tp-caption tp-resizeme
+                  alc-hero-slider__text
+                  rs-parallaxlevel-11
+                  text-white text-shadow
+                  font-weight-bold
+                "
                 data-x="['left','left','left','left']"
                 data-hoffset="['120','40','30','20']"
                 data-y="['top','top','top','top']"
@@ -192,9 +213,9 @@ export default {
     this.news = await this.getNews()
   },
   watch: {
-    'news'() {
-      if (this.news && this.news.length) {
-        this.$initRevSlider()
+    '$fetchState.pending'() {
+      if (!this.$fetchState.pending && this.news && this.news.length) {
+        this.$nextTick(() => setTimeout(() => this.$initRevSlider(), 500))
       }
     },
   },
