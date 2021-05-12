@@ -141,15 +141,15 @@ export default {
     onFileChange(e) {
       const files = e.target.files || e.dataTransfer.files
       if (!files.length) {
-        this.format.avatar = null
+        this.form.avatar = null
         return
       }
       if (files[0].type.split('/')[0] !== 'image') {
-        this.format.avatar = null
+        this.form.avatar = null
         return
       }
       if (files[0].size > 2097152) {
-        this.format.avatar = null
+        this.form.avatar = null
         return this.$toast({
           component: Toast,
           props: {
