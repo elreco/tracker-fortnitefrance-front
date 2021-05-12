@@ -102,8 +102,7 @@ export default {
           this.$toast({
             component: Toast,
             props: {
-              text:
-                'Votre compte est créé ! Nous vous avons envoyé un mail pour activer votre compte (vérifiez vos spams)',
+              text: 'Votre compte est créé ! Nous vous avons envoyé un mail pour activer votre compte (vérifiez vos spams)',
               type: 'success',
             },
           })
