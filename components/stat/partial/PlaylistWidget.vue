@@ -17,13 +17,15 @@
         />
         <stat-playlist-item
           v-if="playlist.kills"
-          :value="$numeral(playlist.kills).format()"
+          :value="$numeral(playlist.kills).format('0a')"
           title="Kills"
         />
         <stat-playlist-item
           v-if="playlist.kills && playlist.matchesplayed"
           :value="
-            $numeral(Math.abs(playlist.kills - playlist.matchesplayed)).format()
+            $numeral(Math.abs(playlist.kills - playlist.matchesplayed)).format(
+              '0a'
+            )
           "
           title="Morts"
         />
@@ -84,10 +86,14 @@
       <div class="widget__content-inner">
         <div class="widget-player__stats widget-player__stats--center">
           <div
-            class="widget-player__stat-item widget-player__stat-item--number-side"
+            class="
+              widget-player__stat-item widget-player__stat-item--number-side
+            "
           >
             <div
-              class="widget-player__stat--value widget-player__stat--value-primary"
+              class="
+                widget-player__stat--value widget-player__stat--value-primary
+              "
             >
               {{ $numeral(playlist.placetop1).format() }}
             </div>

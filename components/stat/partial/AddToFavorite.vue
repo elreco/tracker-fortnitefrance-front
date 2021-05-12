@@ -3,7 +3,7 @@
     v-if="!loading && !$fetchState.pending"
     type="button"
     :disabled="favoritesCount >= 5 || $fetchState.pending"
-    class="btn btn-sm font-weight-bold"
+    class="btn btn-sm font-weight-bold my-2 my-sm-auto"
     :class="favorite ? 'btn-danger' : 'btn-warning'"
     @click="toggleFavorite"
   >

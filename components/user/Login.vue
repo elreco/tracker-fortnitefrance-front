@@ -86,24 +86,32 @@ export default {
   methods: {
     async login() {
       this.loading = true
+      this.form.email = this.form.email.toLowerCase()
       await this.$auth
         .loginWith('local', {
           params: this.form,
         })
-        .then((response) => {
-          if (response) {
-            this.$toast({
-              component: Toast,
-              props: {
-                text: 'Vous êtes connecté !',
-                type: 'success',
-              },
-            })
-            this.$router.back()
-          }
+        .then(() => {
+          this.$toast({
+            component: Toast,
+            props: {
+              text: 'Vous êtes connecté !',
+              type: 'success',
+            },
+          })
+          this.$router.back()
+        })
+        .catch(() => {
+          this.reset()
         })
         .finally(() => (this.loading = false))
       /*  */
+    },
+    reset() {
+      this.form = {
+        email: '',
+        password: '',
+      }
     },
   },
 }

@@ -102,8 +102,7 @@ export default {
           this.$toast({
             component: Toast,
             props: {
-              text:
-                'Votre compte est créé ! Nous vous avons envoyé un mail pour activer votre compte (vérifiez vos spams)',
+              text: 'Votre compte est créé ! Nous vous avons envoyé un mail pour activer votre compte (vérifiez vos spams)',
               type: 'success',
             },
           })
@@ -113,11 +112,11 @@ export default {
     },
     reset() {
       this.form = {
-        pseudo: null,
-        email: null,
-        password: null,
-        confirmPassword: null,
-        username: null,
+        pseudo: '',
+        email: '',
+        password: '',
+        confirmPassword: '',
+        username: '',
       }
     },
   },
