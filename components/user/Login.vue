@@ -91,19 +91,26 @@ export default {
           params: this.form,
         })
         .then((response) => {
-          if (response) {
-            this.$toast({
-              component: Toast,
-              props: {
-                text: 'Vous êtes connecté !',
-                type: 'success',
-              },
-            })
-            this.$router.back()
-          }
+          this.$toast({
+            component: Toast,
+            props: {
+              text: 'Vous êtes connecté !',
+              type: 'success',
+            },
+          })
+          this.$router.back()
+        })
+        .catch(() => {
+          this.reset()
         })
         .finally(() => (this.loading = false))
       /*  */
+    },
+    reset() {
+      this.form = {
+        email: '',
+        password: '',
+      }
     },
   },
 }

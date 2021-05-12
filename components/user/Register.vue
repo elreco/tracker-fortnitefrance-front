@@ -113,11 +113,11 @@ export default {
     },
     reset() {
       this.form = {
-        pseudo: null,
-        email: null,
-        password: null,
-        confirmPassword: null,
-        username: null,
+        pseudo: '',
+        email: '',
+        password: '',
+        confirmPassword: '',
+        username: '',
       }
     },
   },
