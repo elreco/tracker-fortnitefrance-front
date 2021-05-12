@@ -22,6 +22,9 @@
             class="header-mobile__search-icon"
           ></span>
         </div>
+        <div class="header-search-form">
+          <stat-search />
+        </div>
       </div>
 
       <header class="header header--layout-3">
@@ -467,6 +470,9 @@ export default {
       sponsors,
       contactMail: process.env.CONTACT_MAIL,
     }
+  },
+  mounted() {
+    this.$nextTick(() => this.$initSearchMobile())
   },
   fetchDelay: 2000,
   methods: {

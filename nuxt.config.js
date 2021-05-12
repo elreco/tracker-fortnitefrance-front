@@ -255,6 +255,10 @@ export default {
       mode: 'client'
     },
     {
+      src: '~/plugins/client/search-mobile.js',
+      mode: 'client'
+    },
+    {
       src: '~/plugins/axios.js'
     },
     {

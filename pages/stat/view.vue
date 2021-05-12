@@ -1,7 +1,10 @@
 <template>
   <div>
     <div
-      class="page-heading page-heading--horizontal effect-duotone effect-duotone--primary"
+      class="
+        page-heading page-heading--horizontal
+        effect-duotone effect-duotone--primary
+      "
     >
       <div class="effect-duotone__layer">
         <div class="effect-duotone__layer-inner"></div>
@@ -14,7 +17,7 @@
               <span class="highlight">{{ appName }}</span>
             </h1>
           </div>
-          <div class="col text-right my-auto">
+          <div class="col text-center text-md-right my-2 my-md-auto">
             <stat-add-to-favorite />
           </div>
         </div>
