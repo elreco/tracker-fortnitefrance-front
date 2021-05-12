@@ -215,7 +215,7 @@ export default {
   watch: {
     '$fetchState.pending'() {
       if (!this.$fetchState.pending && this.news && this.news.length) {
-        this.$nextTick(() => setTimeout(() => this.$initRevSlider(), 500))
+        this.$nextTick(() => setTimeout(() => this.$initRevSlider(), 3000))
       }
     },
   },
