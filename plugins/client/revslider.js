@@ -3,18 +3,18 @@ export default (context, inject) => {
     var revapi;
     $("#hero-revslider").show().revolution({
       sliderType: "standard",
-      jsFileLocation: "revolution/js/",
+      jsFileLocation: "/plugins/revolution/js/",
       sliderLayout: "auto",
       dottedOverlay: "fourxfour",
-      delay: 9000,
+      delay: 10000,
       revealer: {
         direction: "tlbr_skew",
         color: "#1d1429",
-        duration: "1500",
+        duration: "1000",
         delay: "0",
         easing: "Power3.easeOut",
         spinner: "2",
-        spinnerColor: "rgba(0,0,0,",
+        spinnerColor: "rgba(0,0,0,1)",
       },
       navigation: {
         keyboardNavigation: "off",
