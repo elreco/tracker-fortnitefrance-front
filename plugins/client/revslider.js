@@ -1,11 +1,12 @@
 export default (context, inject) => {
-  var initRevSlider = () => {
+  var initRevSlider = async () => {
+    await sleep(200);
     $("#hero-revslider").show().revolution({
       sliderType: "standard",
       jsFileLocation: "/plugins/revolution/js/",
       sliderLayout: "auto",
       dottedOverlay: "fourxfour",
-      delay: 2000,
+      delay: 7000,
       revealer: {
         direction: "tlbr_skew",
         color: "#1d1429",
@@ -80,4 +81,8 @@ export default (context, inject) => {
   }
   inject('killRevSlider', killRevSlider)
   inject('initRevSlider', initRevSlider)
+}
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
