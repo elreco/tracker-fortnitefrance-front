@@ -192,8 +192,8 @@ export default {
     this.news = await this.getNews()
   },
   watch: {
-    '$fetchState.pending'() {
-      if (!this.$fetchState.pending) {
+    'news'() {
+      if (this.news && this.news.length) {
         this.$initRevSlider()
       }
     },
