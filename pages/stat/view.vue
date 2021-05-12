@@ -98,15 +98,15 @@ export default {
   },
   methods: {
     title() {
-      if (this.$router.params && this.$router.params.view) {
-        switch (this.$router.params.view) {
+      if (this.$route.params && this.$route.params.view) {
+        switch (this.$route.params.view) {
           case 'matches':
             return `${this.$store.state.stat.meta.title} - Tous les matchs - Fortnite France`
           default:
             return `${this.$store.state.stat.meta.title} - Fortnite France`
         }
       } else {
-        return `Fortnite France`
+        return `${this.$store.state.stat.meta.title} - Fortnite France`
       }
     },
     description() {
