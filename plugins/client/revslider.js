@@ -1,12 +1,11 @@
 export default (context, inject) => {
   var initRevSlider = () => {
-    var revapi;
     $("#hero-revslider").show().revolution({
       sliderType: "standard",
       jsFileLocation: "/plugins/revolution/js/",
       sliderLayout: "auto",
       dottedOverlay: "fourxfour",
-      delay: 500000,
+      delay: 2000,
       revealer: {
         direction: "tlbr_skew",
         color: "#1d1429",
