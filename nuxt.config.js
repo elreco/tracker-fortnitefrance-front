@@ -318,7 +318,7 @@ export default {
   },
   env: {
     appName: process.env.APP_NAME || 'Fortnite France',
-    baseUrl: process.env.BASE_URL || 'http://localhost:3000',
+    baseUrl: process.env.VUE_BASE_URL_TRACKER || 'http://localhost:3000',
   },
   router: {
     extendRoutes(routes, resolve) {
