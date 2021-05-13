@@ -27,6 +27,16 @@ export default {
     this.favorite = await this.getFavorite()
     this.favoritesCount = await this.getFavoritesCount()
   },
+  watch: {
+    '$store.state.stat.stat'() {
+      if (
+        this.$store.state.stat.stat.name.toLowerCase() ===
+        this.$route.params.name.toLowerCase()
+      ) {
+        this.$fetch()
+      }
+    },
+  },
   mounted() {
     this.loading = false
   },
@@ -84,11 +94,7 @@ export default {
       }
     },
     async getFavorite() {
-      if (
-        this.$auth &&
-        this.$auth.user &&
-        this.$store.state.stat.stat.name === this.$route.params.name
-      ) {
+      if (this.$auth && this.$auth.user) {
         const favorite = await this.$store.dispatch('favorite/fetch', {
           where: {
             user: {
@@ -115,11 +121,16 @@ export default {
       }
     },
     canDisplayButton() {
-      return (
-        !this.loading &&
-        !this.$fetchState.pending &&
-        this.$store.state.stat.stat.name === this.$route.params.name
-      )
+      if (
+        this.loading ||
+        this.$fetchState.pending ||
+        this.$store.state.stat.stat.name.toLowerCase() !==
+          this.$route.params.name.toLowerCase()
+      ) {
+        return false
+      } else {
+        return true
+      }
     },
     getButtonText() {
       return this.favorite
