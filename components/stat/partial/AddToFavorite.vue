@@ -8,6 +8,7 @@
     @click="toggleFavorite"
   >
     {{ favorite ? 'Retirer des favoris' : 'Ajouter aux favoris' }}
+    {{ $store.state.stat.stat.name }}
   </button>
 </template>
 
@@ -17,7 +18,6 @@ import Toast from '~/components/global/Toast.vue'
 export default {
   data() {
     return {
-      stat: this.$store.state.stat.stat,
       favorite: false,
       favoritesCount: 0,
       loading: true,
@@ -51,7 +51,7 @@ export default {
               this.$toast({
                 component: Toast,
                 props: {
-                  text: `Vous avez supprimé  ${this.stat.name} de vos favoris !`,
+                  text: `Vous avez supprimé  ${this.$store.state.stat.stat.name} de vos favoris !`,
                   type: 'success',
                 },
               })
@@ -66,7 +66,7 @@ export default {
             stat: {
               __type: 'Pointer',
               className: 'Stat',
-              objectId: this.stat.objectId,
+              objectId: this.$store.state.stat.stat.objectId,
             },
           }
 
@@ -74,7 +74,7 @@ export default {
             this.$toast({
               component: Toast,
               props: {
-                text: `Vous avez ajouté  ${this.stat.name} à vos favoris !`,
+                text: `Vous avez ajouté  ${this.$store.state.stat.stat.name} à vos favoris !`,
                 type: 'success',
               },
             })
@@ -84,7 +84,7 @@ export default {
       }
     },
     async getFavorite() {
-      if (this.$auth && this.$auth.user && this.stat) {
+      if (this.$auth && this.$auth.user && this.$store.state.stat.stat) {
         const favorite = await this.$store.dispatch('favorite/fetch', {
           where: {
             user: {
@@ -95,7 +95,7 @@ export default {
             stat: {
               __type: 'Pointer',
               className: 'Stat',
-              objectId: this.stat.objectId,
+              objectId: this.$store.state.stat.stat.objectId,
             },
           },
         })
