@@ -4,6 +4,7 @@
     <template v-else-if="!$fetchState.pending && !$fetchState.error">
       <div class="team-roster team-roster--card mb-0 pb-0">
         <stat-general-card :stat="stat" />
+        <adsbygoogle ad-format="horizontal" class="my-3" />
         <div class="row">
           <div class="col-sm-12 col-lg-4">
             <stat-playlist-widget

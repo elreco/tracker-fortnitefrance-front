@@ -64,7 +64,11 @@
             </div>
           </div>
         </div>
-
+        <div class="row">
+          <div class="col-lg-12">
+            <adsbygoogle ad-format="horizontal" class="mb-3" />
+          </div>
+        </div>
         <div class="row">
           <div class="content col-lg-6 offset-lg-3">
             <article class="post post--single">

@@ -285,7 +285,17 @@ export default {
     }],
     '@nuxtjs/moment',
     '@nuxtjs/dotenv',
+    '@nuxtjs/google-analytics',
+    '@nuxtjs/google-adsense'
   ],
+
+  googleAnalytics: {
+    id: "UA-97058805-4", // Use as fallback if no runtime config is provided
+  },
+
+  'google-adsense': {
+    id: 'pub-9253579683768027'
+  },
 
   moment: {
     defaultLocale: 'fr',
