@@ -3,6 +3,7 @@
     <news-slider />
     <div class="site-content">
       <div class="container">
+        <adsbygoogle class="my-2" />
         <about-box />
         <div class="spacer-xlg"></div>
         <div class="card card--clean">
