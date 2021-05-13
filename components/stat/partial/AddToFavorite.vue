@@ -1,13 +1,14 @@
 <template>
   <button
-    v-if="!loading && !$fetchState.pending"
+    v-if="canDisplayButton()"
+    v-tooltip="tooltipText()"
     type="button"
-    :disabled="favoritesCount >= 5 || $fetchState.pending"
+    :disabled="isDisabled()"
     class="btn btn-sm font-weight-bold my-2 my-sm-auto"
     :class="favorite ? 'btn-danger' : 'btn-warning'"
-    @click="toggleFavorite"
+    @click="toggleFavorite()"
   >
-    {{ favorite ? 'Retirer des favoris' : 'Ajouter aux favoris' }}
+    {{ getButtonText() }}
   </button>
 </template>
 
@@ -17,7 +18,6 @@ import Toast from '~/components/global/Toast.vue'
 export default {
   data() {
     return {
-      stat: this.$store.state.stat.stat,
       favorite: false,
       favoritesCount: 0,
       loading: true,
@@ -51,7 +51,7 @@ export default {
               this.$toast({
                 component: Toast,
                 props: {
-                  text: `Vous avez supprimé  ${this.stat.name} de vos favoris !`,
+                  text: `Vous avez supprimé  ${this.$store.state.stat.stat.name} de vos favoris !`,
                   type: 'success',
                 },
               })
@@ -66,7 +66,7 @@ export default {
             stat: {
               __type: 'Pointer',
               className: 'Stat',
-              objectId: this.stat.objectId,
+              objectId: this.$store.state.stat.stat.objectId,
             },
           }
 
@@ -74,7 +74,7 @@ export default {
             this.$toast({
               component: Toast,
               props: {
-                text: `Vous avez ajouté  ${this.stat.name} à vos favoris !`,
+                text: `Vous avez ajouté  ${this.$store.state.stat.stat.name} à vos favoris !`,
                 type: 'success',
               },
             })
@@ -84,7 +84,11 @@ export default {
       }
     },
     async getFavorite() {
-      if (this.$auth && this.$auth.user && this.stat) {
+      if (
+        this.$auth &&
+        this.$auth.user &&
+        this.$store.state.stat.stat.name === this.$route.params.name
+      ) {
         const favorite = await this.$store.dispatch('favorite/fetch', {
           where: {
             user: {
@@ -95,7 +99,7 @@ export default {
             stat: {
               __type: 'Pointer',
               className: 'Stat',
-              objectId: this.stat.objectId,
+              objectId: this.$store.state.stat.stat.objectId,
             },
           },
         })
@@ -109,6 +113,26 @@ export default {
         const favorites = await this.$store.dispatch('favorite/me')
         return favorites.count
       }
+    },
+    canDisplayButton() {
+      return (
+        !this.loading &&
+        !this.$fetchState.pending &&
+        this.$store.state.stat.stat.name === this.$route.params.name
+      )
+    },
+    getButtonText() {
+      return this.favorite
+        ? `Retirer ${this.$store.state.stat.stat.name} des favoris`
+        : `Ajouter ${this.$store.state.stat.stat.name} aux favoris`
+    },
+    isDisabled() {
+      return this.favoritesCount >= 5 || this.$fetchState.pending
+    },
+    tooltipText() {
+      return this.favoritesCount >= 5
+        ? 'Vous ne pouvez pas avoir plus de 5 favoris'
+        : ''
     },
   },
 }
