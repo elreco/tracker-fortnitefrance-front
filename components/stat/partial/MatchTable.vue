@@ -4,7 +4,7 @@
       <h4>{{ title }}</h4>
     </div>
     <div class="card__content">
-      <div v-if="matches.length" class="table-responsive">
+      <div v-if="matches && matches.length" class="table-responsive">
         <table class="table table-hover game-player-result">
           <thead>
             <tr>
@@ -43,7 +43,11 @@
                 </div>
               </td>
               <td
-                class="game-player-result__character highlight text-left text-capitalize"
+                class="
+                  game-player-result__character
+                  highlight
+                  text-left text-capitalize
+                "
               >
                 {{
                   match.match_data &&
@@ -82,7 +86,13 @@
                       ? `alc-icon`
                       : `alc-icon--disabled`
                   "
-                  class="alc-icon alc-icon--circle alc-icon--xs alc-icon--outline alc-icon--outline-md"
+                  class="
+                    alc-icon
+                    alc-icon--circle
+                    alc-icon--xs
+                    alc-icon--outline
+                    alc-icon--outline-md
+                  "
                 >
                   <i class="fas fa-star"></i>
                 </div>
