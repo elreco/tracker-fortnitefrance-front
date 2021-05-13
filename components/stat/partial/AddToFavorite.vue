@@ -1,14 +1,14 @@
 <template>
   <button
-    v-if="!loading && !$fetchState.pending"
+    v-if="canDisplayButton()"
+    v-tooltip="tooltipText()"
     type="button"
-    :disabled="favoritesCount >= 5 || $fetchState.pending"
+    :disabled="isDisabled()"
     class="btn btn-sm font-weight-bold my-2 my-sm-auto"
     :class="favorite ? 'btn-danger' : 'btn-warning'"
-    @click="toggleFavorite"
+    @click="toggleFavorite()"
   >
-    {{ favorite ? 'Retirer des favoris' : 'Ajouter aux favoris' }}
-    {{ $store.state.stat.stat.name }}
+    {{ getButtonText() }}
   </button>
 </template>
 
@@ -84,7 +84,11 @@ export default {
       }
     },
     async getFavorite() {
-      if (this.$auth && this.$auth.user && this.$store.state.stat.stat) {
+      if (
+        this.$auth &&
+        this.$auth.user &&
+        this.$store.state.stat.stat.name === this.$route.params.name
+      ) {
         const favorite = await this.$store.dispatch('favorite/fetch', {
           where: {
             user: {
@@ -109,6 +113,26 @@ export default {
         const favorites = await this.$store.dispatch('favorite/me')
         return favorites.count
       }
+    },
+    canDisplayButton() {
+      return (
+        !this.loading &&
+        !this.$fetchState.pending &&
+        this.$store.state.stat.stat.name === this.$route.params.name
+      )
+    },
+    getButtonText() {
+      return this.favorite
+        ? `Retirer ${this.$store.state.stat.stat.name} des favoris`
+        : `Ajouter ${this.$store.state.stat.stat.name} aux favoris`
+    },
+    isDisabled() {
+      return this.favoritesCount >= 5 || this.$fetchState.pending
+    },
+    tooltipText() {
+      return this.favoritesCount >= 5
+        ? 'Vous ne pouvez pas avoir plus de 5 favoris'
+        : ''
     },
   },
 }
