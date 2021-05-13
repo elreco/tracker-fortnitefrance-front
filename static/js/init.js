@@ -126,6 +126,7 @@
 				var $nav_list    = $('.main-nav__list');
 				var $nav_list_li = $('.main-nav__list > li');
 				var $toggle_btn  = $('#header-mobile__toggle');
+				var $menu_link  = $('.router-link__toggle');
 				var $pushy_btn   = $('.pushy-panel__toggle');
 
 				// Clone Shopping Cart to Mobile Menu
@@ -170,6 +171,10 @@
 
 				// Mobile Menu Toggle
 				$toggle_btn.on('click', function(){
+					$wrapper.toggleClass('site-wrapper--has-overlay');
+        });
+
+        $menu_link.on('click', function(){
 					$wrapper.toggleClass('site-wrapper--has-overlay');
 				});
 
