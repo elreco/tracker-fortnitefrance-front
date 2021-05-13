@@ -48,7 +48,9 @@
                       >
                       <ul class="main-nav__sub">
                         <li>
-                          <nuxt-link :to="{ name: 'account' }"
+                          <nuxt-link
+                            class="router-link__toggle"
+                            :to="{ name: 'account' }"
                             >Mon compte</nuxt-link
                           >
                         </li>
@@ -62,7 +64,7 @@
                   </template>
                 </template>
                 <li v-else class="nav-account__item">
-                  <nuxt-link :to="{ name: 'login' }"
+                  <nuxt-link class="router-link__toggle" :to="{ name: 'login' }"
                     >Connexion ou Inscription</nuxt-link
                   >
                 </li>
@@ -86,10 +88,18 @@
               <nav class="main-nav">
                 <ul class="main-nav__list">
                   <li :class="isRouteActive('/')">
-                    <nuxt-link :to="{ name: 'index' }">Accueil</nuxt-link>
+                    <nuxt-link
+                      class="router-link__toggle"
+                      :to="{ name: 'index' }"
+                      >Accueil</nuxt-link
+                    >
                   </li>
                   <li :class="isRouteActive('/news')">
-                    <nuxt-link :to="{ name: 'news' }">News</nuxt-link>
+                    <nuxt-link
+                      class="router-link__toggle"
+                      :to="{ name: 'news' }"
+                      >News</nuxt-link
+                    >
                     <!-- <div class="main-nav__megamenu">
                       <div class="row">
                         <div class="col-12">
