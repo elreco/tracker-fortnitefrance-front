@@ -51,7 +51,7 @@
     </div>
     <div class="site-content">
       <div class="container">
-        <div v-if="news.video" class="card">
+        <div v-if="news.video" class="card mb-5">
           <div class="card__content">
             <div class="alc-video-player js-alc-video-player">
               <div class="alc-video-player__item">
@@ -68,6 +68,7 @@
         <div class="row">
           <div class="content col-lg-6 offset-lg-3">
             <article class="post post--single">
+              <h4 v-if="news.subtitle">{{ news.subtitle }}</h4>
               <div class="post__content" v-html="news.text"></div>
             </article>
           </div>
