@@ -482,7 +482,7 @@ export default {
     }
   },
   mounted() {
-    this.$nextTick(() => this.$initSearchMobile())
+    this.$nextTick(() => this.$initGlobalTheme())
   },
   fetchDelay: 2000,
   methods: {

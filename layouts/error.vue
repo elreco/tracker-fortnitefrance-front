@@ -79,6 +79,9 @@ export default {
       description: 'Erreur Fortnite France',
     }
   },
+  mounted() {
+    this.$nextTick(() => this.$initGlobalTheme())
+  },
   head() {
     return {
       title: this.title,

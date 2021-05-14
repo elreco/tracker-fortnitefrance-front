@@ -16,7 +16,7 @@
             alt=""
           />
         </figure>
-        <div class="team-roster__content w-50">
+        <div class="team-roster__content w-100">
           <div class="team-roster__player-details">
             <div class="team-roster__player-info">
               <h5 v-if="stat.rank" class="team-roster__player-realname">

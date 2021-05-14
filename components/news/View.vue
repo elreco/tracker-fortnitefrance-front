@@ -66,7 +66,8 @@
         </div>
         <div class="row">
           <div class="col-lg-12">
-            <adsbygoogle ad-format="horizontal" class="mb-3" />
+            <adsense data-ad-client="pub-9253579683768027" class="mb-3">
+            </adsense>
           </div>
         </div>
         <div class="row">

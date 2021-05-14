@@ -65,7 +65,6 @@
 	var $chart_doughnut_soccer2 = $('#chart-doughnut-soccer-2');
 	var $chart_player_stats = $('#player-stats');
 	var $chart_event_cols = $('#alc-event-chart-cols');
-	var $content_filter = $('.content-filter');
 	var $marquee = $('.marquee');
 	var $range_slider = $('#slider-range');
 	var $insta_feed = $('#instagram-feed');
@@ -96,8 +95,6 @@
 			this.isotope();
 
 			this.SlickCarousel();
-
-			this.ContentFilter();
 
 			this.ChartJs();
 
@@ -1151,19 +1148,6 @@
 					]
 				});
 
-			}
-
-		},
-
-
-		ContentFilter: function() {
-
-			if ( $content_filter.exists() ) {
-				$('.content-filter__toggle').on('click', function(e){
-					e.preventDefault();
-					$(this).toggleClass('content-filter__toggle--active');
-					$('.content-filter__list').toggleClass('content-filter__list--expanded');
-				});
 			}
 
 		},

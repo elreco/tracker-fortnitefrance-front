@@ -3,7 +3,12 @@
     <news-slider />
     <div class="site-content">
       <div class="container">
-        <adsbygoogle class="mb-5" />
+        <adsense
+          data-ad-client="pub-9253579683768027"
+          data-ad-slot="5577404864"
+          class="mb-5"
+        >
+        </adsense>
         <about-box />
         <div class="spacer-xlg"></div>
         <div class="card card--clean">
