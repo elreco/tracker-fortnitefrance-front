@@ -12,7 +12,7 @@
         <about-box />
         <div class="spacer-xlg"></div>
         <div class="card card--clean">
-          <div class="card__header"><h4>Dernière news</h4></div>
+          <div class="card__header"><h4>Dernières news</h4></div>
         </div>
         <div class="card__content p-0">
           <news-grid />

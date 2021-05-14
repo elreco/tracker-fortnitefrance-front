@@ -4,7 +4,7 @@
       <div
         v-for="n in newsFirst"
         :key="n.objectId"
-        class="post-grid__item col-sm-4"
+        class="post-grid__item col-md-6 col-lg-4"
       >
         <news-card :news="n" />
       </div>
@@ -16,7 +16,7 @@
       <div
         v-for="n in newsSecond"
         :key="n.objectId"
-        class="post-grid__item col-sm-4"
+        class="post-grid__item col-md-6 col-lg-4"
       >
         <news-card :news="n" />
       </div>

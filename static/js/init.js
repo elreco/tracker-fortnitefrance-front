@@ -8,11 +8,6 @@
 ;(function($){
 	"use strict";
 
-	/* $('body:not(.page-loader-disable)').jpreLoader({
-		showSplash: false,
-		loaderVPos: "50%",
-	}); */
-
 	$.fn.exists = function () {
 		return this.length > 0;
 	};
@@ -65,7 +60,6 @@
 	var $chart_doughnut_soccer2 = $('#chart-doughnut-soccer-2');
 	var $chart_player_stats = $('#player-stats');
 	var $chart_event_cols = $('#alc-event-chart-cols');
-	var $marquee = $('.marquee');
 	var $range_slider = $('#slider-range');
 	var $insta_feed = $('#instagram-feed');
 	var $insta_feed_alt = $('#instagram-feed-alt');
@@ -88,8 +82,6 @@
 
 			this.headerNav();
 
-			/* this.countDown(); */
-
 			this.MagnificPopup();
 
 			this.isotope();
@@ -99,8 +91,6 @@
 			this.ChartJs();
 
 			this.RangeSlider();
-
-			this.GoogleMap();
 
 			this.miscScripts();
 
@@ -2521,65 +2511,6 @@
 				});
 			}
 		},
-
-
-		miscScripts: function() {
-			// Tooltips
-			$('[data-toggle="tooltip"]').tooltip();
-
-			[].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {
-				new SelectFx(el);
-			} );
-
-			// Marquee
-			if ( $marquee.exists() ) {
-				$marquee.marquee({
-					allowCss3Support: true,
-					pauseOnHover: true
-				});
-			}
-
-			// Game Result Widget - Expand
-			if ( $template_var == 'template-football' ) {
-
-				// Switch Toggle
-			$('.widget-game-result').each(function() {
-				var $this = $(this);
-
-				if ( $this.find('.switch-toggle').exists() ) {
-					var txtHolder = $this.find('.switch__label-txt');
-					var txtExpand = txtHolder.data('text-expand');
-					var txtShrink = txtHolder.data('text-shrink');
-
-					$this.on('change', function(){
-						$this.find('.widget-game-result__extra-stats').toggleClass('active');
-						txtHolder.text(function(i, text){
-							return text === txtShrink ? txtExpand : txtShrink;
-						});
-					});
-				}
-			});
-
-			} else {
-
-				// Switch Toggle (Basketball, Soccer)
-				$('.widget-game-result .js-switch-toggle').each(function() {
-					$(this).on('click', function(){
-
-						var text_expand = $(this).find('.js-switch-txt').data('text-expand');
-						var text_shrink = $(this).find('.js-switch-txt').data('text-shrink');
-
-						$(this).parent().parent().find('.widget-game-result__extra-stats').toggleClass('active');
-						$(this).find('.js-switch-txt').text(function(i, text){
-							return text === text_shrink ? text_expand : text_shrink;
-						});
-					});
-				});
-
-			}
-
-		},
-
 	};
 
 	$(document).on('ready', function() {
