@@ -1,9 +1,9 @@
 export default (context, inject) => {
-  var initSearchMobile = () => {
+  var initGlobalTheme = () => {
     $('#header-mobile__search-icon').on('click', function () {
       $(this).toggleClass('header-mobile__search-icon--close');
       $('.header-mobile').toggleClass('header-mobile--expanded');
     });
   }
-  inject('initSearchMobile', initSearchMobile)
+  inject('initGlobalTheme', initGlobalTheme)
 }

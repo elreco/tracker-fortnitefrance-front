@@ -255,7 +255,15 @@ export default {
       mode: 'client'
     },
     {
-      src: '~/plugins/client/search-mobile.js',
+      src: '~/plugins/client/content-filter.js',
+      mode: 'client'
+    },
+    {
+      src: '~/plugins/client/global-theme.js',
+      mode: 'client'
+    },
+    {
+      src: '~/plugins/client/vue-google-adsense',
       mode: 'client'
     },
     {
@@ -285,16 +293,11 @@ export default {
     }],
     '@nuxtjs/moment',
     '@nuxtjs/dotenv',
-    '@nuxtjs/google-analytics',
-    '@nuxtjs/google-adsense'
+    '@nuxtjs/google-analytics'
   ],
 
   googleAnalytics: {
     id: "UA-97058805-4", // Use as fallback if no runtime config is provided
-  },
-
-  'google-adsense': {
-    id: 'pub-9253579683768027'
   },
 
   moment: {

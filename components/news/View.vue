@@ -66,7 +66,12 @@
         </div>
         <div class="row">
           <div class="col-lg-12">
-            <adsbygoogle ad-format="horizontal" class="mb-3" />
+            <adsense
+              data-ad-client="pub-9253579683768027"
+              data-ad-format="horizontal"
+              class="mb-3"
+            >
+            </adsense>
           </div>
         </div>
         <div class="row">
@@ -328,6 +333,11 @@ export default {
         this.$nextTick(() => this.$initMpIframe())
       }
     },
+    news() {
+      if (this.news && this.news.objectId) {
+        this.addViews()
+      }
+    },
   },
   methods: {
     async getNews() {
@@ -338,8 +348,10 @@ export default {
         id: this.$route.params.id,
         params,
       })
-      await this.$store.dispatch('news/addView', news.objectId)
       return news
+    },
+    addViews() {
+      this.$store.dispatch('news/addView', this.news.objectId)
     },
   },
 }
