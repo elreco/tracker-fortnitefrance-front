@@ -127,9 +127,9 @@ export default {
         this.loading ||
         this.$fetchState.pending ||
         !this.$store.state.stat.stat.name ||
-          !this.$route.params.name ||
-          this.$store.state.stat.stat.name.toLowerCase() !==
-            this.$route.params.name.toLowerCase()
+        !this.$route.params.name ||
+        this.$store.state.stat.stat.name.toLowerCase() !==
+          this.$route.params.name.toLowerCase()
       ) {
         return false
       } else {
