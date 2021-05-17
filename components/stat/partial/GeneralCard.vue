@@ -203,7 +203,7 @@ export default {
     },
     totalWins() {
       const totalWins = this.stat.totalWins ? this.stat.totalWins : 0
-      return Math.abs(totalWins - this.kills())
+      return totalWins
     },
     killsPct() {
       return (this.kills() * 100) / this.deaths()
