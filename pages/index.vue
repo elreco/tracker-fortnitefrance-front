@@ -18,9 +18,8 @@
               <span class="highlight">statistiques</span> Fortnite Battle Royale
             </h1>
             <stat-search
-              :is-home-page="false"
               placeholder="Entrez le nom d'un joueur (ex. zRotation, Ship...)"
-              class="w-100 search-home"
+              class="w-100 search-home body-search-form"
             />
           </div>
         </div>

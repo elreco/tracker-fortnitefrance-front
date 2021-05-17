@@ -22,7 +22,7 @@
             class="header-mobile__search-icon"
           ></span>
         </div>
-        <stat-search />
+        <stat-search class="header-search-form" />
       </div>
 
       <header class="header header--layout-3">
@@ -107,7 +107,7 @@
 
               <div class="header__primary-spacer"></div>
 
-              <stat-search />
+              <stat-search class="header-search-form" />
             </div>
           </div>
         </div>

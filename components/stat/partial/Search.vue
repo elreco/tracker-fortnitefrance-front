@@ -1,5 +1,5 @@
 <template>
-  <div class="header-search-form">
+  <div>
     <form class="search-form" @submit.prevent="search">
       <input
         ref="searchInput"
