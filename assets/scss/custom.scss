@@ -61,3 +61,41 @@
   font-style: italic!important;
  }
 }
+
+.body-search-form {
+	padding: 24px 0;
+	overflow: hidden;
+	transition: all 0.4s ease-in-out;
+	position: relative;
+	z-index: 1;
+	vertical-align: top;
+
+	@media (min-width: 992px) {
+		display: inline-block;
+		width: $header-search-width-desktop-lg;
+	}
+
+	@media (min-width: 992px) and (max-width: 1199px) {
+		width: $header-search-width-desktop;
+	}
+
+	.search-form {
+		position: relative;
+	}
+
+	.main-nav & {
+		padding: 11px 0;
+		background-color: transparent;
+
+		&.header-search-form--right {
+			float: right;
+		}
+	}
+
+	.header__secondary & {
+
+		&.header-search-form--left {
+			float: left;
+		}
+	}
+}

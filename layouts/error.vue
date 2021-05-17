@@ -43,7 +43,7 @@
                   </h3>
                 </template>
               </header>
-              <stat-search />
+              <stat-search class="body-search-form" />
               <div v-if="!error.playerNotFound" class="error__description">
                 {{ error.message }}
               </div>
