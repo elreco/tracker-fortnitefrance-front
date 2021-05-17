@@ -4,13 +4,6 @@
     <template v-else-if="!$fetchState.pending && !$fetchState.error">
       <div class="team-roster team-roster--card mb-0 pb-0">
         <stat-general-card :stat="stat" />
-        <adsense
-          data-ad-client="pub-9253579683768027"
-          data-ad-slot="2059506107"
-          class="my-3"
-          data-ad-format="horizontal"
-        >
-        </adsense>
         <div class="row">
           <div class="col-sm-12 col-lg-4">
             <stat-playlist-widget
@@ -37,9 +30,18 @@
       </div>
       <div class="row">
         <div class="col-lg-12">
-          <stat-match-table :matches="matches" title="Matchs récents" />
+          <adsense
+            data-ad-client="pub-9253579683768027"
+            data-ad-slot="2059506107"
+            class="my-3"
+            data-ad-format="horizontal"
+          >
+          </adsense>
         </div>
       </div>
+      <stat-match-table :matches="matches" title="Matchs récents" />
+      <adsense data-ad-client="pub-9253579683768027" data-ad-slot="4645662062">
+      </adsense>
     </template>
   </div>
 </template>

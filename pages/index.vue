@@ -19,7 +19,7 @@
             </h1>
             <stat-search
               placeholder="Entrez le nom d'un joueur (ex. zRotation, Ship...)"
-              class="w-100 search-home body-search-form"
+              :is-home-page="true"
             />
           </div>
         </div>
@@ -30,7 +30,7 @@
       <div class="container">
         <adsense
           data-ad-client="pub-9253579683768027"
-          data-ad-slot="8984007104"
+          data-ad-slot="4645662062"
           class="mb-5"
         >
         </adsense>
