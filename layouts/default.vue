@@ -22,9 +22,7 @@
             class="header-mobile__search-icon"
           ></span>
         </div>
-        <div class="header-search-form">
-          <stat-search />
-        </div>
+        <stat-search />
       </div>
 
       <header class="header header--layout-3">
@@ -100,227 +98,7 @@
                       :to="{ name: 'news' }"
                       >News</nuxt-link
                     >
-                    <!-- <div class="main-nav__megamenu">
-                      <div class="row">
-                        <div class="col-12">
-                          <div
-                            class="widget widget--megamenu widget-latest-posts"
-                          >
-                            <div class="widget__content">
-                              <ul
-                                class="posts posts--simple-list posts-layout-horizontal posts-layout-horizontal--3cols"
-                              >
-                                <li class="posts__item posts__item--category-4">
-                                  <figure
-                                    class="posts__thumb posts__thumb--hover"
-                                  >
-                                    <a href="#"
-                                      ><img
-                                        src="/images/esports/samples/nav-post-img-1.jpg"
-                                        alt=""
-                                    /></a>
-                                  </figure>
-                                  <div class="posts__inner">
-                                    <div class="posts__cat">
-                                      <span
-                                        class="label posts__cat-label posts__cat-label--category-4"
-                                        >Xenowatch</span
-                                      >
-                                    </div>
-                                    <h6
-                                      class="posts__title posts__title--color-hover"
-                                    >
-                                      <a href="_esports_blog-post-1.html"
-                                        >Xenowatch&#x27;s new patch will fix the
-                                        faces bugs</a
-                                      >
-                                    </h6>
-                                    <time
-                                      datetime="2017-08-21"
-                                      class="posts__date"
-                                      >August 27th, 2018</time
-                                    >
-                                  </div>
-                                </li>
-                                <li class="posts__item posts__item--category-2">
-                                  <figure
-                                    class="posts__thumb posts__thumb--hover"
-                                  >
-                                    <a href="#"
-                                      ><img
-                                        src="/images/esports/samples/nav-post-img-2.jpg"
-                                        alt=""
-                                    /></a>
-                                  </figure>
-                                  <div class="posts__inner">
-                                    <div class="posts__cat">
-                                      <span
-                                        class="label posts__cat-label posts__cat-label--category-2"
-                                        >L.O. Heroes</span
-                                      >
-                                    </div>
-                                    <h6
-                                      class="posts__title posts__title--color-hover"
-                                    >
-                                      <a href="_esports_blog-post-1.html"
-                                        >A new mage character is coming to the
-                                        League</a
-                                      >
-                                    </h6>
-                                    <time
-                                      datetime="2017-08-21"
-                                      class="posts__date"
-                                      >July 16th, 2018</time
-                                    >
-                                  </div>
-                                </li>
-                                <li class="posts__item posts__item--category-3">
-                                  <figure
-                                    class="posts__thumb posts__thumb--hover"
-                                  >
-                                    <a href="#"
-                                      ><img
-                                        src="/images/esports/samples/nav-post-img-3.jpg"
-                                        alt=""
-                                    /></a>
-                                  </figure>
-                                  <div class="posts__inner">
-                                    <div class="posts__cat">
-                                      <span
-                                        class="label posts__cat-label posts__cat-label--category-3"
-                                        >Striker GO</span
-                                      >
-                                    </div>
-                                    <h6
-                                      class="posts__title posts__title--color-hover"
-                                    >
-                                      <a href="_esports_blog-post-1.html"
-                                        >New Teach vehicles will be added in
-                                        July&#x27;s patch</a
-                                      >
-                                    </h6>
-                                    <time
-                                      datetime="2017-08-21"
-                                      class="posts__date"
-                                      >June 12th, 2018</time
-                                    >
-                                  </div>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="w-100"></div>
-                        <ul
-                          class="col-lg-5 col-md-3 col-12 main-nav__ul main-nav__ul-3cols"
-                        >
-                          <li class="main-nav__title">Main Features</li>
-                          <li>
-                            <a href="_esports_features-shortcodes.html"
-                              >Shortcodes</a
-                            >
-                          </li>
-                          <li>
-                            <a href="_esports_features-widgets-blog.html"
-                              >Widgets - Blog</a
-                            >
-                          </li>
-                          <li>
-                            <a href="_esports_index.html">Home V1</a>
-                          </li>
-                          <li>
-                            <a href="_esports_features-typography.html"
-                              >Typography</a
-                            >
-                          </li>
-                          <li>
-                            <a href="_esports_features-widgets-sports.html"
-                              >Widgets - eSports</a
-                            >
-                          </li>
-                          <li>
-                            <a href="_esports_index-2.html">Home V2</a>
-                          </li>
-                          <li>
-                            <a href="_esports_features-404.html">404 Error</a>
-                          </li>
-                          <li>
-                            <a href="_esports_features-widgets-shop.html"
-                              >Widgets - Shop</a
-                            >
-                          </li>
-                          <li></li>
-                          <li>
-                            <a href="_esports_features-search-results.html"
-                              >Search Results</a
-                            >
-                          </li>
-                          <li>
-                            <a href="_esports_shop-login.html"
-                              >Login/Register</a
-                            >
-                          </li>
-                        </ul>
-                        <ul
-                          class="col-lg-3 col-md-3 col-12 main-nav__ul main-nav__ul-2cols"
-                        >
-                          <li class="main-nav__title">Blog Pages</li>
-                          <li>
-                            <a href="_esports_blog-1.html">News Page V1</a>
-                          </li>
-                          <li>
-                            <a href="_esports_blog-post-1.html">Post Page V1</a>
-                          </li>
-                          <li>
-                            <a href="_esports_blog-2.html">News Page V2</a>
-                          </li>
-                          <li>
-                            <a href="_esports_blog-post-2.html">Post Page V2</a>
-                          </li>
-                          <li>
-                            <a href="_esports_blog-3.html">News Page V3</a>
-                          </li>
-                          <li>
-                            <a href="_esports_blog-post-3.html">Post Page V3</a>
-                          </li>
-                          <li>
-                            <a href="_esports_blog-4.html">News Page V4</a>
-                          </li>
-                        </ul>
-                        <ul class="col-lg-2 col-md-3 col-12 main-nav__ul">
-                          <li class="main-nav__title">Other Pages</li>
-                          <li>
-                            <a href="_esports_page-sponsors.html">Sponsors</a>
-                          </li>
-                          <li>
-                            <a href="_esports_page-faqs.html">FAQs</a>
-                          </li>
-                          <li>
-                            <a href="_esports_page-contacts.html">Contacts</a>
-                          </li>
-                          <li>
-                            <a href="_esports_features-404.html">404 Error</a>
-                          </li>
-                        </ul>
-                        <ul class="col-lg-2 col-md-3 col-12 main-nav__ul">
-                          <li class="main-nav__title">Headers</li>
-                          <li>
-                            <a href="_esports_features-typography.html"
-                              >Header V1</a
-                            >
-                          </li>
-                          <li>
-                            <a href="_esports_features-shortcodes.html"
-                              >Header V2</a
-                            >
-                          </li>
-                        </ul>
-                      </div>
-                    </div> -->
                   </li>
-                  <!-- <li>
-                    <nuxt-link :to="{ name: 'index' }">Tournois</nuxt-link>
-                  </li> -->
                   <li>
                     <a :href="discord.link">{{ discord.title }}</a>
                   </li>
@@ -329,9 +107,7 @@
 
               <div class="header__primary-spacer"></div>
 
-              <div class="header-search-form">
-                <stat-search />
-              </div>
+              <stat-search />
             </div>
           </div>
         </div>
@@ -376,11 +152,16 @@
                                 >
                               </li>
                               <li>
-                                <a :href="discord.link">{{ discord.name }}</a>
+                                <a :href="discord.link">{{ discord.title }}</a>
                               </li>
                               <li>
                                 <router-link :to="{ name: 'login' }">
                                   Mon compte</router-link
+                                >
+                              </li>
+                              <li>
+                                <router-link :to="{ name: 'legal-notice' }">
+                                  Mentions légales</router-link
                                 >
                               </li>
                             </ul>

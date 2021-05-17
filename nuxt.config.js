@@ -16,7 +16,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: 'Premier site de statistiques et leaderboards en France sur Fortnite Battle Royale. Analysez votre profil de manière approfondie grâce à nos graphiques.'
+        content: 'Premier site de statistiques et leaderboards en France sur Fortnite Battle Royale. Analysez votre profil de manière approfondie et consultez votre nombre de tops 1.'
       },
       {
         hid: 'twitter:image',
@@ -239,7 +239,7 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ['~/assets/scss/style-esports.scss', '~/assets/scss/custom.scss'],
+  css: ['~/assets/scss/style-esports.scss'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [{

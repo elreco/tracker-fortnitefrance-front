@@ -6,6 +6,7 @@
         <stat-general-card :stat="stat" />
         <adsense
           data-ad-client="pub-9253579683768027"
+          data-ad-slot="2059506107"
           class="my-3"
           data-ad-format="horizontal"
         >

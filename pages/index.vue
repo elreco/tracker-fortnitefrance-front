@@ -1,11 +1,36 @@
 <template>
   <div>
+    <div
+      class="
+        page-heading page-heading--horizontal
+        effect-duotone effect-duotone--primary
+      "
+    >
+      <div class="effect-duotone__layer">
+        <div class="effect-duotone__layer-inner"></div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h1 class="page-heading__title text-center">
+              Recherchez vos
+              <span class="highlight">statistiques</span> Fortnite Battle Royale
+            </h1>
+            <stat-search
+              :is-home-page="false"
+              placeholder="Entrez le nom d'un joueur (ex. zRotation, Ship...)"
+              class="w-100 search-home"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
     <news-slider />
     <div class="site-content">
       <div class="container">
         <adsense
           data-ad-client="pub-9253579683768027"
-          data-ad-slot="5577404864"
+          data-ad-slot="8984007104"
           class="mb-5"
         >
         </adsense>
@@ -34,6 +59,7 @@ import NewsSlider from '@/components/news/Slider'
 import NewsGrid from '@/components/news/Grid'
 import Faq from '@/components/global/Faq'
 import AboutBox from '@/components/global/AboutBox'
+import StatSearch from '~/components/stat/partial/Search.vue'
 
 export default {
   components: {
@@ -41,6 +67,7 @@ export default {
     NewsGrid,
     Faq,
     AboutBox,
+    StatSearch,
   },
   beforeRouteLeave(to, from, next) {
     this.$killRevSlider()

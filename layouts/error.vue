@@ -1,7 +1,10 @@
 <template>
   <div>
     <div
-      class="page-heading page-heading--horizontal effect-duotone effect-duotone--primary"
+      class="
+        page-heading page-heading--horizontal
+        effect-duotone effect-duotone--primary
+      "
     >
       <div class="effect-duotone__layer">
         <div class="effect-duotone__layer-inner"></div>
@@ -40,9 +43,7 @@
                   </h3>
                 </template>
               </header>
-              <div class="header-search-form">
-                <stat-search />
-              </div>
+              <stat-search />
               <div v-if="!error.playerNotFound" class="error__description">
                 {{ error.message }}
               </div>
@@ -79,9 +80,6 @@ export default {
       description: 'Erreur Fortnite France',
     }
   },
-  mounted() {
-    this.$nextTick(() => this.$initGlobalTheme())
-  },
   head() {
     return {
       title: this.title,
@@ -113,6 +111,9 @@ export default {
         },
       ],
     }
+  },
+  mounted() {
+    this.$nextTick(() => this.$initGlobalTheme())
   },
 }
 </script>
