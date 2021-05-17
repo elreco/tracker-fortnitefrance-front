@@ -152,11 +152,16 @@
                                 >
                               </li>
                               <li>
-                                <a :href="discord.link">{{ discord.name }}</a>
+                                <a :href="discord.link">{{ discord.title }}</a>
                               </li>
                               <li>
                                 <router-link :to="{ name: 'login' }">
                                   Mon compte</router-link
+                                >
+                              </li>
+                              <li>
+                                <router-link :to="{ name: 'legal-notice' }">
+                                  Mentions légales</router-link
                                 >
                               </li>
                             </ul>
