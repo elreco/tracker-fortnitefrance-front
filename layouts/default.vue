@@ -48,7 +48,9 @@
                         <li>
                           <nuxt-link
                             class="router-link__toggle"
-                            :to="{ name: 'account' }"
+                            :to="{
+                              name: 'account',
+                            }"
                             >Mon compte</nuxt-link
                           >
                         </li>
@@ -85,19 +87,59 @@
               </div>
               <nav class="main-nav">
                 <ul class="main-nav__list">
-                  <li :class="isRouteActive('/')">
+                  <li :class="isRouteActive('index')">
                     <nuxt-link
                       class="router-link__toggle"
                       :to="{ name: 'index' }"
                       >Accueil</nuxt-link
                     >
                   </li>
-                  <li :class="isRouteActive('/news')">
-                    <nuxt-link
-                      class="router-link__toggle"
-                      :to="{ name: 'news' }"
-                      >News</nuxt-link
-                    >
+                  <li :class="isRouteActive('news')" class="has-children">
+                    <a href="#">Parcourir</a>
+                    <ul class="main-nav__sub">
+                      <li :class="isRouteActive('news')">
+                        <nuxt-link :to="{ name: 'news' }">News</nuxt-link>
+                      </li>
+                      <li class="">
+                        <a href="#"
+                          ><span
+                            class="
+                              mr-1
+                              label
+                              posts__cat-label posts__cat-label--category-4
+                            "
+                            >Bientôt</span
+                          >
+                          Classement
+                        </a>
+                      </li>
+                      <li class="">
+                        <a href="#"
+                          ><span
+                            class="
+                              mr-1
+                              label
+                              posts__cat-label posts__cat-label--category-4
+                            "
+                            >Bientôt</span
+                          >
+                          Tournois</a
+                        >
+                      </li>
+                      <li class="">
+                        <a href="#"
+                          ><span
+                            class="
+                              mr-1
+                              label
+                              posts__cat-label posts__cat-label--category-4
+                            "
+                            >Bientôt</span
+                          >
+                          Boutique</a
+                        >
+                      </li>
+                    </ul>
                   </li>
                   <li>
                     <a :href="discord.link">{{ discord.title }}</a>
@@ -147,7 +189,10 @@
                           <div class="col">
                             <ul class="widget__list">
                               <li>
-                                <router-link :to="{ name: 'index' }"
+                                <router-link
+                                  :to="{
+                                    name: 'index',
+                                  }"
                                   >Accueil</router-link
                                 >
                               </li>
@@ -155,12 +200,20 @@
                                 <a :href="discord.link">{{ discord.title }}</a>
                               </li>
                               <li>
-                                <router-link :to="{ name: 'login' }">
+                                <router-link
+                                  :to="{
+                                    name: 'login',
+                                  }"
+                                >
                                   Mon compte</router-link
                                 >
                               </li>
                               <li>
-                                <router-link :to="{ name: 'legal-notice' }">
+                                <router-link
+                                  :to="{
+                                    name: 'legal-notice',
+                                  }"
+                                >
                                   Mentions légales</router-link
                                 >
                               </li>
@@ -278,8 +331,8 @@ export default {
         },
       })
     },
-    isRouteActive(path) {
-      if (path === this.$route.path) {
+    isRouteActive(name) {
+      if (name === this.$route.name) {
         return 'active'
       }
     },
