@@ -6,27 +6,13 @@
     <div class="widget__content-secondary">
       <div class="widget-player__details">
         <stat-playlist-item
-          v-if="playlist.placetop1"
-          :value="$numeral(playlist.placetop1).format()"
+          :value="wins(playlist.placetop1)"
           title="Victoires"
         />
+        <stat-playlist-item :value="kd(playlist.kd)" title="Ratio K/D" />
+        <stat-playlist-item :value="kills(playlist.kills)" title="Kills" />
         <stat-playlist-item
-          v-if="playlist.kd"
-          :value="$numeral(playlist.kd).format('0.00')"
-          title="Ratio K/D"
-        />
-        <stat-playlist-item
-          v-if="playlist.kills"
-          :value="$numeral(playlist.kills).format('0a')"
-          title="Kills"
-        />
-        <stat-playlist-item
-          v-if="playlist.kills && playlist.matchesplayed"
-          :value="
-            $numeral(Math.abs(playlist.kills - playlist.matchesplayed)).format(
-              '0a'
-            )
-          "
+          :value="deaths(playlist.placetop1, playlist.matchesplayed)"
           title="Morts"
         />
         <stat-playlist-item
@@ -60,22 +46,18 @@
           title="Top 6"
         />
         <stat-playlist-item
-          v-if="playlist.minutesplayed"
           :value="formatMinutesPlayed(playlist.minutesplayed)"
           title="Tps de jeu"
         />
         <stat-playlist-item
-          v-if="playlist.kills && playlist.matchesplayed"
           :value="killsPerMatches(playlist.kills, playlist.matchesplayed)"
           title="Kills / match"
         />
         <stat-playlist-item
-          v-if="playlist.kills && playlist.minutesplayed"
           :value="killsPerMinutes(playlist.kills, playlist.minutesplayed)"
           title="Kills / min."
         />
         <stat-playlist-item
-          v-if="playlist.score && playlist.minutesplayed"
           :value="scorePerMinutes(playlist.score, playlist.minutesplayed)"
           title="Score / min."
         />
@@ -126,19 +108,67 @@ export default {
   },
   methods: {
     formatMinutesPlayed(minutes) {
+      if (!minutes) {
+        minutes = 0
+      }
       const milliseconds = this.$moment
         .duration(minutes, 'minutes')
         .asMilliseconds()
       return this.$moment.utc(milliseconds).format('D[J]hh[H]mm[M]')
     },
     killsPerMatches(kills, matches) {
+      if (!kills) {
+        kills = 0
+      }
+      if (!matches) {
+        matches = 0
+      }
       return this.$numeral(kills / matches).format('0.00')
     },
     killsPerMinutes(kills, minutes) {
+      if (!kills) {
+        kills = 0
+      }
+      if (!minutes) {
+        minutes = 0
+      }
       return this.$numeral(kills / minutes).format('0.00')
     },
     scorePerMinutes(score, minutes) {
+      if (!score) {
+        score = 0
+      }
+      if (!minutes) {
+        minutes = 0
+      }
       return this.$numeral(score / minutes).format('0.00')
+    },
+    deaths(wins, matchesplayed) {
+      if (!wins) {
+        wins = 0
+      }
+      if (!matchesplayed) {
+        matchesplayed = 0
+      }
+      return this.$numeral(Math.abs(wins - matchesplayed)).format('0a')
+    },
+    kd(kd) {
+      if (!kd) {
+        kd = 0
+      }
+      return this.$numeral(kd).format('0.00')
+    },
+    wins(wins) {
+      if (!wins) {
+        wins = 0
+      }
+      return this.$numeral(wins).format()
+    },
+    kills(kills) {
+      if (!kills) {
+        kills = 0
+      }
+      return this.$numeral(kills).format('0a')
     },
   },
 }
