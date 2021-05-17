@@ -199,7 +199,7 @@ export default {
         this.stat.global_stats.squad.matchesplayed
           ? this.stat.global_stats.squad.matchesplayed
           : 0
-      return Math.abs(solo + duo + squad - this.kills())
+      return Math.abs(solo + duo + squad - this.totalWins())
     },
     totalWins() {
       const totalWins = this.stat.totalWins ? this.stat.totalWins : 0
