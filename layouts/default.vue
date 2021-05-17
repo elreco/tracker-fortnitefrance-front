@@ -98,7 +98,11 @@
                     <a href="#">Parcourir</a>
                     <ul class="main-nav__sub">
                       <li :class="isRouteActive('news')">
-                        <nuxt-link :to="{ name: 'news' }">News</nuxt-link>
+                        <nuxt-link
+                          class="router-link__toggle"
+                          :to="{ name: 'news' }"
+                          >News</nuxt-link
+                        >
                       </li>
                       <li class="">
                         <a href="#"
