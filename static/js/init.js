@@ -193,11 +193,11 @@
         });
 
         $(".main-nav__list > li").on('mouseover', function () {
-          $(".main-nav__sub").css("opacity", 1).css('transform', 'rotateX(0deg)').css('visibility', 'visible');
+          $(this).find(".main-nav__sub").css("opacity", 1).css('transform', 'rotateX(0deg)').css('visibility', 'visible');
         });
 
         $(".main-nav__list > li").on('mouseout', function () {
-          $(".main-nav__sub").css('opacity', 0).css("transform-style", "preserve-3d").css('transform', 'rotateX(-75deg)').css('visibility', 'hidden');
+          $(this).find(".main-nav__sub").css('opacity', 0).css("transform-style", "preserve-3d").css('transform', 'rotateX(-75deg)').css('visibility', 'hidden');
         });
 
         $(".main-nav__list > li a").on('click', function () {
