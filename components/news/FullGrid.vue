@@ -1,6 +1,15 @@
 <template>
   <div>
     <div class="posts posts--cards post-grid post-grid--2cols row">
+      <div class="post-grid__item col-sm-6">
+        <div class="card__content">
+          <adsense
+            data-ad-client="pub-9253579683768027"
+            data-ad-slot="4645662062"
+          >
+          </adsense>
+        </div>
+      </div>
       <div v-for="n in news" :key="n.objectId" class="post-grid__item col-sm-6">
         <news-card :news="n" />
       </div>

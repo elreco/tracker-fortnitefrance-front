@@ -1,17 +1,38 @@
 <template>
   <div>
-    <form class="search-form" @submit.prevent="search">
-      <input
-        ref="searchInput"
-        v-model="searchInput"
-        type="text"
-        class="form-control header-mobile__search-control"
-        required
-        :placeholder="placeholder"
-      />
-      <button type="submit" class="header-mobile__search-submit">
-        <i class="fas fa-search"></i>
-      </button>
+    <form
+      :class="isHomePage ? 'w-100 body-search-form' : 'search-form'"
+      @submit.prevent="search"
+    >
+      <template v-if="isHomePage">
+        <div class="input-group">
+          <input
+            ref="searchInput"
+            v-model="searchInput"
+            type="text"
+            class="form-control header-mobile__search-control"
+            required
+            :placeholder="placeholder"
+          />
+
+          <span class="input-group-append"
+            ><button class="btn btn-primary" type="submit">Rechercher</button>
+          </span>
+        </div>
+      </template>
+      <template v-else>
+        <input
+          ref="searchInput"
+          v-model="searchInput"
+          type="text"
+          class="form-control header-mobile__search-control"
+          required
+          :placeholder="placeholder"
+        />
+        <button type="submit" class="header-mobile__search-submit">
+          <i class="fas fa-search"></i>
+        </button>
+      </template>
     </form>
   </div>
 </template>
@@ -19,6 +40,11 @@
 <script>
 export default {
   props: {
+    isHomePage: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
     placeholder: {
       type: String,
       required: false,
