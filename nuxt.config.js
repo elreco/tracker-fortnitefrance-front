@@ -16,7 +16,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: 'Premier site de statistiques et leaderboards en France sur Fortnite Battle Royale. Analysez votre profil de manière approfondie grâce à nos graphiques.'
+        content: 'Premier site de statistiques et leaderboards en France sur Fortnite Battle Royale. Analysez votre profil de manière approfondie et consultez votre nombre de tops 1.'
       },
       {
         hid: 'twitter:image',
@@ -239,7 +239,7 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ['~/assets/scss/style-esports.scss', '~/assets/scss/custom.scss'],
+  css: ['~/assets/scss/style-esports.scss'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [{
@@ -255,7 +255,15 @@ export default {
       mode: 'client'
     },
     {
-      src: '~/plugins/client/search-mobile.js',
+      src: '~/plugins/client/content-filter.js',
+      mode: 'client'
+    },
+    {
+      src: '~/plugins/client/global-theme.js',
+      mode: 'client'
+    },
+    {
+      src: '~/plugins/client/vue-google-adsense',
       mode: 'client'
     },
     {
@@ -285,7 +293,12 @@ export default {
     }],
     '@nuxtjs/moment',
     '@nuxtjs/dotenv',
+    '@nuxtjs/google-analytics'
   ],
+
+  googleAnalytics: {
+    id: "UA-97058805-4", // Use as fallback if no runtime config is provided
+  },
 
   moment: {
     defaultLocale: 'fr',
@@ -308,7 +321,7 @@ export default {
   },
   env: {
     appName: process.env.APP_NAME || 'Fortnite France',
-    baseUrl: process.env.BASE_URL || 'http://localhost:3000',
+    baseUrl: process.env.VUE_BASE_URL_TRACKER || 'http://localhost:3000',
   },
   router: {
     extendRoutes(routes, resolve) {

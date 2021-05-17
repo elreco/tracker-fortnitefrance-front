@@ -96,6 +96,9 @@ export default {
       ],
     }
   },
+  mounted() {
+    this.$nextTick(() => this.$initContentFilter())
+  },
   methods: {
     title() {
       if (this.$route.params && this.$route.params.view) {

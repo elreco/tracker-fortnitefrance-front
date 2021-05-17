@@ -69,7 +69,7 @@
                   data-radius="2px"
                   data-origin="50% 50%"
                 >
-                  {{ $voca.truncate(n.title, 20, '...') }}
+                  {{ $voca.truncate(n.title, 30, '...') }}
                 </div>
               </div>
 
@@ -103,7 +103,7 @@
                   data-radius="2px"
                   data-origin="50% 50%"
                 >
-                  {{ $voca.truncate(n.subtitle, 20, '...') }}
+                  {{ $voca.truncate(n.subtitle, 30, '...') }}
                 </div>
               </div>
 
