@@ -5,6 +5,7 @@
         page-heading page-heading--horizontal
         effect-duotone effect-duotone--primary
       "
+      style="background-image: url(/images/esports/home_bg.jpg)"
     >
       <div class="effect-duotone__layer">
         <div class="effect-duotone__layer-inner"></div>
