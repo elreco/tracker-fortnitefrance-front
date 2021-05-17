@@ -1,21 +1,30 @@
 <template>
-  <form class="search-form" @submit.prevent="search">
-    <input
-      ref="searchInput"
-      v-model="searchInput"
-      type="text"
-      class="form-control header-mobile__search-control"
-      required
-      placeholder="Recherchez les statistiques d'un joueur"
-    />
-    <button type="submit" class="header-mobile__search-submit">
-      <i class="fas fa-search"></i>
-    </button>
-  </form>
+  <div class="header-search-form">
+    <form class="search-form" @submit.prevent="search">
+      <input
+        ref="searchInput"
+        v-model="searchInput"
+        type="text"
+        class="form-control header-mobile__search-control"
+        required
+        :placeholder="placeholder"
+      />
+      <button type="submit" class="header-mobile__search-submit">
+        <i class="fas fa-search"></i>
+      </button>
+    </form>
+  </div>
 </template>
 
 <script>
 export default {
+  props: {
+    placeholder: {
+      type: String,
+      required: false,
+      default: "Recherchez les statistiques d'un joueur",
+    },
+  },
   data() {
     return {
       searchInput: null,

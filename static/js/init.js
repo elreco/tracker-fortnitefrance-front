@@ -92,8 +92,6 @@
 
 			this.RangeSlider();
 
-			this.miscScripts();
-
 		},
 
 		SvgPolyfill: function() {

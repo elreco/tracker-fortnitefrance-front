@@ -14,10 +14,13 @@ export default function ({
           message: error.response.data.error,
         });
       } else {
-        $toast({
-          component: Toast,
-          props: getMessage(error.response)
-        })
+        var message = getMessage(error.response)
+        if (message) {
+          $toast({
+            component: Toast,
+            props: message
+          })
+        }
       }
       //return Promise.reject(error);
     }
@@ -27,7 +30,7 @@ export default function ({
 }
 
 function getMessage(error) {
-  var text = 'Un problème est survenu. Veuillez réessayer svp.'
+  var text = null
   var type = 'danger'
 
   if ((error.config.url === 'login' && error.config.method === 'get') || (error.config.url === 'users' && error.config.method === 'post')) {
@@ -46,8 +49,13 @@ function getMessage(error) {
         break
     }
   }
-  return {
-    text: text,
-    type: type
+  if (text) {
+    return {
+      text: text,
+      type: type
+    }
+  } else {
+    return null
   }
+
 }

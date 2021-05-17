@@ -25,6 +25,7 @@
   box-shadow: none !important;
   min-width: 526px !important;
 }
+
 .Vue-Toastification__toast--default {
   background: none !important;
 }
@@ -34,4 +35,29 @@
   bottom: 42px !important;
   left: 82px !important;
   width: 75% !important;
+}
+
+.search-home input {
+  border: 2px solid $color-dark-2;
+  font-size: 13px;
+  font-style: normal;
+
+  &:focus {
+    border: 2px solid $color-dark-lighten-2;
+  }
+  &::-webkit-input-placeholder {
+    font-style: italic!important;
+ }
+
+ &:-moz-placeholder {
+  font-style: italic!important;
+ }
+
+ &::-moz-placeholder {
+  font-style: italic!important;
+ }
+
+ &:-ms-input-placeholder {
+  font-style: italic!important;
+ }
 }
