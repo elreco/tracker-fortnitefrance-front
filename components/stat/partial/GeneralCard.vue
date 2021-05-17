@@ -4,7 +4,11 @@
       <div class="team-roster__content-wrapper">
         <figure class="team-roster__player-img" style="max-height: 400px">
           <div
-            class="team-roster__player-shape effect-duotone effect-duotone--blue team-roster__player-shape--bg2"
+            class="
+              team-roster__player-shape
+              effect-duotone effect-duotone--blue
+              team-roster__player-shape--bg2
+            "
           >
             <div class="effect-duotone__layer">
               <div class="effect-duotone__layer-inner"></div>
@@ -29,7 +33,7 @@
           </div>
           <div class="team-roster__player-details-common">
             <ul class="team-roster__player-social social-links">
-              <social-buttons />
+              <social-buttons class="social-buttons-stat" />
             </ul>
           </div>
           <div class="team-roster__player-stats">
@@ -79,7 +83,10 @@
                       </div>
                     </td>
                     <td
-                      class="progress-table__progress-label progress-table__progress-label--highlight"
+                      class="
+                        progress-table__progress-label
+                        progress-table__progress-label--highlight
+                      "
                     >
                       {{ $numeral(kills()).format('0a') }}
                     </td>
@@ -96,7 +103,10 @@
                       </div>
                     </td>
                     <td
-                      class="progress-table__progress-label progress-table__progress-label--highlight"
+                      class="
+                        progress-table__progress-label
+                        progress-table__progress-label--highlight
+                      "
                     >
                       {{ $numeral(deaths()).format('(0a)') }}
                     </td>
