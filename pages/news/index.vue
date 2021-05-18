@@ -53,7 +53,7 @@ export default {
   },
   data() {
     return {
-      title: 'News - Fortnite France Tracker',
+      title: `News - ${process.env.appName}`,
       description:
         "Ne manquez rien de l'actualité du jeu Fortnite : Battle royale ! Découvrez toutes les news officielles.",
     }

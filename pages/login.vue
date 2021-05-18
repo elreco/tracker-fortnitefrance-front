@@ -46,9 +46,8 @@ export default {
   middleware: 'auth-guest',
   data() {
     return {
-      title: 'Connexion - Fortnite France Tracker',
-      description:
-        'Créez un coompte Fortnite France Tracker ou connectez-vous pour gérer votre compte et vos favoris.',
+      title: `Connexion - ${process.env.appName}`,
+      description: `Créez un coompte ${process.env.appName} ou connectez-vous pour gérer votre compte et vos favoris.`,
     }
   },
   head() {

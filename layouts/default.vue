@@ -9,7 +9,7 @@
             ><img
               src="/images/esports/logo-mini.png"
               srcset="/images/esports/logo-mini.png 2x"
-              alt="Fortnite France Tracker - Stats et Classement Fortnite"
+              :alt="`${appName} - Stats et Classement Fortnite`"
               class="header-mobile__logo-img"
           /></nuxt-link>
         </div>
@@ -81,7 +81,7 @@
                   <img
                     src="/images/esports/logo-tracker.png"
                     srcset="/images/esports/logo-tracker.png 2x"
-                    alt="Logo Fortnite France Tracker"
+                    :alt="`Logo ${appName}`"
                     class="header-logo__img"
                 /></nuxt-link>
               </div>
@@ -95,7 +95,7 @@
                     >
                   </li>
                   <li :class="isRouteActive('news')" class="has-children">
-                    <a href="#">Parcourir</a>
+                    <a href="#" class="router-nav__toggle">Parcourir</a>
                     <ul class="main-nav__sub">
                       <li :class="isRouteActive('news')">
                         <nuxt-link
@@ -234,8 +234,8 @@
                       <h4 class="widget__title">À Propos</h4>
                       <div class="widget__content">
                         <p>
-                          Fortnite France Tracker est un site de statistiques
-                          pour Fortnite non affilié à Epic Games. Retrouvez vos
+                          {{ appName }} est un site de statistiques pour
+                          Fortnite non affilié à Epic Games. Retrouvez vos
                           statistiques en français et partagez-les à vos amis,
                           n'importe où sur internet et les réseaux sociaux.
                         </p>
@@ -313,6 +313,7 @@ export default {
   },
   data() {
     return {
+      appName: process.env.appName,
       discord: socials.discord,
       socials,
       sponsors,
