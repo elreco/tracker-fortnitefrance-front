@@ -1,7 +1,6 @@
 <template>
   <div>
-    <loader-news-view v-if="$fetchState.pending" />
-    <div v-else-if="!$fetchState.pending && !$fetchState.error">
+    <div v-if="!$fetchState.pending && !$fetchState.error">
       <div
         class="page-heading page-heading--overlay page-heading--post-bg"
         :style="news.image && `background-image: url(${news.image.url})`"
@@ -97,14 +96,12 @@
 import SocialButtons from '@/components/global/SocialButtons'
 import NewsTag from './partial/Tag'
 import NewsPostAuthor from './partial/PostAuthor'
-import LoaderNewsView from './loader/View'
 
 export default {
   components: {
     NewsTag,
     NewsPostAuthor,
     SocialButtons,
-    LoaderNewsView,
   },
   data() {
     return {
