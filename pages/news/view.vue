@@ -19,14 +19,19 @@ export default {
       return false
     return true
   },
+  data() {
+    return {
+      appName: process.env.appName,
+    }
+  },
   head() {
     return {
-      title: `${this.$store.state.news.meta.title} - Fortnite France Tracker`,
+      title: `${this.$store.state.news.meta.title} - ${this.appName}`,
       meta: [
         {
           hid: 'twitter:title',
           name: 'twitter:title',
-          content: `${this.$store.state.news.meta.title} - Fortnite France Tracker`,
+          content: `${this.$store.state.news.meta.title} - ${this.appName}`,
         },
         {
           hid: 'twitter:description',
@@ -39,7 +44,7 @@ export default {
         {
           hid: 'og:title',
           property: 'og:title',
-          content: `${this.$store.state.news.meta.title} - Fortnite France Tracker`,
+          content: `${this.$store.state.news.meta.title} - ${this.appName}`,
         },
         {
           hid: 'og:description',

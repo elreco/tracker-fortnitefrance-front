@@ -76,8 +76,8 @@ export default {
   },
   data() {
     return {
-      title: 'Aucun résultat - Fortnite France Tracker',
-      description: 'Erreur Fortnite France Tracker',
+      title: `Aucun résultat - ${process.env.appName}`,
+      description: `Erreur ${process.env.appName}`,
     }
   },
   head() {
