@@ -2,7 +2,7 @@ export default {
   ssr: true,
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Fortnite France - Stats et Classements Fortnite Battle Royale',
+    title: 'Fortnite France Tracker - Stats et Classements Fortnite',
     htmlAttrs: {
       lang: 'fr',
     },
@@ -16,7 +16,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: 'Premier site de statistiques et leaderboards en France sur Fortnite Battle Royale. Analysez votre profil de manière approfondie et consultez votre nombre de tops 1.'
+        content: 'Premier site de statistiques et classements en France sur Fortnite Battle Royale. Analysez votre profil de manière approfondie et consultez votre nombre de tops 1 sur notre Tracker.'
       },
       {
         hid: 'twitter:image',
@@ -320,7 +320,7 @@ export default {
     },
   },
   env: {
-    appName: process.env.APP_NAME || 'Fortnite France',
+    appName: process.env.APP_NAME || 'Fortnite France Tracker',
     baseUrl: process.env.VUE_BASE_URL_TRACKER || 'http://localhost:3000',
   },
   router: {

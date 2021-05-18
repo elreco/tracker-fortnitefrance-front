@@ -21,12 +21,12 @@ export default {
   },
   head() {
     return {
-      title: `${this.$store.state.news.meta.title} - Fortnite France`,
+      title: `${this.$store.state.news.meta.title} - Fortnite France Tracker`,
       meta: [
         {
           hid: 'twitter:title',
           name: 'twitter:title',
-          content: `${this.$store.state.news.meta.title} - Fortnite France`,
+          content: `${this.$store.state.news.meta.title} - Fortnite France Tracker`,
         },
         {
           hid: 'twitter:description',
@@ -39,7 +39,7 @@ export default {
         {
           hid: 'og:title',
           property: 'og:title',
-          content: `${this.$store.state.news.meta.title} - Fortnite France`,
+          content: `${this.$store.state.news.meta.title} - Fortnite France Tracker`,
         },
         {
           hid: 'og:description',
