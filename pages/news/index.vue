@@ -1,7 +1,10 @@
 <template>
   <div>
     <div
-      class="page-heading page-heading--horizontal effect-duotone effect-duotone--primary"
+      class="
+        page-heading page-heading--horizontal
+        effect-duotone effect-duotone--primary
+      "
     >
       <div class="effect-duotone__layer">
         <div class="effect-duotone__layer-inner"></div>
@@ -50,7 +53,7 @@ export default {
   },
   data() {
     return {
-      title: 'News - Fortnite France',
+      title: 'News - Fortnite France Tracker',
       description:
         "Ne manquez rien de l'actualité du jeu Fortnite : Battle royale ! Découvrez toutes les news officielles.",
     }

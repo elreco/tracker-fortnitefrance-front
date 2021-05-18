@@ -76,8 +76,8 @@ export default {
   },
   data() {
     return {
-      title: 'Aucun résultat - Fortnite France',
-      description: 'Erreur Fortnite France',
+      title: 'Aucun résultat - Fortnite France Tracker',
+      description: 'Erreur Fortnite France Tracker',
     }
   },
   head() {
