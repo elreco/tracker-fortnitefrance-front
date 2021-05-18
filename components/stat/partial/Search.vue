@@ -16,7 +16,10 @@
           />
 
           <span class="input-group-append"
-            ><button class="btn btn-primary" type="submit">Rechercher</button>
+            ><button class="btn btn-primary" type="submit">
+              <i class="d-block d-sm-none fa fa-search"></i>
+              <span class="d-none d-sm-block">Rechercher</span>
+            </button>
           </span>
         </div>
       </template>
