@@ -52,9 +52,8 @@ export default {
     this.total = count
   },
   watch: {
-    async '$route.query'() {
-      await this.$fetch()
-      this.$nextTick(() => window.scrollTo(0, 0))
+    '$route.query'() {
+      this.$fetch()
     },
   },
   methods: {
