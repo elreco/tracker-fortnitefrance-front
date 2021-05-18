@@ -104,12 +104,12 @@ export default {
       if (this.$route.params && this.$route.params.view) {
         switch (this.$route.params.view) {
           case 'matches':
-            return `${this.$store.state.stat.meta.title} - Tous les matchs - Fortnite France Tracker`
+            return `${this.$store.state.stat.meta.title} - Tous les matchs - ${this.appName}`
           default:
-            return `${this.$store.state.stat.meta.title} - Fortnite France Tracker`
+            return `${this.$store.state.stat.meta.title} - ${this.appName}`
         }
       } else {
-        return `${this.$store.state.stat.meta.title} - Fortnite France Tracker`
+        return `${this.$store.state.stat.meta.title} - ${this.appName}`
       }
     },
     description() {
