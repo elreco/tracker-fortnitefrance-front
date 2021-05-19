@@ -5,23 +5,29 @@
       <div class="team-roster team-roster--card mb-0 pb-0">
         <stat-general-card :stat="stat" />
         <div class="row">
-          <div class="col-sm-12 col-lg-4">
+          <div
+            v-if="stat.global_stats && stat.global_stats.solo"
+            class="col-sm-12 col-lg-4"
+          >
             <stat-playlist-widget
-              v-if="stat.global_stats && stat.global_stats.solo"
               :playlist="stat.global_stats.solo"
               title="Solo"
             />
           </div>
-          <div class="col-sm-12 col-lg-4">
+          <div
+            v-if="stat.global_stats && stat.global_stats.duo"
+            class="col-sm-12 col-lg-4"
+          >
             <stat-playlist-widget
-              v-if="stat.global_stats && stat.global_stats.duo"
               :playlist="stat.global_stats.duo"
               title="Duo"
             />
           </div>
-          <div class="col-sm-12 col-lg-4">
+          <div
+            v-if="stat.global_stats && stat.global_stats.duo"
+            class="col-sm-12 col-lg-4"
+          >
             <stat-playlist-widget
-              v-if="stat.global_stats && stat.global_stats.squad"
               :playlist="stat.global_stats.squad"
               title="Squad"
             />
