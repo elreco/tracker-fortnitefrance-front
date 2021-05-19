@@ -1,7 +1,7 @@
 <template>
   <div class="card card--has-table">
     <div class="card__header">
-      <h4>{{ title }}</h4>
+      <h4 v-html="title"></h4>
     </div>
     <div class="card__content">
       <div v-if="matches && matches.length" class="table-responsive">
