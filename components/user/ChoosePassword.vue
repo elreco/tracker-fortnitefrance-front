@@ -88,8 +88,7 @@ export default {
           this.$toast({
             component: Toast,
             props: {
-              text:
-                'Votre mot de passe a été modifié ! Vous pouvez vous connecter avec votre nouveau mot de passe.',
+              text: 'Votre mot de passe a été modifié ! Vous pouvez vous connecter avec votre nouveau mot de passe.',
               type: 'success',
             },
           })

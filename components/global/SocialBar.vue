@@ -1,6 +1,11 @@
 <template>
   <ul
-    class="social-links social-links--inline social-links--main-nav social-links--top-bar"
+    class="
+      social-links
+      social-links--inline
+      social-links--main-nav
+      social-links--top-bar
+    "
   >
     <li
       v-for="social in socials"
