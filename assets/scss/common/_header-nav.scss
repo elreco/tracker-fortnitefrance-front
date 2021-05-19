@@ -297,6 +297,21 @@
 	}
 }
 
+@media only screen and (min-width: 992px) {
+  .trigger_nav_hover {
+    transform: rotateX(0deg) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+  }
+  .trigger_nav_hovered {
+    opacity: 0 !important;
+    transform-style: preserve-3d !important;
+	  transform: rotateX(-75deg) !important;
+	  visibility: hidden !important;
+  }
+}
+
 /* Megamenu Banner */
 .main-nav__megamenu {
 
@@ -576,11 +591,11 @@
 }
 
 @media only screen and (min-width: 992px) {
-	.main-nav__list li:hover > .main-nav__sub,
+	/* .main-nav__list li:hover > .main-nav__sub,
 	.main-nav__sub li:hover > .main-nav__sub-2,
 	.main-nav__sub-2 li:hover > .main-nav__sub-3 {
 		display: block;
-	}
+	} */
 
 	.main-nav__list li:hover > .main-nav__megamenu {
 		display: flex;

@@ -162,12 +162,14 @@
 
         $menu_link.on('click', function () {
           $wrapper.toggleClass('site-wrapper--has-overlay');
-          /* $('.main-nav__toggle').toggleClass('main-nav__toggle--rotate')
-            .parent().siblings().children().removeClass('main-nav__toggle--rotate');
-            $(".main-nav__sub, .main-nav__megamenu").not($(this).siblings('.main-nav__sub, .main-nav__megamenu')).slideUp('normal');
-          $(this).siblings('.main-nav__sub').slideToggle('normal'); */
-          /* $(".main-nav__sub").css('opacity', 0).css("transform-style", "preserve-3d").css('transform', 'rotateX(-75deg)').css('visibility', 'hidden'); */
+          $(this).parent().parent(".main-nav__sub").removeClass('trigger_nav_hover').addClass('trigger_nav_hovered');
         });
+
+        $(".main-nav__list li").on("mouseenter", function () {
+          $(this).children(".main-nav__sub").addClass('trigger_nav_hover').removeClass('trigger_nav_hovered');
+        }).on("mouseleave", function () {
+          $(this).children(".main-nav__sub").removeClass('matrigger_nav_hoverin_test').addClass('trigger_nav_hovered');
+        })
 
         $('.site-overlay, .main-nav__back').on('click', function () {
           $wrapper.toggleClass('site-wrapper--has-overlay');
@@ -196,6 +198,7 @@
           $(this).siblings('.main-nav__sub').slideToggle('normal');
           $(this).siblings('.main-nav__megamenu').slideToggle('normal');
         });
+
         $('.router-nav__toggle').on('click', function () {
           $('.main-nav__toggle').toggleClass('main-nav__toggle--rotate')
             .parent().siblings().children().removeClass('main-nav__toggle--rotate');
@@ -204,22 +207,6 @@
           $('.main-nav__toggle').siblings('.main-nav__sub').slideToggle('normal');
           $('.main-nav__toggle').siblings('.main-nav__megamenu').slideToggle('normal');
         });
-        /* $(".main-nav__list > li").on({
-          mouseenter: function () {
-            $(this).find(".main-nav__sub").css("opacity", 1).css('display', 'block').css('transform', 'rotateX(0deg)').css('visibility', 'visible');
-          },
-          mouseleave: function () {
-              //stuff to do on mouse leave
-              $(this).find(".main-nav__sub").css('opacity', 0).css("transform-style", "preserve-3d").css('transform', 'rotateX(-75deg)').css('visibility', 'hidden');
-          }
-      }); */
-        /* $(".main-nav__list > li").on('mouseover', function () {
-          $(this).find(".main-nav__sub").css("opacity", 1).css('display', 'block').css('transform', 'rotateX(0deg)').css('visibility', 'visible');
-        });
-
-        $(".main-nav__list > li").on('mouseout', function () {
-          $(this).find(".main-nav__sub").css('opacity', 0).css("transform-style", "preserve-3d").css('transform', 'rotateX(-75deg)').css('visibility', 'hidden');
-        }); */
 
         // Add toggle button and class if submenu has sub-submenu
         $('.main-nav__list > li > ul > li').has('.main-nav__sub-2').addClass('has-children').prepend('<span class="main-nav__toggle-2"></span>');
