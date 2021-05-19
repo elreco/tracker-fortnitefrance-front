@@ -38,6 +38,7 @@ export default {
       news: [],
       perPage: 9,
       total: 0,
+      loading: true,
     }
   },
   async fetch() {
