@@ -2,7 +2,10 @@
   <div>
     <loader-stat-match v-if="$fetchState.pending" />
     <template v-else-if="!$fetchState.pending && !$fetchState.error">
-      <stat-match-table :matches="matches" :title="`Tous les matchs de <span class='text-primary'>${stat.name}</span>`" />
+      <stat-match-table
+        :matches="matches"
+        :title="`Tous les matchs de <span class='text-primary'>${stat.name}</span>`"
+      />
       <adsense data-ad-client="pub-9253579683768027" data-ad-slot="4645662062">
       </adsense>
     </template>
