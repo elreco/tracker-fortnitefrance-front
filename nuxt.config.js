@@ -16,7 +16,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: 'Premier site de statistiques et classements en France sur Fortnite Battle Royale. Analysez votre profil de manière approfondie et consultez votre nombre de tops 1 sur notre Tracker.'
+        content: 'Tracker, statistiques détaillées, nombre de tops 1 et classement pour Fortnite Battle Royale.'
       },
       {
         hid: 'twitter:image',
