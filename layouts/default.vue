@@ -9,7 +9,7 @@
             ><img
               src="/images/esports/logo-mini.png"
               srcset="/images/esports/logo-mini.png 2x"
-              :alt="`${appName} - Stats et Classement Fortnite`"
+              :alt="`${appName} - Stats et Classements Fortnite`"
               class="header-mobile__logo-img"
           /></nuxt-link>
         </div>
