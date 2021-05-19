@@ -50,8 +50,7 @@ export default {
           {
             component: Toast,
             props: {
-              text:
-                'Si votre adresse email existe dans notre base de données, un email pour réinitialisation de votre mot de passe vous a été envoyé par email !',
+              text: 'Si votre adresse email existe dans notre base de données, un email pour réinitialisation de votre mot de passe vous a été envoyé par email !',
               type: 'success',
             },
           },

@@ -1,7 +1,10 @@
 <template>
   <div>
     <div
-      class="page-heading page-heading--horizontal effect-duotone effect-duotone--primary"
+      class="
+        page-heading page-heading--horizontal
+        effect-duotone effect-duotone--primary
+      "
     >
       <div class="container">
         <div class="row">
@@ -21,7 +24,12 @@
             <div class="col-md-8 offset-md-2">
               <div class="icobox icobox--center">
                 <div
-                  class="icobox__icon icobox__icon--border icobox__icon--lg icobox__icon--circle"
+                  class="
+                    icobox__icon
+                    icobox__icon--border
+                    icobox__icon--lg
+                    icobox__icon--circle
+                  "
                 >
                   <i class="icon-like"></i>
                 </div>

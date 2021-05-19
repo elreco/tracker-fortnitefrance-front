@@ -3,7 +3,12 @@
     <div class="col-md-4">
       <div class="icobox icobox--center">
         <div
-          class="icobox__icon icobox__icon--border icobox__icon--lg icobox__icon--circle"
+          class="
+            icobox__icon
+            icobox__icon--border
+            icobox__icon--lg
+            icobox__icon--circle
+          "
         >
           <i class="icon-people"></i>
         </div>
@@ -18,7 +23,12 @@
     <div class="col-md-4">
       <div class="icobox icobox--center">
         <div
-          class="icobox__icon icobox__icon--border icobox__icon--lg icobox__icon--circle"
+          class="
+            icobox__icon
+            icobox__icon--border
+            icobox__icon--lg
+            icobox__icon--circle
+          "
         >
           <i class="icon-graph"></i>
         </div>
@@ -35,7 +45,12 @@
     <div class="col-md-4">
       <div class="icobox icobox--center">
         <div
-          class="icobox__icon icobox__icon--border icobox__icon--lg icobox__icon--circle"
+          class="
+            icobox__icon
+            icobox__icon--border
+            icobox__icon--lg
+            icobox__icon--circle
+          "
         >
           <i class="icon-like"></i>
         </div>
