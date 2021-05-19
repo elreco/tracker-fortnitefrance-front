@@ -1,7 +1,7 @@
 <template>
   <div>
-    <loader-stat-match v-if="$fetchState.pending" />
-    <template v-else-if="!$fetchState.pending && !$fetchState.error">
+    <loader-stat-match v-if="$fetchState.pending && loaded" />
+    <template v-else-if="!$fetchState.pending && loaded">
       <stat-match-table
         :matches="matches"
         :title="`Tous les matchs de <span class='text-primary'>${stat.name}</span>`"
@@ -23,16 +23,17 @@ export default {
   },
   data() {
     return {
-      loading: true,
       stat: {},
       matches: [],
+      loaded: false,
     }
   },
   async fetch() {
-    this.loading = true
     this.stat = await this.getStat()
     this.matches = await this.getMatches()
-    this.loading = false
+  },
+  mounted() {
+    setTimeout(() => (this.loaded = true), 250)
   },
   methods: {
     async getStat() {

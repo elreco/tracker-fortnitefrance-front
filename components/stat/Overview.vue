@@ -1,7 +1,7 @@
 <template>
   <div>
-    <loader-stat-overview v-if="$fetchState.pending" />
-    <template v-else-if="!$fetchState.pending && !$fetchState.error">
+    <loader-stat-overview v-if="$fetchState.pending && loaded" />
+    <template v-else-if="!$fetchState.pending && loaded">
       <div class="team-roster team-roster--card mb-0 pb-0">
         <stat-general-card :stat="stat" />
         <div class="row">
@@ -63,6 +63,7 @@ export default {
     return {
       stat: {},
       matches: [],
+      loaded: false,
     }
   },
   async fetch() {
@@ -75,6 +76,9 @@ export default {
         this.$nextTick(() => this.$initCircularBar())
       }
     },
+  },
+  mounted() {
+    setTimeout(() => (this.loaded = true), 250)
   },
   methods: {
     async getStat() {

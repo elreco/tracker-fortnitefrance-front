@@ -10,9 +10,18 @@
           </adsense>
         </div>
       </div>
-      <div v-for="n in news" :key="n.objectId" class="post-grid__item col-sm-6">
-        <news-card :news="n" />
-      </div>
+      <template v-if="$fetchState.pending && loaded">
+        <loader-news-full-grid v-for="i in perPage" :key="i" />
+      </template>
+      <template v-elseif="!$fetchState.pending && loaded">
+        <div
+          v-for="n in news"
+          :key="n.objectId"
+          class="post-grid__item col-sm-6"
+        >
+          <news-card :news="n" />
+        </div>
+      </template>
     </div>
     <pagination
       v-if="total && perPage"
@@ -27,18 +36,20 @@
 <script>
 import Pagination from '@/components/global/Pagination'
 import NewsCard from './partial/Card'
+import LoaderNewsFullGrid from './loader/FullGrid'
 
 export default {
   components: {
     NewsCard,
     Pagination,
+    LoaderNewsFullGrid,
   },
   data() {
     return {
       news: [],
       perPage: 9,
       total: 0,
-      loading: true,
+      loaded: false,
     }
   },
   async fetch() {
@@ -56,6 +67,9 @@ export default {
     '$route.query'() {
       this.$fetch()
     },
+  },
+  mounted() {
+    setTimeout(() => (this.loaded = true), 250)
   },
   methods: {
     currentPage() {
