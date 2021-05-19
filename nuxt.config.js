@@ -6,43 +6,46 @@ export default {
     htmlAttrs: {
       lang: 'fr',
     },
-    meta: [{
-        charset: 'utf-8'
+    meta: [
+      {
+        charset: 'utf-8',
       },
       {
         name: 'viewport',
-        content: 'width=device-width, initial-scale=1'
+        content: 'width=device-width, initial-scale=1',
       },
       {
         hid: 'description',
         name: 'description',
-        content: 'Tracker, statistiques détaillées, nombre de tops 1 et classement pour Fortnite Battle Royale.'
+        content:
+          'Tracker, statistiques détaillées, nombre de tops 1 et classement pour Fortnite Battle Royale.',
       },
       {
         hid: 'twitter:image',
         name: 'twitter:image',
-        content: '/images/seo-image.png'
+        content: '/images/seo-image.png',
       },
       {
         hid: 'og:image',
         name: 'og:image',
-        content: '/images/seo-image.png'
+        content: '/images/seo-image.png',
       },
       {
         hid: 'og:image:secure_url',
         name: 'og:image:secure_url',
-        content: '/images/seo-image.png'
+        content: '/images/seo-image.png',
       },
       {
         name: 'msapplication-TileColor',
-        content: '#2d89ef'
+        content: '#2d89ef',
       },
       {
         name: 'theme-color',
-        content: '#ffffff'
-      }
+        content: '#ffffff',
+      },
     ],
-    link: [{
+    link: [
+      {
         rel: 'apple-touch-icon',
         sizes: '180x180',
         href: '/images/favicons/apple-touch-icon.png',
@@ -127,7 +130,8 @@ export default {
         href: '/plugins/magnific-popup/dist/magnific-popup.css',
       },
     ],
-    script: [{
+    script: [
+      {
         src: '//cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js',
         body: true,
       },
@@ -165,11 +169,11 @@ export default {
       },
       {
         src: '/plugins/custom-select/classie.js',
-        body: true
+        body: true,
       },
       {
         src: '/plugins/custom-select/selectFx.js',
-        body: true
+        body: true,
       },
       {
         src: '//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js',
@@ -229,11 +233,11 @@ export default {
       },
       {
         src: '/js/custom.js',
-        body: true
+        body: true,
       },
       {
         src: '/js/init.js',
-        body: true
+        body: true,
       },
     ],
   },
@@ -242,81 +246,92 @@ export default {
   css: ['~/assets/scss/style-esports.scss'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [{
+  plugins: [
+    {
       src: '~/plugins/client/revslider.js',
-      mode: 'client'
+      mode: 'client',
     },
     {
       src: '~/plugins/client/circular-bar.js',
-      mode: 'client'
+      mode: 'client',
     },
     {
       src: '~/plugins/client/mp-iframe.js',
-      mode: 'client'
+      mode: 'client',
     },
     {
       src: '~/plugins/client/content-filter.js',
-      mode: 'client'
+      mode: 'client',
     },
     {
       src: '~/plugins/client/global-theme.js',
-      mode: 'client'
+      mode: 'client',
     },
     {
       src: '~/plugins/client/vue-google-adsense',
-      mode: 'client'
+      mode: 'client',
     },
     {
-      src: '~/plugins/axios.js'
+      src: '~/plugins/axios.js',
     },
     {
-      src: '~/plugins/voca.js'
+      src: '~/plugins/voca.js',
     },
     {
-      src: '~/plugins/numeral.js'
+      src: '~/plugins/numeral.js',
     },
     {
-      src: '~/plugins/v-tooltip.js'
+      src: '~/plugins/v-tooltip.js',
     },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
   loading: {
-    color: '#2575DC'
+    color: '#2575DC',
   },
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/eslint
-    ['@nuxtjs/eslint-module', {
-      fix: true
-    }],
+    [
+      '@nuxtjs/eslint-module',
+      {
+        fix: true,
+      },
+    ],
     '@nuxtjs/moment',
     '@nuxtjs/dotenv',
-    '@nuxtjs/google-analytics'
+    '@nuxtjs/google-analytics',
   ],
 
   googleAnalytics: {
-    id: "UA-97058805-4", // Use as fallback if no runtime config is provided
+    id: 'UA-97058805-4', // Use as fallback if no runtime config is provided
   },
 
   moment: {
     defaultLocale: 'fr',
-    locales: ['fr']
+    locales: ['fr'],
   },
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxtjs/axios', '@nuxtjs/auth-next', 'vue-social-sharing/nuxt', 'vue-toastification/nuxt', 'cookie-universal-nuxt'],
+  modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/auth-next',
+    'vue-social-sharing/nuxt',
+    'vue-toastification/nuxt',
+    'cookie-universal-nuxt',
+  ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     babel: {
       plugins: [
         [
-          "@babel/plugin-proposal-private-methods", {
-            "loose": true
-          }
-        ]
-      ]
+          '@babel/plugin-proposal-private-methods',
+          {
+            loose: true,
+          },
+        ],
+      ],
     },
   },
   env: {
@@ -328,14 +343,14 @@ export default {
       routes.push({
         name: 'news.view',
         path: '/news/:id/:slug?',
-        component: resolve(__dirname, 'pages/news/view.vue')
+        component: resolve(__dirname, 'pages/news/view.vue'),
       })
       routes.push({
         name: 'stat.view',
         path: '/stats/:name/:view?',
-        component: resolve(__dirname, 'pages/stat/view.vue')
+        component: resolve(__dirname, 'pages/stat/view.vue'),
       })
-    }
+    },
   },
 
   // Plugins config
@@ -351,7 +366,7 @@ export default {
   toast: {
     timeout: 3000,
     icon: false,
-    closeButton: false
+    closeButton: false,
   },
 
   auth: {
@@ -359,36 +374,36 @@ export default {
     redirect: {
       login: '/login',
       logout: '/login',
-      home: '/'
+      home: '/',
     },
     strategies: {
       local: {
         token: {
           property: 'sessionToken',
           name: 'X-Parse-Session-Token',
-          type: false
+          type: false,
         },
         user: {
-          property: false
+          property: false,
         },
         endpoints: {
           login: {
             url: 'login',
-            method: 'get'
+            method: 'get',
           },
           user: {
             url: 'users/me',
-            method: 'get'
+            method: 'get',
           },
-          logout: false
-        }
-      }
+          logout: false,
+        },
+      },
     },
     cookie: {
       prefix: 'auth.',
       options: {
-        path: '/'
-      }
+        path: '/',
+      },
     },
-  }
+  },
 }

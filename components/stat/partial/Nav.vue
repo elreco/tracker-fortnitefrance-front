@@ -1,6 +1,11 @@
 <template>
   <nav
-    class="content-filter content-filter--boxed content-filter--highlight-side content-filter--label-left"
+    class="
+      content-filter
+      content-filter--boxed
+      content-filter--highlight-side
+      content-filter--label-left
+    "
   >
     <div class="container">
       <div class="content-filter__inner">
