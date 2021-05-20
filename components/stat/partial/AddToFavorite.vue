@@ -20,7 +20,7 @@ export default {
     return {
       favorite: false,
       favoritesCount: 0,
-      loading: true,
+      loaded: false,
     }
   },
   async fetch() {
@@ -40,7 +40,7 @@ export default {
     },
   },
   mounted() {
-    this.loading = false
+    setTimeout(() => (this.loaded = false), 250)
   },
   methods: {
     async toggleFavorite() {
@@ -124,7 +124,7 @@ export default {
     },
     canDisplayButton() {
       if (
-        this.loading ||
+        !this.loaded ||
         this.$fetchState.pending ||
         !this.$store.state.stat.stat.name ||
         !this.$route.params.name ||
