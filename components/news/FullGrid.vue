@@ -13,7 +13,7 @@
       <template v-if="$fetchState.pending && loaded">
         <loader-news-full-grid v-for="i in perPage" :key="i" />
       </template>
-      <template v-elseif="!$fetchState.pending && loaded">
+      <template v-else-if="!$fetchState.pending && loaded">
         <div
           v-for="n in news"
           :key="n.objectId"
@@ -54,7 +54,7 @@ export default {
   },
   async fetch() {
     const { results, count } = await this.getNews()
-    if (!results || results.length === 0) {
+    if (this.$route.query.page && (!results || results.length === 0)) {
       this.$nuxt.error({
         statusCode: 404,
         message: "Il n'y a pas de news pour cette page.",
