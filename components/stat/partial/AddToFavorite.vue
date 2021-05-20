@@ -1,6 +1,6 @@
 <template>
   <button
-    v-if="canDisplayButton()"
+    v-if="canDisplayButton() && loaded"
     v-tooltip="tooltipText()"
     type="button"
     :disabled="isDisabled()"
@@ -40,7 +40,7 @@ export default {
     },
   },
   mounted() {
-    setTimeout(() => (this.loaded = false), 250)
+    setTimeout(() => (this.loaded = true), 250)
   },
   methods: {
     async toggleFavorite() {
@@ -124,7 +124,6 @@ export default {
     },
     canDisplayButton() {
       if (
-        !this.loaded ||
         this.$fetchState.pending ||
         !this.$store.state.stat.stat.name ||
         !this.$route.params.name ||
