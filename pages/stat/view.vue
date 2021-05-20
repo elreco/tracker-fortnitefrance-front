@@ -55,6 +55,13 @@ export default {
     if (params.view && !['matches', 'twitch'].includes(params.view)) {
       return false
     }
+    if (
+      params.view &&
+      params.view === 'matches' &&
+      query.page &&
+      !Number.isInteger(parseInt(query.page))
+    )
+      return false
     if (!Object.prototype.toString.call(params.name) === '[object String]')
       return false
     return true
