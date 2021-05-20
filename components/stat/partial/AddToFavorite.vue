@@ -124,7 +124,6 @@ export default {
     },
     canDisplayButton() {
       if (
-        this.$fetchState.pending ||
         !this.$store.state.stat.stat.name ||
         !this.$route.params.name ||
         this.$store.state.stat.stat.name.toLowerCase() !==
