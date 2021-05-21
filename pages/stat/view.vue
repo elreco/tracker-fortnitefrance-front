@@ -111,12 +111,12 @@ export default {
       if (this.$route.params && this.$route.params.view) {
         switch (this.$route.params.view) {
           case 'matches':
-            return `${this.$store.state.stat.meta.title} - Tous les matchs - ${this.appName}`
+            return `${this.$route.params.name} - Tous les matchs - ${this.appName}`
           default:
-            return `${this.$store.state.stat.meta.title} - ${this.appName}`
+            return `${this.$route.params.name} - ${this.appName}`
         }
       } else {
-        return `${this.$store.state.stat.meta.title} - ${this.appName}`
+        return `${this.$route.params.name} - ${this.appName}`
       }
     },
     description() {

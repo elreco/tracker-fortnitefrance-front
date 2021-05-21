@@ -104,18 +104,12 @@
                           >News</nuxt-link
                         >
                       </li>
-                      <li class="">
-                        <a href="#"
-                          ><span
-                            class="
-                              mr-1
-                              label
-                              posts__cat-label posts__cat-label--category-4
-                            "
-                            >Bientôt</span
-                          >
-                          Classement
-                        </a>
+                      <li :class="isRouteActive('ladder')">
+                        <nuxt-link
+                          class="router-link__toggle"
+                          :to="{ name: 'ladder' }"
+                          >Classement</nuxt-link
+                        >
                       </li>
                       <li class="">
                         <a href="#"

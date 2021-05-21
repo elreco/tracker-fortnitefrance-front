@@ -206,13 +206,13 @@ export default {
       return totalWins
     },
     killsPct() {
-      return (this.kills() * 100) / this.deaths()
+      return Math.round((this.kills() * 100) / this.deaths())
     },
     deathsPct() {
-      return (this.deaths() * 100) / this.kills()
+      return Math.round((this.deaths() * 100) / this.kills())
     },
     totalWinsPct() {
-      return (this.totalWins() * 100) / this.deaths()
+      return Math.round((this.totalWins() * 100) / this.deaths())
     },
   },
 }

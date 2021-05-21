@@ -23,31 +23,24 @@
       <div class="container">
         <div class="error-404">
           <div class="row">
-            <div class="col-md-8 offset-md-2">
+            <div v-if="error.playerNotFound" class="col-md-12">
+              <error-stat-not-found />
+            </div>
+            <div v-else class="col-md-8 offset-md-2">
               <figure class="error-404__figure">
                 <img src="/images/icon-ghost.svg" class="w-75" alt="" />
               </figure>
-              <header class="error__header">
-                <template v-if="error.playerNotFound">
-                  <h2 class="error__title">OUPS! Aucun joueur trouvé</h2>
-                  <h3 class="error__subtitle">
-                    Nous ne trouvons pas
-                    {{ $route.params && $route.params.name }} !
-                  </h3>
-                </template>
-                <template v-else>
-                  <h2 class="error__title">OUPS! Il y a une erreur</h2>
-                  <h3 class="error__subtitle">
-                    Nous avons une erreur
-                    <span class="highlight">{{ error.statusCode }}</span> !
-                  </h3>
-                </template>
+              <header class="error__header mb-2">
+                <h2 class="error__title">OUPS! Il y a une erreur</h2>
+                <h3 class="error__subtitle">
+                  Nous avons une erreur
+                  <span class="highlight">{{ error.statusCode }}</span> !
+                </h3>
+                <div class="error__description mb-0">
+                  {{ error.message }}
+                </div>
               </header>
-              <stat-search class="body-search-form" />
-              <div v-if="!error.playerNotFound" class="error__description">
-                {{ error.message }}
-              </div>
-
+              <stat-search class="header-search-form" />
               <footer class="error__cta">
                 <nuxt-link :to="{ name: 'index' }" class="btn btn-primary"
                   >Retourner à l'accueil</nuxt-link
@@ -63,10 +56,12 @@
 
 <script>
 import StatSearch from '@/components/stat/partial/Search'
+import ErrorStatNotFound from '@/components/error/StatNotFound'
 
 export default {
   components: {
     StatSearch,
+    ErrorStatNotFound,
   },
   props: {
     error: {
