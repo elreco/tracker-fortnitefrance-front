@@ -155,6 +155,11 @@ export default {
         limit: this.perPage,
         count: true,
         order: 'rank',
+        where: {
+          rank: {
+            $gt: 0,
+          },
+        },
       }
       return await this.$store.dispatch('stat/fetch', params)
     },
