@@ -1,5 +1,12 @@
 <template>
-  <div>
+  <div class="col-lg-12">
+    <adsense
+      data-ad-client="pub-9253579683768027"
+      data-ad-format="horizontal"
+      data-ad-slot="5577404864"
+      class="mb-3"
+    >
+    </adsense>
     <loader-ladder-full-list
       v-if="$fetchState.pending && loaded"
       :numer="perPage"
