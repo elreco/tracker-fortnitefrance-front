@@ -73,5 +73,22 @@ export default {
     this.$killRevSlider()
     return next()
   },
+  data() {
+    return {
+      baseUrl: process.env.baseUrl,
+    }
+  },
+  jsonld() {
+    return {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      url: this.baseUrl,
+      potentialAction: {
+        '@type': 'SearchAction',
+        target: `${this.baseUrl}/stats/{search_term_string}`,
+        'query-input': 'required name=search_term_string',
+      },
+    }
+  },
 }
 </script>
