@@ -19,7 +19,10 @@
       <div class="card__content">
         <div class="table-responsive">
           <table
-            class="table table-hover table-standings table-standings--full"
+            class="
+              table table-hover table-standings table-standings--full
+              text-nowrap
+            "
           >
             <thead>
               <tr>
