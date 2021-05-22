@@ -54,7 +54,7 @@ export default {
   watch: {
     async '$route.query'() {
       await this.$fetch()
-      window.scrollTo(0, 0)
+      if (this.loaded) window.scrollTo(0, 0)
     },
   },
   mounted() {
