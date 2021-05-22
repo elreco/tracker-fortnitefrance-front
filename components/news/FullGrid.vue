@@ -10,10 +10,10 @@
           </adsense>
         </div>
       </div>
-      <template v-if="$fetchState.pending && loaded">
+      <template v-if="$fetchState.pending">
         <loader-news-full-grid v-for="i in perPage" :key="i" />
       </template>
-      <template v-else-if="!$fetchState.pending && loaded">
+      <template v-else>
         <div
           v-for="n in news"
           :key="n.objectId"
@@ -49,7 +49,6 @@ export default {
       news: [],
       perPage: 9,
       total: 0,
-      loaded: false,
     }
   },
   async fetch() {
@@ -66,11 +65,8 @@ export default {
   watch: {
     async '$route.query'() {
       await this.$fetch()
-      if (this.loaded) window.scrollTo(0, 0)
+      window.scrollTo(0, 0)
     },
-  },
-  mounted() {
-    setTimeout(() => (this.loaded = true), 250)
   },
   methods: {
     currentPage() {
