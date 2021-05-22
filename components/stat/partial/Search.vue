@@ -67,7 +67,7 @@ export default {
           name: this.searchInput,
         },
       })
-      this.searchInput = null
+      /* this.searchInput = null */
       this.$refs.searchInput.blur()
     },
   },
