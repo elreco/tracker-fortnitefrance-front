@@ -7,14 +7,8 @@
       class="mb-3"
     >
     </adsense>
-    <loader-ladder-full-list
-      v-if="$fetchState.pending && loaded"
-      :numer="perPage"
-    />
-    <div
-      v-else-if="!$fetchState.pending && loaded"
-      class="card card--has-table"
-    >
+    <loader-ladder-full-list v-if="$fetchState.pending" :numer="perPage" />
+    <div v-else-if="!$fetchState.pending" class="card card--has-table">
       <div class="card__header"><h4>Classement par victoires</h4></div>
       <div class="card__content">
         <div class="table-responsive">
@@ -124,7 +118,6 @@ export default {
       stats: [],
       perPage: 100,
       total: 0,
-      loaded: false,
     }
   },
   async fetch() {
@@ -141,11 +134,8 @@ export default {
   watch: {
     async '$route.query'() {
       await this.$fetch()
-      if (this.loaded) window.scrollTo(0, 0)
+      window.scrollTo(0, 0)
     },
-  },
-  mounted() {
-    setTimeout(() => (this.loaded = true), 250)
   },
   methods: {
     currentPage() {
