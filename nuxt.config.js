@@ -259,10 +259,6 @@ export default {
       mode: 'client',
     },
     {
-      src: '~/plugins/client/content-filter.js',
-      mode: 'client',
-    },
-    {
       src: '~/plugins/client/global-theme.js',
       mode: 'client',
     },
