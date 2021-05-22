@@ -52,8 +52,9 @@ export default {
     this.total = count
   },
   watch: {
-    '$route.query'() {
-      this.$fetch()
+    async '$route.query'() {
+      await this.$fetch()
+      window.scrollTo(0, 0)
     },
   },
   mounted() {
