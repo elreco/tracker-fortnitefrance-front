@@ -9,8 +9,16 @@
   >
     <div class="container">
       <div class="content-filter__inner">
-        <a href="#" class="content-filter__toggle"></a>
-        <ul class="content-filter__list">
+        <a
+          href="#"
+          class="content-filter__toggle"
+          :class="displayFilter && 'content-filter__toggle--active'"
+          @click="triggerFilter()"
+        ></a>
+        <ul
+          class="content-filter__list"
+          :class="displayFilter && 'content-filter__list--expanded'"
+        >
           <li
             class="content-filter__item"
             :class="!$route.params.view ? 'content-filter__item--active' : ''"
@@ -50,3 +58,19 @@
     </div>
   </nav>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      displayFilter: false,
+    }
+  },
+  methods: {
+    triggerFilter() {
+      this.displayFilter
+        ? (this.displayFilter = false)
+        : (this.displayFilter = true)
+    },
+  },
+}
+</script>

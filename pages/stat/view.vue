@@ -103,9 +103,6 @@ export default {
       ],
     }
   },
-  mounted() {
-    this.$initContentFilter()
-  },
   methods: {
     title() {
       if (this.$route.params && this.$route.params.view) {
