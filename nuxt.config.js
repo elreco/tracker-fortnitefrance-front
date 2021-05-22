@@ -1,5 +1,7 @@
 export default {
-  ssr: true,
+  server: {
+    host: '192.168.1.5' // par défaut: localhost
+  },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Fortnite France Tracker - Stats et Classements Fortnite',
