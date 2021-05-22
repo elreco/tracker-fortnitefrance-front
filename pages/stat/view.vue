@@ -104,7 +104,7 @@ export default {
     }
   },
   mounted() {
-    this.$nextTick(() => this.$initContentFilter())
+    this.$initContentFilter()
   },
   methods: {
     title() {
