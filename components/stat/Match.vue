@@ -1,7 +1,7 @@
 <template>
   <div>
-    <loader-stat-match v-if="$fetchState.pending && loaded" />
-    <template v-else-if="!$fetchState.pending && loaded">
+    <loader-stat-match v-if="$fetchState.pending" />
+    <template v-else>
       <stat-match-table
         :matches="matches"
         :title="`Tous les matchs de <span class='text-primary'>${stat.name}</span>`"
@@ -34,7 +34,6 @@ export default {
     return {
       stat: {},
       matches: [],
-      loaded: false,
       perPage: 20,
       total: 0,
     }
@@ -54,11 +53,8 @@ export default {
   watch: {
     async '$route.query'() {
       await this.$fetch()
-      if (this.loaded) window.scrollTo(0, 0)
+      window.scrollTo(0, 0)
     },
-  },
-  mounted() {
-    setTimeout(() => (this.loaded = true), 250)
   },
   methods: {
     currentPage() {

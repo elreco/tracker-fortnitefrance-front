@@ -1,7 +1,7 @@
 <template>
   <div>
-    <loader-news-view v-if="$fetchState.pending && loaded" />
-    <div v-else-if="!$fetchState.pending && loaded">
+    <loader-news-view v-if="$fetchState.pending" />
+    <div v-else>
       <div
         class="page-heading page-heading--overlay page-heading--post-bg"
         :style="news.image && `background-image: url(${news.image.url})`"
@@ -109,7 +109,6 @@ export default {
   data() {
     return {
       news: {},
-      loaded: false,
     }
   },
   jsonld() {
@@ -143,9 +142,6 @@ export default {
         this.addViews()
       }
     },
-  },
-  mounted() {
-    setTimeout(() => (this.loaded = true), 250)
   },
   methods: {
     async getNews() {
