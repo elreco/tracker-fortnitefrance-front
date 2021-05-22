@@ -1,7 +1,7 @@
 
  export default (context, inject) => {
   var initContentFilter = async () => {
-    await sleep(250);
+    await sleep(1000);
     $('.content-filter__toggle').on('click', function () {
       $(this).toggleClass('content-filter__toggle--active');
       $('.content-filter__list').toggleClass('content-filter__list--expanded');
