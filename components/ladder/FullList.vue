@@ -121,7 +121,7 @@ export default {
   },
   data() {
     return {
-      news: [],
+      stats: [],
       perPage: 100,
       total: 0,
       loaded: false,
@@ -142,6 +142,22 @@ export default {
     '$route.query'() {
       this.$fetch()
     },
+  },
+  jsonld() {
+    const stats = this.stats.map((item, index) => ({
+      '@type': 'ListItem',
+      position: item.rank,
+      item: {
+        '@id': item.rank,
+        name: item.name,
+        wins: item.totalWins,
+      },
+    }))
+    return {
+      '@context': 'https://schema.org',
+      '@type': 'Table',
+      itemListElement: stats,
+    }
   },
   mounted() {
     setTimeout(() => (this.loaded = true), 250)

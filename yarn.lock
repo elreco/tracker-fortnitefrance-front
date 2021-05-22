@@ -6099,6 +6099,13 @@ numeral@^2.0.6:
   resolved "https://registry.yarnpkg.com/numeral/-/numeral-2.0.6.tgz#4ad080936d443c2561aed9f2197efffe25f4e506"
   integrity sha1-StCAk21EPCVhrtnyGX7//iX05QY=
 
+nuxt-jsonld@^1.5.1:
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/nuxt-jsonld/-/nuxt-jsonld-1.5.1.tgz#cbde4542fa142b9c80d408ec024d0d2f3ed3e8f0"
+  integrity sha512-W8M4bD9Iw+Vy9LqJylkSzAf5NEOCJhDxzUlVLpT8IDtkDs1Ahwu0goH1+L8Gi8FBeDOqpK90Yttj3gwAGLi54A==
+  dependencies:
+    schema-dts "^0.8.2"
+
 nuxt@^2.15.3:
   version "2.15.6"
   resolved "https://registry.yarnpkg.com/nuxt/-/nuxt-2.15.6.tgz#628ff86d57c1d4671802777635ce7fd2c24f9091"
@@ -7857,6 +7864,11 @@ sax@~1.2.4:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
   integrity sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw==
+
+schema-dts@^0.8.2:
+  version "0.8.2"
+  resolved "https://registry.yarnpkg.com/schema-dts/-/schema-dts-0.8.2.tgz#4a478eec4119023456e3c41b23744af69ff7a8fc"
+  integrity sha512-whRg7QF9wmPfrwAi4NRT/bjMBIdHvzpr4excNN00hn+U2aFXx9NB3JKfooUMJLDqpGEqnZpA61f5muw9lQ50ZA==
 
 schema-utils@^1.0.0:
   version "1.0.0"
