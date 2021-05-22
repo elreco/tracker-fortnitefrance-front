@@ -11,7 +11,6 @@
           :to="getRoute(currentPage - 1)"
           :disabled="isInFirstPage"
           class="page-link"
-          @click.native="scrollToTop"
         >
           <i class="fas fa-angle-left"></i>
         </nuxt-link>
@@ -26,25 +25,16 @@
           :disabled="page.isDisabled"
           class="page-link"
           :to="getRoute(page.name)"
-          @click.native="scrollToTop"
           >{{ page.name }}</nuxt-link
         >
       </li>
       <li class="page-item" :class="isInLastPage && 'disabled'">
-        <nuxt-link
-          class="page-link"
-          :to="getRoute(currentPage + 1)"
-          @click.native="scrollToTop"
-        >
+        <nuxt-link class="page-link" :to="getRoute(currentPage + 1)">
           <i class="fas fa-angle-right"></i>
         </nuxt-link>
       </li>
       <li class="page-item" :class="isInLastPage && 'disabled'">
-        <nuxt-link
-          class="page-link"
-          :to="getRoute(totalPages)"
-          @click.native="scrollToTop"
-        >
+        <nuxt-link class="page-link" :to="getRoute(totalPages)">
           <i class="fas fa-angle-double-right"></i>
         </nuxt-link>
       </li>
@@ -133,9 +123,6 @@ export default {
       return {
         query,
       }
-    },
-    scrollToTop() {
-      this.$nextTick(() => window.scrollTo(0, 0))
     },
   },
 }
