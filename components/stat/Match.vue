@@ -35,7 +35,7 @@ export default {
       stat: {},
       matches: [],
       loaded: false,
-      perPage: 10,
+      perPage: 20,
       total: 0,
     }
   },

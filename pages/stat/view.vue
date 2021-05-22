@@ -11,13 +11,13 @@
       </div>
       <div class="container">
         <div class="row">
-          <div class="col align-self-start">
+          <div class="col-md-8 align-self-start">
             <h1 class="page-heading__title">
               Les statistiques
               <span class="highlight">{{ appName }}</span>
             </h1>
           </div>
-          <div class="col text-center text-md-right my-2 my-md-auto">
+          <div class="col-md-4 text-center text-md-right my-2 my-md-auto">
             <stat-add-to-favorite />
           </div>
         </div>
