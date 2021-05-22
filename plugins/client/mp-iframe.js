@@ -1,5 +1,6 @@
 export default (context, inject) => {
-  var initMpIframe = () => {
+  var initMpIframe = async () => {
+    await sleep(200)
     $('.mp_iframe').magnificPopup({
       type:'iframe',
       removalDelay: 300,
@@ -42,4 +43,7 @@ export default (context, inject) => {
     });
   }
   inject('initMpIframe', initMpIframe)
+}
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }

@@ -133,7 +133,9 @@ export default {
         ) {
           return this.$router.push({ name: 'news' })
         }
-        this.$nextTick(() => this.$initMpIframe())
+        if (this.news && this.news.video) {
+          this.$initMpIframe()
+        }
       }
     },
     news() {
