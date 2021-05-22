@@ -267,6 +267,9 @@ export default {
       mode: 'client',
     },
     {
+      src: '~/plugins/jsonld.js',
+    },
+    {
       src: '~/plugins/axios.js',
     },
     {
