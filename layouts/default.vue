@@ -94,7 +94,10 @@
                       >Accueil</nuxt-link
                     >
                   </li>
-                  <li :class="isRouteActive('news')" class="has-children">
+                  <li
+                    :class="isRouteActive('news') || isRouteActive('ladder')"
+                    class="has-children"
+                  >
                     <a href="#" class="router-nav__toggle">Parcourir</a>
                     <ul class="main-nav__sub">
                       <li :class="isRouteActive('news')">
