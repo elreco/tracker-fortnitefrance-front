@@ -112,6 +112,15 @@ export default {
       loaded: false,
     }
   },
+  jsonld() {
+    return {
+      '@context': 'https://schema.org',
+      '@type': 'NewsArticle',
+      headline: this.news.title,
+      image: [this.news.image ? this.news.image.url : ''],
+      datePublished: this.news.date ? this.news.date.iso : '',
+    }
+  },
   async fetch() {
     this.news = await this.getNews()
   },
