@@ -55,7 +55,10 @@
                   </div>
                 </div>
               </div>
-              <div class="team-roster__player-stats-circular-bar">
+              <div
+                v-if="stat && stat.global_stats"
+                class="team-roster__player-stats-circular-bar"
+              >
                 <div class="circular circular--size-80">
                   <div class="circular__bar" :data-percent="winrate()">
                     <span class="circular__percents">
@@ -69,7 +72,10 @@
             </div>
 
             <div class="team-roster__player-stats-progress-bars">
-              <table class="progress-table progress-table--simple">
+              <table
+                v-if="stat && stat.global_stats"
+                class="progress-table progress-table--simple"
+              >
                 <tbody>
                   <tr>
                     <td class="progress-table__title">Tops 1</td>
