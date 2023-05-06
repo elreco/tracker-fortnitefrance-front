@@ -114,33 +114,10 @@
                           >Classement</nuxt-link
                         >
                       </li>
-                      <li class="">
-                        <a href="#"
-                          ><span
-                            class="
-                              mr-1
-                              label
-                              posts__cat-label posts__cat-label--category-4
-                            "
-                            >Bientôt</span
-                          >
-                          Tournois</a
-                        >
-                      </li>
-                      <li class="">
-                        <a href="#"
-                          ><span
-                            class="
-                              mr-1
-                              label
-                              posts__cat-label posts__cat-label--category-4
-                            "
-                            >Bientôt</span
-                          >
-                          Boutique</a
-                        >
-                      </li>
                     </ul>
+                  </li>
+                  <li>
+                    <a href="https://www.etsy.com/fr/shop/TomoeGozenDesign">Boutique</a>
                   </li>
                   <li>
                     <a :href="discord.link">{{ discord.title }}</a>
